@@ -14,8 +14,9 @@ def parent_dir(path):
 
 PROJECT_ROOT = parent_dir(PACKAGE_DIR)
 # Necessary for Github pages
-FREEZER_BASE_URL = 'http://localhost/killtheyak/site/'
-FREEZER_DESTINATION = os.path.join(PROJECT_ROOT, 'site')
+FREEZER_BASE_URL = 'http://localhost/killtheyak/'
+FREEZER_DESTINATION = PROJECT_ROOT
+FREEZER_REMOVE_EXTRA_FILES = False
 DEBUG = True
 SECRET_KEY = 'shhhh'
 FLATPAGES_MARKDOWN_EXTENSIONS = ['codehilite', 'fenced_code', 'footnotes']

@@ -6,19 +6,19 @@
 
 
   <title>Kill The Yak
-| Dependency example
+| Contribute
 </title>
   <meta name="description" content="Yak-shaving sucks. So let's kill the yak.">
   <meta name="author" content="">
 
 
-  <link rel="stylesheet" href="/killtheyak/site/static/css/pure-min.css">
-  <link rel="stylesheet" href="/killtheyak/site/pygments.css">
+  <link rel="stylesheet" href="/killtheyak/static/css/pure-min.css">
+  <link rel="stylesheet" href="/killtheyak/pygments.css">
 
   
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
   
-  <link rel="stylesheet" href="/killtheyak/site/static/css/style.css">
+  <link rel="stylesheet" href="/killtheyak/static/css/style.css">
   
 
 </head>
@@ -26,10 +26,10 @@
 
 
 <nav class="pure-menu pure-menu-open pure-menu-horizontal">
-    <a href="/killtheyak/site/" class="pure-menu-heading brand">Kill The Yak</a>
+    <a href="/killtheyak/" class="pure-menu-heading brand">Kill The Yak</a>
     <ul>
-        <li><a href="/killtheyak/site/">home</a></li>
-        <li><a href="/killtheyak/site/contribute/">contribute</a></li>
+        <li><a href="/killtheyak/">home</a></li>
+        <li><a href="/killtheyak/contribute/">contribute</a></li>
         <li><a href="http://www.github.com/sloria/killtheyak">source</a></li>
     </ul>
         <span class='tagline'><a href="http://projects.csail.mit.edu/gsb/old-archive/gsb-archive/gsb2000-02-11.html">Yak shaving</a> sucks. So let's kill the yak.</span>
@@ -44,53 +44,41 @@
     
 <article>
 <h1 class='muted'>All I want to do is. . .</h1>
-<h1 class='page-title'>Dependency example</h1>
-
-
-
-
-<hr>
-
-
-
-
-<p class='date'>Updated: 2013-07-13<p>
-
-
-
-
-    <p>OS:</p>
-    <ul class="os-list">
-
-    
-    <li><a href="/killtheyak/site/os/macosx/">macosx</a></li>
-    
-    <li><a href="/killtheyak/site/os/windows/">windows</a></li>
-    
-    <li><a href="/killtheyak/site/os/linux/">linux</a></li>
-    
-    </ul>
+<h1 class='page-title'>Contribute</h1>
 
 
 
 
 
-<hr>
 
 
-<div class="codehilite"><pre><span class="c"># Content in fenced code blocks gets included on other pages</span>
-<span class="c"># When they list this page as a dependency</span>
-</pre></div>
+
+
+
+
+
+
+
+
+<ol>
+<li>Fork the <a href="https://github.com/sloria/killtheyak-pages">repo</a>.</li>
+<li>Copy <code>TEMPLATE.md</code> to a new file.</li>
+<li>Write your content. Commit.</li>
+<li>Send a pull request.</li>
+</ol>
+<p>Some things to note:</p>
+<ul>
+<li>You can write in <a href="http://daringfireball.net/projects/markdown/">Markdown</a>.</li>
+<li>If your "recipe" has any dependencies, include them in <code>deps</code>. You can refer to other pages in the repo by writing their filename (without the extension), e.g. <code>deps: [install-homebrew]</code></li>
+<li>Content enclosed in <code>```</code> is important. When other pages list your page as a <code>dep</code>, the content between the <code>```</code> will be included on their page.</li>
+<li>Don't forget to add yourself as a contributor so you can get credit! You can write your name, or you can write your Github page URL. </li>
+</ul>
 </article>
 
 <hr>
 
 
 </span>
-
-<div class="suggestions">
-<p class="">If you have suggestions, corrections, or content to contribute, fork us at our <a href="http://www.github.com/sloria/killtheyak">Github repo</a> or <a href="https://github.com/sloria/killtheyak/issues/new">open an issue</a>.</p>
-</div>
 
 
   </div>
@@ -103,9 +91,9 @@
 
 
 <!-- JavaScript at the bottom for fast page loading -->
-<script src="/killtheyak/site/static/libs/jquery/jquery-2.0.3.min.js"></script>
-<script src="/killtheyak/site/static/js/plugins.js"></script>
-<script src="/killtheyak/site/static/js/script.js"></script>
+<script src="/killtheyak/static/libs/jquery/jquery-2.0.3.min.js"></script>
+<script src="/killtheyak/static/js/plugins.js"></script>
+<script src="/killtheyak/static/js/script.js"></script>
 
 <!-- end scripts -->
 <!-- Google Analytics snippet. Change UA-XXXXXX-X to your site's ID -->
