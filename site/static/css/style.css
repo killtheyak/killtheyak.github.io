@@ -1,0 +1,161 @@
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700,300italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+
+
+/* Layout */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.box {
+    width: 900px;
+    margin: 40px auto;
+}
+
+/* Typography */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    /*-webkit-font-smoothing: antialiased;*/
+}
+
+h1, h2, h3, h4, .brand {
+    font-family: 'Gloria Hallelujah', serif;
+    font-weight: normal;
+}
+
+textarea, code,
+pre  {
+    font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono',
+               monospace!important;
+    font-size: 15px;
+}
+
+pre {
+    font-size: 1em;
+}
+
+.muted {
+    color: #999;
+}
+
+.pure-menu-heading.brand {
+    text-transform: none;
+}
+
+.date {
+    font-style: italic;
+}
+
+.suggestions {
+    font-size: 80%;
+    color: #777;
+}
+
+/* Fancy hr! */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+
+.pages-list {
+    list-style: none;
+}
+
+.pages-list li {
+    margin-bottom: 12px;
+}
+
+/* Links */
+
+a {
+    text-decoration: none;
+    color: #113F8C;
+}
+
+a.tag{
+    color: #D0D102;
+}
+
+a:hover,
+a:focus
+a.tag:hover{
+    color: #D70060;
+    text-decoration: underline;
+}
+
+a.brand:hover, a.dep-name:hover {
+    color: #D70060;
+    text-decoration: none;
+}
+
+.deps-list,
+.os-list {
+    color: #616161;
+}
+
+a.dep-name {
+    color: #61AE24;
+    border-bottom: 1px #777 dotted;
+}
+
+span a.clear-filter {
+    font-size: 70%;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    border-bottom: 0px;
+}
+
+.header {
+    margin: 50% 2em 0;
+    text-align: right;
+}
+
+/* Buttons */
+.os-button {
+    font-size: 60%;
+    border-radius: 4px;
+    /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
+}
+
+/* Icons */
+.icon-macosx:before {
+  content: "\f179";
+}
+
+/* Nav */
+nav .tagline {
+    font-size: 80%;
+    color: #cccccc;
+    text-align: right;
+    margin-left: 90px;
+}
+
+nav .tagline a {
+    display: inline;
+    padding: 0;
+    color: #cccccc;
+    /*border-bottom: 1px #777 dotted;*/
+}
+
+nav .tagline a:hover {
+    color: #D70060;
+    /*text-decoration: none;*/
+}
+
+/* Footer */
+footer {
+    font-size: 70%;
+    text-align: right;
+    letter-spacing: 0;
+    color: #777;
+}

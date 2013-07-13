@@ -1,0 +1,36 @@
+<ul class="pages-list">
+{% for page in pages %}
+    <li>
+        <a href="{{ url_for('page', path=page.path) }}">{{ page.title }}</a>
+        {% if page.meta.os|length %}
+            {% for os in page.meta.os %}
+                <a class="pure-button os-button" href="{{ url_for('os', os=os) }}">
+                    <i class="icon-{{ os }} icon-small"></i>
+                    {{ os }}
+                </a>
+            {% endfor %}
+        {% endif %}
+        {% if page.meta.tags|length %}
+            <span class='tags muted'>
+            <small>
+            :: tags:
+            {% for tag in page.meta.tags %}
+                <a class='tag' href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a>
+                {% if not loop.last %}
+                ,
+                {% endif %}
+            {% endfor %}
+            </small>
+            </span>
+        {% endif %}
+        {% if page.meta.updated %}
+            <span class="date muted">
+               :: <small>Updated {{ page.meta.updated }}</small>
+            </span>
+
+        {% endif %}
+    </li>
+{% else %}
+    <li>No pages yet. Check back later and please <a href="{{ url_for('contribute') }}">contribute</a>!</li>
+{% endfor %}
+</ul>

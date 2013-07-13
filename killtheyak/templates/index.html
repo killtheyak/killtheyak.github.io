@@ -1,0 +1,33 @@
+{% extends "_layouts/base.html" %}
+{% block content %}
+
+<h1>All I want to do is. . .</h1>
+
+{% with pages=pages, os_icons=os_icons %}
+    {% include "_list.html" %}
+{% endwith %}
+
+{% if os or tag %}
+
+
+{% if os %}
+<h2>in <a href="{{ url_for('os', os=os|lower) }}">{{ os|title }}</a>.
+<span class='clear-filter muted'>
+    <a class='clear-filter' href="{{ url_for('home') }}">
+    <small>[clear filters]</small>
+</a></span>
+
+</h2>
+{% endif %}
+
+{% if tag %}
+<h2>tagged <a href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a>.
+<span class='clear-filter muted'>
+    <a class='clear-filter' href="{{ url_for('home') }}">
+    <small>[clear filters]</small>
+</h2>
+
+{% endif %}
+
+{% endif %}
+{% endblock content %}

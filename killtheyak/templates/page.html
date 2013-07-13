@@ -1,0 +1,74 @@
+{% extends "_layouts/base.html" %}
+{% block page_title %}
+| {{ page.title }}
+{% endblock page_title %}
+{% block content %}
+<article>
+<h1 class='muted'>All I want to do is. . .</h1>
+<h1 class='page-title'>{{ page.title }}</h1>
+
+{{ page.meta.description }}
+
+{% if page.meta.os|length or page.meta.deps|length or page.meta.updated %}
+<hr>
+{% endif %}
+
+{# Updated #}
+{% if page.meta.updated %}
+<p class='date'>Updated: {{ page.meta.updated }}<p>
+{% endif %}
+
+{# OS info #}
+{% if page.meta.os|length %}
+    <p>OS:</p>
+    <ul class="os-list">
+
+    {% for os in page.meta.os %}
+    <li><a href="{{ url_for('os', os=os) }}">{{ os }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{# Deps info #}
+{% if page.meta.deps|length %}
+    <p>Do these first:</p>
+    <ul class='deps-list'>
+    {% for dep in deps %}
+        <li>
+            <div class="dep-container">
+                <a class="dep-name" href="#">
+                    {{ dep.title }}
+                </a>
+                <a href="{{ url_for('page', path=dep.path) }}">&nbsp;[full instructions]</a>
+
+                <div class="dep-code-container">
+                {{ dep.html|fenced_code }}
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% if page.meta.os|length or page.meta.deps|length %}
+<hr>
+{% endif %}
+{# Page Content #}
+{{ page }}
+</article>
+
+<hr>
+{# Contributors #}
+{% if page.meta.contributors|length %}
+<span class="contributors-list">
+Contributors:
+{% for contributor in page.meta.contributors %}
+{{ contributor|github_urlize }}
+{% if not loop.last %},&nbsp;{% endif %}
+{% endfor %}
+
+{% endif %}
+</span>
+{% if page.title|lower != "contribute" %}
+{% include "page_footer.html" %}
+{% endif %}
+{% endblock content %}
