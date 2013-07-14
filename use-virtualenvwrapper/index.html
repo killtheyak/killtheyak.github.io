@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kill The Yak
-| Install Python 3
+| Use virtualenv + virtualenvwrapper with Python
 </title>
   <meta name="description" content="Yak-shaving sucks. So let's kill the yak.">
   <meta name="author" content="Steven Loria">
@@ -39,9 +39,9 @@
     
 <article>
 <h1 class='muted'>All I want to do is. . .</h1>
-<h1 class='page-title'>. . .install Python 3.</h1>
+<h1 class='page-title'>. . .use virtualenv + virtualenvwrapper with Python.</h1>
 
-
+Virtualenv allows you to make isolated working copies of Python so that you can work on a specific project without affecting other projects. Virtualenvwrapper provides commands that make it simple to create and manage your virtual environments.
 
 
 <hr>
@@ -49,7 +49,7 @@
 
 
 
-<p class='date'>Updated: 2013-07-13<p>
+<p class='date'>Updated: 2013-07-14<p>
 
 
 
@@ -59,6 +59,8 @@
 
     
     <li><a href="/os/macosx/">macosx</a></li>
+    
+    <li><a href="/os/linux/">linux</a></li>
     
     </ul>
 
@@ -71,13 +73,30 @@
         <li>
             <div class="dep-container">
                 <a class="dep-name" href="#">
-                    Install Homebrew
+                    Install Python 2 and/or 3
                 </a>
-                <a href="/install-homebrew/">&nbsp;[full instructions]</a>
+                <a href="/install-python/">&nbsp;[full instructions]</a>
 
                 <div class="dep-code-container">
-                <div class="codehilite"><pre><span class="c"># In your Mac Terminal, run:</span>
-<span class="nv">$ </span>ruby -e <span class="s2">"$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"</span>
+                <div class="codehilite"><pre><span class="c"># On Mac &gt;= 10.5 with homebrew</span>
+<span class="c">## Install Python 2</span>
+<span class="nv">$ </span>brew install python
+<span class="c">## Install Python 3</span>
+<span class="nv">$ </span>brew install python3
+<span class="c">## Follow any instructions that appear after each brew install</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Is everything working?</span>
+<span class="nv">$ </span>brew doctor
+<span class="c"># Listen to the doctor</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Run Python 2</span>
+<span class="nv">$ </span>python
+<span class="c"># Run Python 3</span>
+<span class="nv">$ </span>python3
+<span class="c"># Install a Python 2 package</span>
+<span class="nv">$ </span>pip install some-package
+<span class="c"># Install a Python 3 package</span>
+<span class="nv">$ </span>pip3 install some-package
 </pre></div>
                 </div>
                 
@@ -99,17 +118,45 @@
 <hr>
 
 
-<div class="codehilite"><pre><span class="c"># Mac instructions</span>
-<span class="nv">$ </span>brew install python3
-<span class="c"># You should now be able to run:</span>
-<span class="nv">$ </span>python3
-<span class="c"># To open up the Python 3 REPL</span>
+<p>Install the packages.</p>
+<div class="codehilite"><pre><span class="nv">$ </span>pip install virtualenv
+<span class="nv">$ </span>pip install virtualenvwrapper
 </pre></div>
 
 
-<p>If it still doesn't work, run <code>$ brew doctor</code>. You may have to make the proper symlinks with:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>brew link python3
+<p>Open your shell's profile config (e.g. <code>.bash_profile</code>, <code>.bashrc</code>, or <code>.zshrc</code>). This is usually located in your home directory.</p>
+<p>Then add the following:</p>
+<div class="codehilite"><pre><span class="c"># ~/.bash_profile</span>
+
+<span class="c"># Enable virtualenvwrapper </span>
+<span class="nv">VIRTUALENVWRAPPER_PYTHON</span><span class="o">=</span>/usr/local/bin/python
+<span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span>~/Envs
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </pre></div>
+
+
+<p>Create the folder for your virtual environments.</p>
+<div class="codehilite"><pre><span class="c"># Reload your profile</span>
+<span class="nv">$ </span><span class="nb">source</span> ~/.bash_profile
+<span class="c"># Create your env directory</span>
+<span class="nv">$ </span>mkdir -p <span class="nv">$WORKON_HOME</span>
+</pre></div>
+
+
+<p>Now, when you log in to a new shell session, you will be able to use virtualenvwrapper.</p>
+<div class="codehilite"><pre><span class="c"># Create a new virtualenv</span>
+<span class="nv">$ </span>mkvirtualenv my-fresh-environment
+<span class="c"># List environments</span>
+<span class="nv">$ </span>lsvirtualenv
+<span class="c"># Remove an environment</span>
+<span class="nv">$ </span>rmvirtualenv my-polluted-environment
+</pre></div>
+
+
+<p>See also:</p>
+<ul>
+<li><a href="http://virtualenvwrapper.readthedocs.org/en/latest/">Virtualenvwrapper docs</a> </li>
+</ul>
 </article>
 
 

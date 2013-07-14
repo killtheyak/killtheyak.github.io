@@ -103,6 +103,14 @@ a.dep-name {
     border-bottom: 1px #777 dotted;
 }
 
+a.contribute {
+    color: #61AE24;
+}
+
+a.contribute:hover {
+    color: #D70060;
+}
+
 span a.clear-filter {
     font-size: 70%;
     font-weight: 300;

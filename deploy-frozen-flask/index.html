@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kill The Yak
-| Install Python 3
+| Deploy a static page for free using Flask and Github Pages
 </title>
   <meta name="description" content="Yak-shaving sucks. So let's kill the yak.">
   <meta name="author" content="Steven Loria">
@@ -39,7 +39,7 @@
     
 <article>
 <h1 class='muted'>All I want to do is. . .</h1>
-<h1 class='page-title'>. . .install Python 3.</h1>
+<h1 class='page-title'>. . .deploy a static page for free using Flask and Github Pages.</h1>
 
 
 
@@ -60,6 +60,10 @@
     
     <li><a href="/os/macosx/">macosx</a></li>
     
+    <li><a href="/os/windows/">windows</a></li>
+    
+    <li><a href="/os/linux/">linux</a></li>
+    
     </ul>
 
 
@@ -71,13 +75,18 @@
         <li>
             <div class="dep-container">
                 <a class="dep-name" href="#">
-                    Install Homebrew
+                    Install Python 3
                 </a>
-                <a href="/install-homebrew/">&nbsp;[full instructions]</a>
+                <a href="/install-python/">&nbsp;[full instructions]</a>
 
                 <div class="dep-code-container">
-                <div class="codehilite"><pre><span class="c"># In your Mac Terminal, run:</span>
-<span class="nv">$ </span>ruby -e <span class="s2">"$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"</span>
+                <div class="codehilite"><pre><span class="c"># Mac instructions</span>
+<span class="nv">$ </span>brew install python3
+<span class="c"># You should now be able to run:</span>
+<span class="nv">$ </span>python3
+<span class="c"># To open up the Python 3 REPL</span>
+</pre></div>
+<div class="codehilite"><pre><span class="nv">$ </span>brew link python3
 </pre></div>
                 </div>
                 
@@ -99,17 +108,7 @@
 <hr>
 
 
-<div class="codehilite"><pre><span class="c"># Mac instructions</span>
-<span class="nv">$ </span>brew install python3
-<span class="c"># You should now be able to run:</span>
-<span class="nv">$ </span>python3
-<span class="c"># To open up the Python 3 REPL</span>
-</pre></div>
 
-
-<p>If it still doesn't work, run <code>$ brew doctor</code>. You may have to make the proper symlinks with:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>brew link python3
-</pre></div>
 </article>
 
 
