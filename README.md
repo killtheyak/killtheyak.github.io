@@ -6,7 +6,7 @@
 
 <cite>- Jeremy H. Brown</cite>
 
-[Kill The Yak][] is a website with formulae that will reduce the time you spend yak shaving.
+[Kill The Yak][KillTheYak] is a website with formulae that will reduce the time you spend yak shaving.
 
 If you are interesting in contributing content, see the [killtheyak-pages][] repo.
 

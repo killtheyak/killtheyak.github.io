@@ -67,6 +67,7 @@ Contributors:
 {{ contributor|github_urlize }}
 {% if not loop.last %},&nbsp;{% endif %}
 {% endfor %}
+{% endif %}
 
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
@@ -79,7 +80,6 @@ Contributors:
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51e268c25bf9bae5"></script>
 <!-- AddThis Button END -->
 
-{% endif %}
 </span>
 {% if page.title|lower != "contribute" %}
 <hr>
