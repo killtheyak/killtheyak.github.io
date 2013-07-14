@@ -51,17 +51,10 @@ def build():
 
 
 @manager.command
-def deploy(push=True):
+def deploy():
     '''Deploys the site.'''
     build()
-    os.system('git checkout master')
-    os.system("git pull origin master")
-    os.system('git submodule update')
-    os.system('git checkout -b gh-pages')
-    os.system('git merge master')
-    os.system('git pull origin gh-pages')
-    if push:
-        os.system('git push --all')
+    os.system('git push origin master')
 
 
 @manager.command

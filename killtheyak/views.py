@@ -9,7 +9,6 @@ EXCLUDE_PAGES = ['contribute', 'TEMPLATE', 'example-dep', "README"]
 
 @app.route('/')
 def home():
-    print("MAde it home")
     all_pages = (p for p in pages if p.path not in EXCLUDE_PAGES)
     latest = sorted(all_pages, reverse=True, key=lambda p: p.meta['updated'])
     return render_template('index.html', pages=latest)

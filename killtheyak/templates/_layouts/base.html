@@ -1,21 +1,16 @@
 <!doctype html>
 <head>
   <meta charset="utf-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
   <title>Kill The Yak{% block page_title %}{% endblock %}</title>
   <meta name="description" content="Yak-shaving sucks. So let's kill the yak.{% block meta_description %}{% endblock %}">
-  <meta name="author" content="{% block meta_author %}{% endblock %}">
-
-
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/pure-min.css') }}">
+  <meta name="author" content="{% block meta_author %}Steven Loria{% endblock %}">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
+  {# <link rel="stylesheet" href="{{ url_for('static', filename='css/pure-min.css') }}"> #}
   <link rel="stylesheet" href="{{ url_for('pygments_css') }}">
-
-  {# Fontawesome: Use either the CDN or local #}
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-  {# <link rel="stylesheet" href="{{ url_for('static', filename='libs/font-awesome/font-awesome.min.css') }}"> #}
+  {# Icons and fonts #}
+  <link rel="stylesheet" href="{{ url_for('static', filename='icons/css/fontello.css') }}">
+  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   {% block css %}{% endblock %}
 
@@ -37,14 +32,14 @@
 
 </div><!-- end pure-g-r  -->
 
-
-<!-- JavaScript at the bottom for fast page loading -->
-<script src="{{ url_for('static', filename='libs/jquery/jquery-2.0.3.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+{# Javascript #}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+{# <script src="{{ url_for('static', filename='libs/jquery/jquery-2.0.3.min.js') }}"></script> #}
+{# <script src="{{ url_for('static', filename='js/plugins.js') }}"></script> #}
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
 <!-- end scripts -->
-<!-- Google Analytics snippet. Change UA-XXXXXX-X to your site's ID -->
+
+{# Google analytics #}
 <script>
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
