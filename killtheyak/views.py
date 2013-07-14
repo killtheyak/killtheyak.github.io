@@ -7,10 +7,20 @@ from app import app, pages
 EXCLUDE_PAGES = ['contribute', 'TEMPLATE', 'example-dep', "README"]
 
 
+def sort_by_updated(pages):
+    '''Returns a list of pages sorted by the "updated" field.
+
+    Exludes any of the pages in EXCLUDE_PAGES.
+    '''
+    return [page for page in sorted(pages,
+                                    reverse=True,
+                                    key=lambda p: p.meta['updated'])
+                if page.path not in EXCLUDE_PAGES]
+
 @app.route('/')
 def home():
     all_pages = (p for p in pages if p.path not in EXCLUDE_PAGES)
-    latest = sorted(all_pages, reverse=True, key=lambda p: p.meta['updated'])
+    latest = sort_by_updated(all_pages)
     return render_template('index.html', pages=latest)
 
 
@@ -37,13 +47,15 @@ def os(os):
         os = 'MacOSX'
     else:
         os = os
-    return render_template('index.html', pages=filtered, os=os)
+    latest = sort_by_updated(filtered)
+    return render_template('index.html', pages=latest, os=os)
 
 
 @app.route('/tag/<string:tag>/')
 def tag(tag):
     filtered = [p for p in pages if tag in p.meta.get('tags', [])]
-    return render_template('index.html', pages=filtered, tag=tag)
+    latest = sort_by_updated(filtered)
+    return render_template('index.html', pages=latest, tag=tag)
 
 
 @app.errorhandler(404)
