@@ -1,0 +1,239 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Kill The Yak
+| Use Celery in Django with a Redis backend
+</title>
+  <meta name="description" content="Yak-shaving sucks. So let's kill the yak.">
+  <meta name="author" content="">
+
+
+  <link rel="stylesheet" href="/killtheyak/static/css/pure-min.css">
+  <link rel="stylesheet" href="/killtheyak/pygments.css">
+
+  
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/killtheyak/static/css/style.css">
+  
+
+</head>
+<body class="box">
+
+
+<nav class="pure-menu pure-menu-open pure-menu-horizontal">
+    <a href="/killtheyak/" class="pure-menu-heading brand">Kill The Yak</a>
+    <ul>
+        <li><a href="/killtheyak/">home</a></li>
+        <li><a href="/killtheyak/contribute/">contribute</a></li>
+        <li><a href="http://www.github.com/sloria/killtheyak">source</a></li>
+    </ul>
+        <span class='tagline'><a href="http://projects.csail.mit.edu/gsb/old-archive/gsb-archive/gsb2000-02-11.html">Yak shaving</a> sucks. So let's kill the yak.</span>
+
+</nav>
+
+<header></header>
+
+<div class="pure-g-r">
+
+  <div class="content pure-u-1">
+    
+<article>
+<h1 class='muted'>All I want to do is. . .</h1>
+<h1 class='page-title'>Use Celery in Django with a Redis backend</h1>
+
+Celery is a distributed task queue for Python that allows you to run comutationally expensive code asynchronously. Here&#39;s how to integrate Celery in a Django project, using Redis for the backend service.
+
+
+<hr>
+
+
+
+
+<p class='date'>Updated: 2013-07-13<p>
+
+
+
+
+    <p>OS:</p>
+    <ul class="os-list">
+
+    
+    <li><a href="/killtheyak/os/macosx/">macosx</a></li>
+    
+    <li><a href="/killtheyak/os/linux/">linux</a></li>
+    
+    </ul>
+
+
+
+
+    <p>Do these first:</p>
+    <ul class='deps-list'>
+    
+        <li>
+            <div class="dep-container">
+                <a class="dep-name" href="#">
+                    Install Homebrew
+                </a>
+                <a href="/killtheyak/install-homebrew/">&nbsp;[full instructions]</a>
+
+                <div class="dep-code-container">
+                <div class="codehilite"><pre><span class="c"># In your Mac Terminal, run:</span>
+<span class="nv">$ </span>ruby -e <span class="s2">"$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"</span>
+</pre></div>
+                </div>
+                
+                    
+    
+        <a class="pure-button os-button" href="/killtheyak/os/macosx/">
+            <i class="icon-macosx icon-small"></i>
+            macosx
+        </a>
+    
+
+                
+            </div>
+        </li>
+    
+    </ul>
+
+
+<hr>
+
+
+<p>First, install redis:</p>
+<div class="codehilite"><pre><span class="c"># On MacOSX with homebrew</span>
+<span class="nv">$ </span>brew install redis
+
+<span class="c"># On Linux</span>
+<span class="nv">$ </span>wget http://download.redis.io/redis-stable.tar.gz
+<span class="nv">$ </span>tar xvzf redis-stable.tar.gz
+<span class="nv">$ </span><span class="nb">cd </span>redis-stable
+<span class="nv">$ </span>make
+</pre></div>
+
+
+<p>Then, add the following to your requirements file:</p>
+<div class="codehilite"><pre><span class="cp"># requirements.txt</span>
+<span class="n">celery</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">redis</span>
+<span class="n">django</span><span class="o">-</span><span class="n">celery</span>
+</pre></div>
+
+
+<p>Install the new requirements:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>pip install -r requirements.txt
+</pre></div>
+
+
+<p>Add the following to setup.py:</p>
+<div class="codehilite"><pre><span class="c"># settings.py</span>
+<span class="kn">import</span> <span class="nn">djcelery</span>
+<span class="n">djcelery</span><span class="o">.</span><span class="n">setup_loader</span><span class="p">()</span>
+<span class="o">...</span>
+
+<span class="c"># Add djcelery to installed apps</span>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s">&#39;djcelery&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+
+<span class="c"># Celery settings</span>
+<span class="n">BROKER_URL</span> <span class="o">=</span> <span class="s">&#39;redis://localhost:6379/0&#39;</span>
+<span class="n">CELERY_RESULT_BACKEND</span> <span class="o">=</span> <span class="s">&#39;redis://localhost:6379/0&#39;</span>
+</pre></div>
+
+
+<p>Create the database datatables:</p>
+<div class="codehilite"><pre><span class="c"># If you&#39;re using South:</span>
+<span class="nv">$ </span>python manage.py migrate djcelery
+<span class="c"># otherwise:</span>
+<span class="nv">$ </span>python manage.py syncdb
+</pre></div>
+
+
+<p>Now to start your redis server and a celery worker.</p>
+<div class="codehilite"><pre><span class="c"># Start the redis server</span>
+<span class="nv">$ </span>redis-server
+<span class="c"># In a new terminal window/tab, start a celery worker</span>
+<span class="nv">$ </span>python manage.py celeryd worker -E
+<span class="c"># In ANOTHER terminal window/tab, enable the Django Celery monitor</span>
+<span class="c"># so that you can manage your tasks from your admin page</span>
+<span class="nv">$ </span>python manage.py celerycam
+</pre></div>
+
+
+<p>You are now ready to run Celery tasks. </p>
+<p>Tasks can be defined like so:</p>
+<div class="codehilite"><pre><span class="c"># tasks.py (in one of your apps)</span>
+<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">task</span>
+
+<span class="nd">@task</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="c"># In some other file (such as in views or models)</span>
+<span class="kn">from</span> <span class="nn">myapp.tasks</span> <span class="kn">import</span> <span class="n">add</span>
+
+<span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># Asynchronous addition--Huzzah!</span>
+</pre></div>
+
+
+<p>See also:</p>
+<ul>
+<li><a href="http://celeryproject.org/">Celery home page</a></li>
+<li><a href="http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html">First steps with Django - Celery Project</a></li>
+<li><a href="http://redis.io/">Redis home page</a></li>
+</ul>
+</article>
+
+
+
+<span class="contributors-list">
+Contributors:
+
+<a href="http://www.github.com/sloria">sloria</a>
+
+
+
+
+</span>
+
+<hr>
+<div class="suggestions">
+<p class="">If you have suggestions, corrections, or content to contribute, fork us at our <a href="http://www.github.com/sloria/killtheyak">Github repo</a> or <a href="https://github.com/sloria/killtheyak/issues/new">open an issue</a>.</p>
+</div>
+
+
+  </div>
+
+<footer>
+    &copy; by <a href="http://www.stevenloria.com">Steven Loria</a> 2013
+</footer>
+
+</div><!-- end pure-g-r  -->
+
+
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="/killtheyak/static/libs/jquery/jquery-2.0.3.min.js"></script>
+<script src="/killtheyak/static/js/plugins.js"></script>
+<script src="/killtheyak/static/js/script.js"></script>
+
+<!-- end scripts -->
+<!-- Google Analytics snippet. Change UA-XXXXXX-X to your site's ID -->
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
