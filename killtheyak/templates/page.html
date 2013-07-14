@@ -39,7 +39,6 @@
                 <a class="dep-name" href="#">
                     {{ dep.title }}
                 </a>
-                <a href="{{ url_for('page', path=dep.path) }}">&nbsp;[full instructions]</a>
 
                 <div class="dep-code-container">
                 {{ dep.html|fenced_code }}
@@ -47,6 +46,7 @@
                 {% with page=dep  %}
                     {% include "os_buttons.html" %}
                 {% endwith %}
+                <a href="{{ url_for('page', path=dep.path) }}">&nbsp;[full instructions]</a>
             </div>
         </li>
     {% endfor %}
