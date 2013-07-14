@@ -149,3 +149,7 @@ footer {
     letter-spacing: 0;
     color: #777;
 }
+
+.addthis_toolbox {
+    float: right;
+}
