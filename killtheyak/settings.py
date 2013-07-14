@@ -15,7 +15,9 @@ def parent_dir(path):
 PROJECT_ROOT = parent_dir(PACKAGE_DIR)
 # Necessary for Github pages
 FREEZER_DESTINATION = PROJECT_ROOT
-FREEZER_REMOVE_EXTRA_FILES = False
+FREEZER_REMOVE_EXTRA_FILES = False  # IMPORTANT: If this is True, all app files
+                                    # will be deleted
+FREEZER_DESTINATION_IGNORE = ['*.coffee']
 DEBUG = True
 SECRET_KEY = 'shhhh'
 FLATPAGES_MARKDOWN_EXTENSIONS = ['codehilite', 'fenced_code', 'footnotes']

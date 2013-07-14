@@ -44,7 +44,7 @@ def coffee(watch=False):
 
 @manager.command
 def build():
-    '''Builds the project. Outputs files to build/.'''
+    '''Builds the static files.'''
     coffee()  # Compile coffeescript
     print("Freezing it up! Brr...")
     freezer.freeze()  # Freezes the project to build/
