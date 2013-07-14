@@ -62,6 +62,8 @@ Virtualenv allows you to make isolated working copies of Python so that you can 
     
     <li><a href="/os/linux/">linux</a></li>
     
+    <li><a href="/os/windows/">windows</a></li>
+    
     </ul>
 
 
@@ -135,6 +137,15 @@ Virtualenv allows you to make isolated working copies of Python so that you can 
 </pre></div>
 
 
+<p>On Window, you can use the <a href="https://bitbucket.org/guillermooo/virtualenvwrapper-powershell">virtualenvwrapper-powershell</a>.</p>
+<div class="codehilite"><pre><span class="c"># Virtualenvwrapper-powershell in Windows</span>
+PS&gt; pip install virtualenvwrapper-powershell
+PS&gt; <span class="nv">$env</span>:WORKON_HOME<span class="o">=</span><span class="s2">&quot;~/Envs&quot;</span>
+PS&gt; mkdir <span class="nv">$env</span>:WORKON_HOME
+PS&gt; import-module virtualenvwrapper
+</pre></div>
+
+
 <p>Create the folder for your virtual environments.</p>
 <div class="codehilite"><pre><span class="c"># Reload your profile</span>
 <span class="nv">$ </span><span class="nb">source</span> ~/.bash_profile
@@ -155,7 +166,9 @@ Virtualenv allows you to make isolated working copies of Python so that you can 
 
 <p>See also:</p>
 <ul>
+<li><a href="http://docs.python-guide.org/en/latest/dev/virtualenvs.html">Virtual Environments - Hitchhiker's Guide to Python</a></li>
 <li><a href="http://virtualenvwrapper.readthedocs.org/en/latest/">Virtualenvwrapper docs</a> </li>
+<li><a href="https://bitbucket.org/guillermooo/virtualenvwrapper-powershell">Virtualenvwrapper-powershell for Windows users</a></li>
 </ul>
 </article>
 
