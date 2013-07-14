@@ -22,6 +22,8 @@ FLATPAGES_MARKDOWN_EXTENSIONS = ['codehilite', 'fenced_code', 'footnotes']
 FLATPAGES_ROOT = os.path.join(PROJECT_ROOT, 'killtheyak-pages')
 FLATPAGES_EXTENSION = '.md'
 
+GITHUB_REPO = "http://www.github.com/killtheyak/killtheyak.github.com"
+PAGES_REPO = "http://www.github.com/killtheyak/killtheyak-pages"
 
 # Javascript directory
 JAVASCRIPT_DIR = os.path.join(PACKAGE_DIR, 'static', 'js')
