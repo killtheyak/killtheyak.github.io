@@ -15,7 +15,7 @@
 
 {# Updated #}
 {% if page.meta.updated %}
-<p class='date'>Updated: {{ page.meta.updated }}<p>
+<p class='date'>Updated: {{ page.meta.updated|datetime_format }}<p>
 {% endif %}
 
 {# OS info #}
