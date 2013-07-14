@@ -30,3 +30,13 @@ def github_urlize(strg):
         return Markup(markup)
     else:
         return strg
+
+@app.template_filter('lower_first')
+def lower_first(strg):
+    '''Lowercases the first letter of a string.'''
+    if not strg:
+        return ''
+    else:
+        first = strg[0]
+        rest = strg[1:]
+        return first.lower() + rest

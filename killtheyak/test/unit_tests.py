@@ -6,7 +6,7 @@ from nose.tools import *
 from flask import Markup
 from flask_flatpages import FlatPages
 from ..main import app, pages
-from ..filters import fenced_code, github_urlize
+from ..filters import fenced_code, github_urlize, lower_first
 
 
 class TestPages(TestCase):
@@ -32,3 +32,6 @@ class TestFilters(TestCase):
             Markup('<a href="{}">sloria</a>'.format(url1)))
         name = 'Steven Loria'
         assert_equal(github_urlize(name), name)
+
+    def test_lower_first(self):
+        assert_equal(lower_first('Install Python 3'), 'install Python 3')

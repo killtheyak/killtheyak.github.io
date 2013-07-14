@@ -1,7 +1,7 @@
 <ul class="pages-list">
 {% for page in pages %}
     <li>
-        <a href="{{ url_for('page', path=page.path) }}">{{ page.title }}</a>
+        . . .<a href="{{ url_for('page', path=page.path) }}">{{ page.title|lower_first }}</a>.
         {% with page=page  %}
             {% include "os_buttons.html" %}
         {% endwith %}
