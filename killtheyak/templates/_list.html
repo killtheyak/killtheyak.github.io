@@ -2,14 +2,9 @@
 {% for page in pages %}
     <li>
         <a href="{{ url_for('page', path=page.path) }}">{{ page.title }}</a>
-        {% if page.meta.os|length %}
-            {% for os in page.meta.os %}
-                <a class="pure-button os-button" href="{{ url_for('os', os=os) }}">
-                    <i class="icon-{{ os }} icon-small"></i>
-                    {{ os }}
-                </a>
-            {% endfor %}
-        {% endif %}
+        {% with page=page  %}
+            {% include "os_buttons.html" %}
+        {% endwith %}
         {% if page.meta.tags|length %}
             <span class='tags muted'>
             <small>

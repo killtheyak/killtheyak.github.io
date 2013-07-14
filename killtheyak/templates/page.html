@@ -44,6 +44,9 @@
                 <div class="dep-code-container">
                 {{ dep.html|fenced_code }}
                 </div>
+                {% with page=dep  %}
+                    {% include "os_buttons.html" %}
+                {% endwith %}
             </div>
         </li>
     {% endfor %}
@@ -56,7 +59,6 @@
 {{ page }}
 </article>
 
-<hr>
 {# Contributors #}
 {% if page.meta.contributors|length %}
 <span class="contributors-list">
@@ -69,6 +71,7 @@ Contributors:
 {% endif %}
 </span>
 {% if page.title|lower != "contribute" %}
+<hr>
 {% include "page_footer.html" %}
 {% endif %}
 {% endblock content %}
