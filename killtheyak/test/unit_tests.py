@@ -2,11 +2,12 @@
 
 from unittest import TestCase
 from nose.tools import *
+from datetime import datetime
 
 from flask import Markup
 from flask_flatpages import FlatPages
 from ..main import app, pages
-from ..filters import fenced_code, github_urlize, lower_first
+from ..filters import fenced_code, github_urlize, lower_first, datetime_format
 
 
 class TestPages(TestCase):
@@ -16,11 +17,10 @@ class TestPages(TestCase):
         self.pages = FlatPages(app)
 
     def test_get_fenced_blocks(self):
-        page = self.pages.get('install-python3')
+        page = self.pages.get('test-install-python')
         code = fenced_code(page.html)
         assert_not_in('Verified on MacOSX', code)
         assert_in('brew install python3', code)
-        assert_in('brew link python3', code)
 
 class TestFilters(TestCase):
     def setUp(self):
@@ -35,3 +35,7 @@ class TestFilters(TestCase):
 
     def test_lower_first(self):
         assert_equal(lower_first('Install Python 3'), 'install Python 3')
+
+    def test_datetime_format(self):
+        d = datetime.strptime("2013-07-08 10:00", "%Y-%m-%d %H:%M")
+        assert_equal(datetime_format(d), "07/08/13")

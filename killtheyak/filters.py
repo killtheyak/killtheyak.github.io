@@ -40,3 +40,8 @@ def lower_first(strg):
         first = strg[0]
         rest = strg[1:]
         return first.lower() + rest
+
+@app.template_filter('datetime_format')
+def datetime_format(value,
+                    format=app.config.get("DATETIME_FORMAT", "%m/%d/%y")):
+    return value.strftime(format)

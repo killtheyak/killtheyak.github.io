@@ -49,7 +49,7 @@ Celery is a distributed task queue for Python that allows you to run computation
 
 
 
-<p class='date'>Updated: 2013-07-13<p>
+<p class='date'>Updated: 2013-07-13 00:00:00<p>
 
 
 
@@ -103,6 +103,7 @@ Celery is a distributed task queue for Python that allows you to run computation
 
 <p>First, install redis:</p>
 <div class="codehilite"><pre><span class="c"># On MacOSX with homebrew</span>
+<span class="nv">$ </span>brew update
 <span class="nv">$ </span>brew install redis
 
 <span class="c"># On Linux</span>
@@ -114,9 +115,9 @@ Celery is a distributed task queue for Python that allows you to run computation
 
 
 <p>Then, add the following to your requirements file:</p>
-<div class="codehilite"><pre><span class="cp"># requirements.txt</span>
-<span class="n">celery</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">redis</span>
-<span class="n">django</span><span class="o">-</span><span class="n">celery</span>
+<div class="codehilite"><pre><span class="c"># requirements.txt</span>
+celery-with-redis
+django-celery
 </pre></div>
 
 

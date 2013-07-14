@@ -20,7 +20,7 @@
         {% endif %}
         {% if page.meta.updated %}
             <span class="date muted">
-               :: <small>Updated {{ page.meta.updated }}</small>
+               :: <small>Updated {{ page.meta.updated|datetime_format }}</small>
             </span>
 
         {% endif %}

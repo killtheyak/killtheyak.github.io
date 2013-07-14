@@ -1,0 +1,320 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kill The Yak
+| Install a scientific Python environment (numpy + scipy + matplotlib) on MacOSX without Enthought
+</title>
+  <meta name="description" content="Yak-shaving sucks. So let's kill the yak.">
+  <meta name="author" content="Steven Loria">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/pygments.css">
+  
+  <link rel="stylesheet" href="/static/icons/css/fontello.css">
+  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/static/css/style.css">
+  
+
+</head>
+<body class="box">
+
+
+<nav class="pure-menu pure-menu-open pure-menu-horizontal">
+    <a href="/" class="pure-menu-heading brand">Kill The Yak</a>
+    <ul>
+        <li><a href="/">home</a></li>
+        <li><a class='contribute' href="/contribute/">contribute</a></li>
+        <li><a href="http://www.github.com/killtheyak/killtheyak">source</a></li>
+    </ul>
+        <span class='tagline'><a href="http://projects.csail.mit.edu/gsb/old-archive/gsb-archive/gsb2000-02-11.html">Yak shaving</a> sucks. So let's kill the yak.</span>
+
+</nav>
+
+<header></header>
+
+<div class="pure-g-r">
+
+  <div class="content pure-u-1">
+    
+<article>
+<h1 class='muted'>All I want to do is. . .</h1>
+<h1 class='page-title'>. . .install a scientific Python environment (numpy + scipy + matplotlib) on MacOSX without Enthought.</h1>
+
+Python has many excellent libraries for scientific computing. Unfortunately, installing these libraries can be a yak shaving nightmare. One solution is to download the Enthought Python Distribution, a Python distribution that comes bundled with a large number of packages precompiled. While the EPD may be the best solution to get off the ground with scientific computing in as little time as possible, problems may arise when (1) you want to use python outside of the EPD environment, possibly with diffent Python versions and (2) you want to keep your scientific environment in a virtualenv.
+
+
+<hr>
+
+
+
+
+<p class='date'>Updated: 2013-07-14 13:30:00<p>
+
+
+
+
+    <p>OS:</p>
+    <ul class="os-list">
+
+    
+    <li><a href="/os/macosx/">macosx</a></li>
+    
+    </ul>
+
+
+
+
+    <p>Do these first:</p>
+    <ul class='deps-list'>
+    
+        <li>
+            <div class="dep-container">
+                <a class="dep-name" href="#">
+                    Install Homebrew
+                </a>
+                <a href="/install-homebrew/">&nbsp;[full instructions]</a>
+
+                <div class="dep-code-container">
+                <div class="codehilite"><pre><span class="c"># In your Mac Terminal, run:</span>
+<span class="nv">$ </span>ruby -e <span class="s2">"$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"</span>
+</pre></div>
+                </div>
+                
+                    
+    
+        <a class="pure-button os-button" href="/os/macosx/">
+            <i class="icon-macosx icon-small"></i>
+            macosx
+        </a>
+    
+
+                
+            </div>
+        </li>
+    
+        <li>
+            <div class="dep-container">
+                <a class="dep-name" href="#">
+                    Install Python 2 and/or 3
+                </a>
+                <a href="/install-python/">&nbsp;[full instructions]</a>
+
+                <div class="dep-code-container">
+                <div class="codehilite"><pre><span class="c"># On Mac &gt;= 10.5 with homebrew</span>
+<span class="nv">$ </span>brew update
+<span class="c">## Install Python 2</span>
+<span class="nv">$ </span>brew install python
+<span class="c">## Install Python 3</span>
+<span class="nv">$ </span>brew install python3
+<span class="c">## Follow any instructions that appear after each brew install</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Is everything working?</span>
+<span class="nv">$ </span>brew doctor
+<span class="c"># Listen to the doctor</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Run Python 2</span>
+<span class="nv">$ </span>python
+<span class="c"># Run Python 3</span>
+<span class="nv">$ </span>python3
+<span class="c"># Install a Python 2 package</span>
+<span class="nv">$ </span>pip install some-package
+<span class="c"># Install a Python 3 package</span>
+<span class="nv">$ </span>pip3 install some-package
+</pre></div>
+                </div>
+                
+                    
+    
+        <a class="pure-button os-button" href="/os/macosx/">
+            <i class="icon-macosx icon-small"></i>
+            macosx
+        </a>
+    
+
+                
+            </div>
+        </li>
+    
+        <li>
+            <div class="dep-container">
+                <a class="dep-name" href="#">
+                    Install the latest Mac C and C++ compilers
+                </a>
+                <a href="/install-mac-xcode-compilers/">&nbsp;[full instructions]</a>
+
+                <div class="dep-code-container">
+                <div class="codehilite"><pre><span class="c"># Get the latest version of Xcode from the Mac App Store</span>
+<span class="c"># Here: https://itunes.apple.com/us/app/xcode/id497799835?mt=12</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Open Xcode, then press `Command + ,` to open preferences</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Click `Downloads` at the top of the window</span>
+<span class="c"># Then click `Install` next to `Command Line Tools`</span>
+</pre></div>
+                </div>
+                
+                    
+    
+        <a class="pure-button os-button" href="/os/macosx/">
+            <i class="icon-macosx icon-small"></i>
+            macosx
+        </a>
+    
+
+                
+            </div>
+        </li>
+    
+    </ul>
+
+
+<hr>
+
+
+<h2>Optional (but recommended) first step: Create a new virtual environment</h2>
+<div class="codehilite"><pre><span class="c"># If you&#39;re using virtualenvwrapper</span>
+<span class="nv">$ </span>mkvirtualenv science
+<span class="nv">$ </span>workon science
+</pre></div>
+
+
+<h2>Numpy, Scipy, and Matplotlib</h2>
+<p>Install a fortran compiler and Freetype.</p>
+<div class="codehilite"><pre><span class="nv">$ </span>brew update
+<span class="nv">$ </span>brew install gfortran freetype
+<span class="c"># Remember to follow any instructions that show up after each install</span>
+<span class="c"># To display the instructions again, run `brew info gfortran` or `brew info freetype`</span>
+</pre></div>
+
+
+<p>Install the Python packages.</p>
+<div class="codehilite"><pre><span class="c"># Order matters!</span>
+<span class="nv">$ </span>pip install numpy
+<span class="nv">$ </span>pip install scipy
+<span class="nv">$ </span>pip install matplotlib
+<span class="c"># Optional: install ipython</span>
+<span class="nv">$ </span>pip install ipython
+</pre></div>
+
+
+<p>If everything works, you should be able to <code>import pylab</code>, which will bring numpy, scipy, and matplotlib functionality all in one go.</p>
+<div class="codehilite"><pre><span class="c"># Check that everything works</span>
+<span class="nv">$ </span>python
+&gt;&gt;&gt; import pylab
+</pre></div>
+
+
+<p>If all you need is numpy, scipy, and matplotlib, you're done!</p>
+<h2>Bonus: Install the rest of the EPD packages</h2>
+<p>If you want to install more of the libraries included with EPD, you can try making a <code>requirements.txt</code> file containing the following:</p>
+<div class="codehilite"><pre><span class="c"># requirements.txt</span>
+<span class="c"># This includes all the packages bundled with EPD-Free</span>
+<span class="c"># Feel free to add/remove any items</span>
+appinst&gt;<span class="o">=</span>2.1.1
+apptools&gt;<span class="o">=</span>4.1.0
+casuarius&gt;<span class="o">=</span>1.0
+chaco&gt;<span class="o">=</span>4.2.0
+cloud&gt;<span class="o">=</span>2.4.6
+configobj&gt;<span class="o">=</span>4.7.2
+distribute&gt;<span class="o">=</span>.6.26
+<span class="nb">enable</span>&gt;<span class="o">=</span>4.2.0
+enaml&gt;<span class="o">=</span>0.2.0
+enstaller&gt;<span class="o">=</span>4.5.1
+etsproxy&gt;<span class="o">=</span>0.1.1
+freetype&gt;<span class="o">=</span>2.4.4
+ipython&gt;<span class="o">=</span>0.12.1
+jinja2&gt;<span class="o">=</span>2.6
+libjpeg&gt;<span class="o">=</span>7.0
+libpng&gt;<span class="o">=</span>7.0
+matplotlib&gt;<span class="o">=</span>1.1.0
+nose&gt;<span class="o">=</span>1.1.2
+numpy&gt;<span class="o">=</span>1.6.1
+PIL&gt;<span class="o">=</span>1.1.7
+ply&gt;<span class="o">=</span>3.4
+pyaudio&gt;<span class="o">=</span>0.2.4
+pyface&gt;<span class="o">=</span>4.2.0
+pyglet&gt;<span class="o">=</span>1.1.4
+pygments&gt;<span class="o">=</span>1.4
+python_dateutil&gt;<span class="o">=</span>1.5
+pytz
+pyzmq&gt;<span class="o">=</span>2.1.11
+scipy&gt;<span class="o">=</span>1.74
+tornado&gt;<span class="o">=</span>2.2
+traits&gt;<span class="o">=</span>4.2.0
+traitsui&gt;<span class="o">=</span>4.2.0
+wxPython&gt;<span class="o">=</span>2.8.10
+</pre></div>
+
+
+<p>Then run:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>pip install -r -U requirements.txt
+</pre></div>
+
+
+<p>NOTE: This step has not been verified. It is possible that some of the packages have other non-Python dependencies that need to be installed first.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://www.enthought.com/products/epd/">Enthought Python Distribution</a></li>
+<li><a href="http://www.lowindata.com/2013/installing-scientific-python-on-mac-os-x/">Installing scientific Python on MacOS X - Lowin Data Company</a></li>
+</ul>
+</article>
+
+
+
+<span class="contributors-list">
+Contributors:
+
+<a href="http://www.github.com/sloria">sloria</a>
+
+
+
+
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_reddit"></a>
+<a class="addthis_button_hackernews"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51e268c25bf9bae5"></script>
+<!-- AddThis Button END -->
+
+</span>
+
+<hr>
+<div class="suggestions">
+<p class="">If you have suggestions, corrections, or content to contribute, fork us at our <a href="http://www.github.com/killtheyak/killtheyak.github.com">Github repo</a> or <a href="http://www.github.com/killtheyak/killtheyak.github.com/issues/new">open an issue</a>.</p>
+</div>
+
+
+  </div>
+
+<footer>
+    &copy; by <a href="http://www.stevenloria.com">Steven Loria</a> 2013
+</footer>
+
+</div><!-- end pure-g-r  -->
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/static/js/script.js"></script>
+<!-- end scripts -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39544608-3', 'killtheyak.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

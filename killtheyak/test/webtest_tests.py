@@ -23,12 +23,12 @@ class TestAUser(TestCase):
         # Goes to homepage
         res = self.app.get('')
         # Sees titles for a page
-        assert_in('Install Python 3', res)
+        assert_in('install Python', res)
         # Clicks on a title
-        res = res.click('Install Python 3')
+        res = res.click('install Python')
         # Is at the page
         # Can see the title
-        assert_in("Install Python 3", res)
+        assert_in("Install Python", res)
         # And the OS's
         assert_in("macosx", res)
         # And the content
@@ -38,7 +38,7 @@ class TestAUser(TestCase):
         # Goes to homepage
         res = self.app.get('')
         # Clicks on a page
-        res = res.click('Install Python 3')
+        res = res.click('install Python')
         # The page has dependency
         # The dependency titles are listed
         assert_in("install-homebrew", res)

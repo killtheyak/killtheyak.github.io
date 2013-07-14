@@ -1,7 +1,7 @@
 title: Install Python 2 and 3
-updated: 2013-07-07
+updated: 2013-07-07 00:00:00
 os: [macosx]
-deps: [install-homebrew]
+deps: [test-install-homebrew]
 
 ## MacOSX 
 

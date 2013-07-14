@@ -1,5 +1,5 @@
 title: Install Homebrew
-updated: 2013-07-01
+updated: 2013-07-01 00:00:00
 os: [macosx]
 
 Works on all MacOSX >= 10.5.
