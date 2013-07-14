@@ -26,6 +26,7 @@ FLATPAGES_EXTENSION = '.md'
 
 GITHUB_REPO = "http://www.github.com/killtheyak/killtheyak.github.com"
 PAGES_REPO = "http://www.github.com/killtheyak/killtheyak-pages"
+RAW_PAGES_PREFIX = "https://raw.github.com/killtheyak/killtheyak-pages/master/"
 
 # Javascript directory
 JAVASCRIPT_DIR = os.path.join(PACKAGE_DIR, 'static', 'js')
