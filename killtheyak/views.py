@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flask import render_template
+from urlparse import urljoin
+from flask import render_template, request
+from werkzeug.contrib.atom import AtomFeed
 from flask_flatpages import pygments_style_defs
 from app import app, pages
 
@@ -56,6 +58,29 @@ def tag(tag):
     filtered = [p for p in pages if tag in p.meta.get('tags', [])]
     latest = sort_by_updated(filtered)
     return render_template('index.html', pages=latest, tag=tag)
+
+
+def make_external(url):
+    return urljoin(request.url_root, url)
+
+
+@app.route('/feed/recent.atom')
+def recent_feed():
+    feed = AtomFeed('Recent Articles', feed_url=request.url,
+        url=request.url_root)
+    all_pages = [p for p in pages if p.path not in EXCLUDE_PAGES]
+    if len(all_pages) >= 15:
+        latest = sort_by_updated(all_pages)[:15]
+    else:
+        latest = sort_by_updated(all_pages)
+
+    for page in latest:
+        feed.add(page.meta['title'], page.html, content_type="html",
+            author=page.meta.get('contributors', ["Anonymous"])[0],
+            url=make_external(page.path),
+            updated=page.meta['updated'],
+            published=page.meta['updated'])
+    return feed.get_response()
 
 
 @app.errorhandler(404)
