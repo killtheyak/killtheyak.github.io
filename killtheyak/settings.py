@@ -24,6 +24,7 @@ FLATPAGES_MARKDOWN_EXTENSIONS = ['codehilite', 'fenced_code', 'footnotes']
 FLATPAGES_ROOT = os.path.join(PROJECT_ROOT, 'killtheyak-pages')
 FLATPAGES_EXTENSION = '.md'
 
+BASE_URL = "http://killtheyak.com"
 GITHUB_REPO = "http://www.github.com/killtheyak/killtheyak.github.com"
 PAGES_REPO = "http://www.github.com/killtheyak/killtheyak-pages"
 RAW_PAGES_PREFIX = "https://raw.github.com/killtheyak/killtheyak-pages/master/"

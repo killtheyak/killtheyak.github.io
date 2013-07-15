@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title type="text">Recent Articles</title>
+  <title type="text">Kill The Yak - Recent Guides</title>
   <id>http://localhost/feed/recent.atom</id>
   <updated>2013-07-14T19:36:00Z</updated>
   <link href="http://localhost/" />
@@ -8,10 +8,10 @@
   <generator>Werkzeug</generator>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Coffeescript</title>
-    <id>http://localhost/install-coffeescript</id>
+    <id>http://killtheyak.com/install-coffeescript</id>
     <updated>2013-07-14T19:36:00Z</updated>
     <published>2013-07-14T19:36:00Z</published>
-    <link href="http://localhost/install-coffeescript" />
+    <link href="http://killtheyak.com/install-coffeescript" />
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
@@ -48,10 +48,10 @@ coffee -cw cupofjoe.coffee
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Add color to my Terminal</title>
-    <id>http://localhost/add-color-to-terminal</id>
+    <id>http://killtheyak.com/add-color-to-terminal</id>
     <updated>2013-07-14T17:06:00Z</updated>
     <published>2013-07-14T17:06:00Z</published>
-    <link href="http://localhost/add-color-to-terminal" />
+    <link href="http://killtheyak.com/add-color-to-terminal" />
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
@@ -89,10 +89,10 @@ coffee -cw cupofjoe.coffee
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install and configure Git</title>
-    <id>http://localhost/install-git</id>
+    <id>http://killtheyak.com/install-git</id>
     <updated>2013-07-14T16:46:00Z</updated>
     <published>2013-07-14T16:46:00Z</published>
-    <link href="http://localhost/install-git" />
+    <link href="http://killtheyak.com/install-git" />
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
@@ -122,10 +122,10 @@ coffee -cw cupofjoe.coffee
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install a scientific Python environment (numpy + scipy + matplotlib) on MacOSX without Enthought</title>
-    <id>http://localhost/scientific-python</id>
+    <id>http://killtheyak.com/scientific-python</id>
     <updated>2013-07-14T13:30:00Z</updated>
     <published>2013-07-14T13:30:00Z</published>
-    <link href="http://localhost/scientific-python" />
+    <link href="http://killtheyak.com/scientific-python" />
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
@@ -218,10 +218,10 @@ wxPython&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.8.10
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install the latest Mac C and C++ compilers</title>
-    <id>http://localhost/install-mac-xcode-compilers</id>
+    <id>http://killtheyak.com/install-mac-xcode-compilers</id>
     <updated>2013-07-14T13:00:00Z</updated>
     <published>2013-07-14T13:00:00Z</published>
-    <link href="http://localhost/install-mac-xcode-compilers" />
+    <link href="http://killtheyak.com/install-mac-xcode-compilers" />
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
@@ -246,10 +246,10 @@ wxPython&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.8.10
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Use virtualenv + virtualenvwrapper with Python</title>
-    <id>http://localhost/use-virtualenvwrapper</id>
+    <id>http://killtheyak.com/use-virtualenvwrapper</id>
     <updated>2013-07-14T10:00:00Z</updated>
     <published>2013-07-14T10:00:00Z</published>
-    <link href="http://localhost/use-virtualenvwrapper" />
+    <link href="http://killtheyak.com/use-virtualenvwrapper" />
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
@@ -308,10 +308,10 @@ PS&amp;gt; import-module virtualenvwrapper
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Use Celery in Django with a Redis backend</title>
-    <id>http://localhost/django-celery-redis</id>
+    <id>http://killtheyak.com/django-celery-redis</id>
     <updated>2013-07-13T00:00:00Z</updated>
     <published>2013-07-13T00:00:00Z</published>
-    <link href="http://localhost/django-celery-redis" />
+    <link href="http://killtheyak.com/django-celery-redis" />
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
@@ -405,10 +405,10 @@ django-celery
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Python 2 and/or 3</title>
-    <id>http://localhost/install-python</id>
+    <id>http://killtheyak.com/install-python</id>
     <updated>2013-07-13T00:00:00Z</updated>
     <published>2013-07-13T00:00:00Z</published>
-    <link href="http://localhost/install-python" />
+    <link href="http://killtheyak.com/install-python" />
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
@@ -443,10 +443,10 @@ django-celery
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Homebrew</title>
-    <id>http://localhost/install-homebrew</id>
+    <id>http://killtheyak.com/install-homebrew</id>
     <updated>2013-07-13T00:00:00Z</updated>
     <published>2013-07-13T00:00:00Z</published>
-    <link href="http://localhost/install-homebrew" />
+    <link href="http://killtheyak.com/install-homebrew" />
     <author>
       <name>Anonymous</name>
     </author>

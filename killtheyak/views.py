@@ -61,12 +61,12 @@ def tag(tag):
 
 
 def make_external(url):
-    return urljoin(request.url_root, url)
+    return urljoin(app.config["BASE_URL"], url)
 
 
 @app.route('/feed/recent.atom')
 def recent_feed():
-    feed = AtomFeed('Recent Articles', feed_url=request.url,
+    feed = AtomFeed('Kill The Yak - Recent Guides', feed_url=request.url,
         url=request.url_root)
     all_pages = [p for p in pages if p.path not in EXCLUDE_PAGES]
     if len(all_pages) >= 15:
