@@ -1,0 +1,220 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kill The Yak
+| Use Coffeescript in a Django app
+</title>
+  <meta name="description" content="Yak-shaving sucks. So let's kill the yak.">
+  <meta name="author" content="Steven Loria">
+  <link href="/feed/recent.atom"
+      rel="alternate"
+      title="Kill The Yak: Recent Guides"
+      type="application/atom+xml">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
+  
+  <link rel="stylesheet" href="/pygments.css">
+  
+  <link rel="stylesheet" href="/static/icons/css/killtheyak-icons.css">
+  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/static/css/style.css">
+  
+
+</head>
+<body class="box">
+
+
+<nav class="pure-menu pure-menu-open pure-menu-horizontal">
+    <a href="/" class="pure-menu-heading brand">Kill The Yak</a>
+    <ul>
+        <li><a href="/">guides</a></li>
+        <li><a class='contribute' href="/contribute/">contribute</a></li>
+        <li><a href="http://www.github.com/killtheyak/">source</a></li>
+        <li><a href="/feed/recent.atom"><i class="icon-rss"></i></a></li>
+    </ul>
+        <span class='tagline'><a href="http://projects.csail.mit.edu/gsb/old-archive/gsb-archive/gsb2000-02-11.html">Yak shaving</a> sucks. So let's kill the yak.</span>
+
+</nav>
+
+<header></header>
+
+<div class="pure-g-r">
+
+  <div class="content pure-u-1">
+    
+<article>
+<h1 class='muted'>All I want to do is. . .</h1>
+<h1 class='page-title'>. . .use Coffeescript in a Django app.</h1>
+
+Using Coffeescript in Django is much simpler than you might think.
+
+
+<hr>
+
+
+
+
+<p class='date'>Updated: 07/14/13<p>
+
+
+
+
+    <p>OS:</p>
+    <ul class="os-list">
+
+    
+    <li><a href="/os/macosx/">macosx</a></li>
+    
+    <li><a href="/os/windows/">windows</a></li>
+    
+    <li><a href="/os/linux/">linux</a></li>
+    
+    </ul>
+
+
+
+
+    <p>Do these first:</p>
+    <ul class='deps-list'>
+    
+        <li>
+            <div class="dep-container">
+                <a class="dep-name" href="#">
+                    Install Coffeescript
+                </a>
+
+                <div class="dep-code-container">
+                <div class="codehilite"><pre><span class="c"># Mac-specific instructions</span>
+<span class="c"># Install node</span>
+<span class="nv">$ </span>brew update 
+<span class="nv">$ </span>brew install node
+</pre></div>
+<div class="codehilite"><pre><span class="c"># In you shell profile (.bash_profile, .zshrc, etc.), add this line</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/share/npm/bin:<span class="nv">$PATH</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Install coffee (notice the dash)</span>
+npm install -g coffee-script
+</pre></div>
+<div class="codehilite"><pre><span class="c"># To compile a file</span>
+coffee -c cupofjoe.coffee
+<span class="c"># Watch mode--compile a file whenever it is changed</span>
+coffee -cw cupofjoe.coffee
+</pre></div>
+                </div>
+                
+                    
+    
+        <a class="pure-button os-button" href="/os/macosx/">
+            <i class="icon-macosx icon-small"></i>
+            macosx
+        </a>
+    
+
+                
+                <a href="/install-coffeescript/">&nbsp;[full instructions]</a>
+            </div>
+        </li>
+    
+    </ul>
+
+
+<hr>
+
+
+<p>First, set up <a href="http://django_compressor.readthedocs.org/en/master/">django-compressor</a>. </p>
+<div class="codehilite"><pre><span class="c"># Install django-compressor</span>
+<span class="nv">$ </span>pip install django_compressor
+</pre></div>
+
+
+<p>Include the following in your <code>settings.py</code>.</p>
+<div class="codehilite"><pre><span class="c"># settings.py</span>
+
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c"># Other apps...</span>
+    <span class="s">&#39;compressor&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">STATICFILES_FINDERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">&#39;django.contrib.staticfiles.finders.FileSystemFinder&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.staticfiles.finders.AppDirectoriesFinder&#39;</span><span class="p">,</span>
+    <span class="c"># other finders..</span>
+    <span class="s">&#39;compressor.finders.CompressorFinder&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">COMPRESS_PRECOMPILERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&#39;text/coffeescript&#39;</span><span class="p">,</span> <span class="s">&#39;coffee --compile --stdio&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>That's it! You can now include <code>.coffee</code> files in your html. Make sure to include them between <code>{% compress js %}</code> tags and set the <code>type</code> attribute for the script tag to <code>text/coffeescript</code>. </p>
+<div class="codehilite"><pre># some_template.html
+
+{% compress js %}
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;{{ STATIC_URL }}coffee/cupofjoe.coffee&quot;</span> <span class="na">type=</span><span class="s">&quot;text/coffeescript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span> 
+{% endcompress %}
+</pre></div>
+</article>
+
+
+
+<span class="contributors-list">
+Contributors:
+
+<a href="http://www.github.com/sloria">sloria</a>
+
+
+
+
+
+<p>Raw: <a href="https://raw.github.com/killtheyak/killtheyak-pages/master/use-coffeescript-in-django.md">use-coffeescript-in-django.md</a></p>
+
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_reddit"></a>
+<a class="addthis_button_hackernews"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51e268c25bf9bae5"></script>
+<!-- AddThis Button END -->
+
+</span>
+
+<hr>
+<div class="suggestions">
+<p class="">If you have suggestions, corrections, or content to contribute, fork us at our <a href="http://www.github.com/killtheyak/killtheyak.github.com">Github repo</a> or <a href="http://www.github.com/killtheyak/killtheyak.github.com/issues/new">open an issue</a>.</p>
+</div>
+
+
+  </div>
+
+<footer>
+    &copy; by <a href="http://www.stevenloria.com">Steven Loria</a> 2013
+</footer>
+
+</div><!-- end pure-g-r  -->
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/static/js/script.js"></script>
+<!-- end scripts -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39544608-3', 'killtheyak.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
