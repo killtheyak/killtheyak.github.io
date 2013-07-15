@@ -1,8 +1,14 @@
 {
-  "name": "",
+  "name": "killtheyak-icons",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "glyphs": [
+    {
+      "uid": "72b1277834cba5b7944b0a6cac7ddb0d",
+      "css": "rss",
+      "code": 59395,
+      "src": "fontawesome"
+    },
     {
       "uid": "e9fa538fd5913046497ac148e27cd8ea",
       "css": "macosx",
