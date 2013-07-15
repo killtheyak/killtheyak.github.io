@@ -6,6 +6,20 @@
 <article>
 <h1 class='muted'>All I want to do is. . .</h1>
 <h1 class='page-title'>. . .{{ page.title|lower_first }}.</h1>
+{# OS info #}
+{% if page.meta.os|length %}
+    {% with oss=page.meta.os  %}
+        {% include "os_menu.html" %}
+    {% endwith %}
+{% endif %}
+
+{# Tags #}
+{% if page.meta.tags|length %}
+    {% with tags=page.meta.tags  %}
+        {% include "tags_menu.html" %}
+    {% endwith %}
+{% endif %}
+<br>
 
 {{ page.meta.description }}
 
@@ -13,21 +27,21 @@
 <hr>
 {% endif %}
 
+{# Contributors #}
+{% if page.meta.contributors|length %}
+<span class="contributors-list">
+Contributors:
+{% for contributor in page.meta.contributors %}
+{{ contributor|github_urlize }}
+{% if not loop.last %},&nbsp;{% endif %}
+{% endfor %}
+{% endif %}
+
 {# Updated #}
 {% if page.meta.updated %}
-<p class='date'>Updated: {{ page.meta.updated|datetime_format }}<p>
+<span class='date date-updated'>Updated: {{ page.meta.updated|datetime_format }}</span>
 {% endif %}
 
-{# OS info #}
-{% if page.meta.os|length %}
-    <p>OS:</p>
-    <ul class="os-list">
-
-    {% for os in page.meta.os %}
-    <li><a href="{{ url_for('os', os=os) }}">{{ os }}</a></li>
-    {% endfor %}
-    </ul>
-{% endif %}
 
 {# Deps info #}
 {% if page.meta.deps|length %}
@@ -59,15 +73,7 @@
 {{ page }}
 </article>
 
-{# Contributors #}
-{% if page.meta.contributors|length %}
-<span class="contributors-list">
-Contributors:
-{% for contributor in page.meta.contributors %}
-{{ contributor|github_urlize }}
-{% if not loop.last %},&nbsp;{% endif %}
-{% endfor %}
-{% endif %}
+
 
 {# View raw #}
 <p>Raw: <a href="{{ page|raw_page_url }}">{{ page.path ~ ".md" }}</a></p>

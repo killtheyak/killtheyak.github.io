@@ -1,0 +1,9 @@
+<div class="pure-menu pure-menu-open pure-menu-horizontal tag-menu">
+    <span class="pure-menu-heading">Tags: </span>
+    <ul class="tag-list">
+        {% for tag in tags %}
+            <li><a href="{{ url_for('tag', tag=tag) }}">{{ tag }}</a></li>
+            {% if not loop.last %}::{% endif %}
+        {% endfor %}
+    </ul>
+</div>

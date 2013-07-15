@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kill The Yak{% block page_title %} | No-BS guides to get your project rolling{% endblock %}</title>
-  <meta name="description" content="Yak-shaving sucks. So let's kill the yak.{% block meta_description %}{% endblock %}">
+  <meta name="description" content="No-BS guides to get your project going{% block meta_description %}{% endblock %}">
   <meta name="author" content="{% block meta_author %}Steven Loria{% endblock %}">
   <link href="{{ url_for('recent_feed') }}"
       rel="alternate"
@@ -26,7 +26,7 @@
 
 <header>{% block header %}{% endblock %}</header>
 
-<div class="{% block content_class %}pure-g-r{% endblock content_class %}">
+<div class="{% block content_class %}pure-g{% endblock content_class %}">
 
   <div class="content pure-u-1">
     {% block content %}{% endblock %}

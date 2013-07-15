@@ -1,8 +1,5 @@
 {% if page.meta.os|length %}
     {% for os in page.meta.os %}
-        <a class="pure-button os-button" href="{{ url_for('os', os=os) }}">
-            <i class="icon-{{ os }} icon-small"></i>
-            {{ os }}
-        </a>
+        <i class="muted icon-{{ os }}"></i>
     {% endfor %}
 {% endif %}

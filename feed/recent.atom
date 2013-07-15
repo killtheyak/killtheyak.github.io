@@ -15,46 +15,7 @@
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">First, set up [django-compressor][]. 
-
-```bash
-# Install django-compressor
-$ pip install django_compressor
-```
-
-Include the following in your `settings.py`.
-
-```python
-# settings.py
-
-INSTALLED_APPS = [
-    # Other apps...
-    'compressor',
-]
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # other finders..
-    'compressor.finders.CompressorFinder',
-)
-
-COMPRESS_PRECOMPILERS = (
-    ('text/coffeescript', 'coffee --compile --stdio'),
-)
-```
-
-That's it! You can now include `.coffee` files in your html. Make sure to include them between `{% compress js %}` tags and set the `type` attribute for the script tag to `text/coffeescript`. 
-
-```html
-# some_template.html
-
-{% compress js %}
-&lt;script src=&quot;{{ STATIC_URL }}coffee/cupofjoe.coffee&quot; type=&quot;text/coffeescript&quot;&gt;&lt;/script&gt; 
-{% endcompress %}
-```
-
-[django-compressor]: http://django_compressor.readthedocs.org/en/master/</content>
+    <content type="html">Using Coffeescript in Django is much simpler than you might think.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Coffeescript</title>
@@ -65,40 +26,7 @@ That's it! You can now include `.coffee` files in your html. Make sure to includ
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">```bash
-# Mac-specific instructions
-# Install node
-$ brew update 
-$ brew install node
-```
-
-Add the node directory to your `PATH`.
-
-```bash
-# In you shell profile (.bash_profile, .zshrc, etc.), add this line
-export PATH=/usr/local/share/npm/bin:$PATH
-```
-
-```bash
-# Install coffee (notice the dash)
-npm install -g coffee-script
-```
-
-You now have Coffeescript installed.
-
-```bash
-# To compile a file
-coffee -c cupofjoe.coffee
-# Watch mode--compile a file whenever it is changed
-coffee -cw cupofjoe.coffee
-```
-
-See also:
-
-- [Coffeescript.org][Coffeescript]
-
-[Coffeescript]: http://coffeescript.org/
-</content>
+    <content type="html">http://killtheyak.com/install-coffeescript</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Add color to my Terminal</title>
@@ -109,42 +37,7 @@ See also:
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">## Bash 
-
-```bash
-# If you're using the bash shell, add the following to your 
-# ~/.bash_profile file.
-
-# ~/.bash_profile
-# Colorful ls and grep
-export CLICOLOR=1
-export GREP_OPTIONS='--color=auto'
-source &quot;`brew --prefix grc`/etc/grc.bashrc&quot;
-```
-
-## Zsh
-
-```bash
-# Another simple option is to use oh-my-zsh which comes with
-# many different themes out of the box, as well as the added 
-# functionality of the zsh shell
-
-# Check out the project here: https://github.com/robbyrussell/oh-my-zsh
-
-# Install zsh like so:
-$ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-```
-
-Then change your `ZSH_THEME` setting in `~/.zshrc`.
-
-```bash
-# ~/.zshrc
-
-ZSH_THEME=&quot;nanotech&quot;
-
-# Available themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-```
-</content>
+    <content type="html">Let's make our `ls` and `grep` colorful.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install and configure Git</title>
@@ -155,32 +48,7 @@ ZSH_THEME=&quot;nanotech&quot;
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">
-```bash
-# MacOSX-specific instructions
-$ brew update
-$ brew install git
-```
-
-```bash
-# If you get an error:
-# `Warning: /usr/bin occurs before /usr/local/bin`
-# Then add the following to your shell profile (.bash_profile, .zshrc, etc.)
-export PATH=&quot;/usr/local/bin:/usr/local/sbin:~/bin:$PATH&quot;
-```
-
-```bash
-# Make sure you are using the right git binary
-$ which git
-# should be &quot;/usr/local/bin/git&quot;
-```
-
-```bash
-# Configure git with your name and email
-$ git config --global user.name &quot;Django Reinhardt&quot;
-$ git config --global user.email &quot;man_with_guitar@hotmail.com&quot;
-```
-</content>
+    <content type="html">http://killtheyak.com/install-git</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install a scientific Python environment (numpy + scipy + matplotlib) on MacOSX without Enthought</title>
@@ -191,104 +59,7 @@ $ git config --global user.email &quot;man_with_guitar@hotmail.com&quot;
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">## Optional (but recommended) first step: Create a new virtual environment
-
-```bash
-# If you're using virtualenvwrapper
-$ mkvirtualenv science
-$ workon science
-```
-
-## Numpy, Scipy, and Matplotlib
-
-Install a fortran compiler and Freetype.
-
-```bash
-$ brew update
-$ brew install gfortran freetype
-# Remember to follow any instructions that show up after each install
-# To display the instructions again, run `brew info gfortran` or `brew info freetype`
-```
-
-Install the Python packages.
-
-```bash
-# Order matters!
-$ pip install numpy
-$ pip install scipy
-$ pip install matplotlib
-# Optional: install ipython
-$ pip install ipython
-```
-
-If everything works, you should be able to `import pylab`, which will bring numpy, scipy, and matplotlib functionality all in one go.
-
-```bash
-# Check that everything works
-$ python
-&gt;&gt;&gt; import pylab
-```
-
-If all you need is numpy, scipy, and matplotlib, you're done!
-
-## Bonus: Install the rest of the EPD packages
-
-If you want to install more of the libraries included with EPD, you can try making a `requirements.txt` file containing the following:
-
-```bash
-# requirements.txt
-# This includes all the packages bundled with EPD-Free
-# Feel free to add/remove any items
-appinst&gt;=2.1.1
-apptools&gt;=4.1.0
-casuarius&gt;=1.0
-chaco&gt;=4.2.0
-cloud&gt;=2.4.6
-configobj&gt;=4.7.2
-distribute&gt;=.6.26
-enable&gt;=4.2.0
-enaml&gt;=0.2.0
-enstaller&gt;=4.5.1
-etsproxy&gt;=0.1.1
-freetype&gt;=2.4.4
-ipython&gt;=0.12.1
-jinja2&gt;=2.6
-libjpeg&gt;=7.0
-libpng&gt;=7.0
-matplotlib&gt;=1.1.0
-nose&gt;=1.1.2
-numpy&gt;=1.6.1
-PIL&gt;=1.1.7
-ply&gt;=3.4
-pyaudio&gt;=0.2.4
-pyface&gt;=4.2.0
-pyglet&gt;=1.1.4
-pygments&gt;=1.4
-python_dateutil&gt;=1.5
-pytz
-pyzmq&gt;=2.1.11
-scipy&gt;=1.74
-tornado&gt;=2.2
-traits&gt;=4.2.0
-traitsui&gt;=4.2.0
-wxPython&gt;=2.8.10
-```
-
-Then run:
-
-```bash
-$ pip install -r -U requirements.txt
-```
-
-NOTE: This step has not been verified. It is possible that some of the packages have other non-Python dependencies that need to be installed first.
-
-See also:
-
-- [Enthought Python Distribution][EPD]
-- [Installing scientific Python on MacOS X - Lowin Data Company](http://www.lowindata.com/2013/installing-scientific-python-on-mac-os-x/)
-
-[EPD]: https://www.enthought.com/products/epd/
-[virtualenv]: /use-virtualenvwrapper</content>
+    <content type="html">Python has many excellent libraries for scientific computing. Unfortunately, installing these libraries can be a yak shaving nightmare. One solution is to download the Enthought Python Distribution, a Python distribution that comes bundled with a large number of packages precompiled. While the EPD may be the best solution to get off the ground with scientific computing in as little time as possible, problems may arise when (1) you want to use python outside of the EPD environment, possibly with diffent Python versions and (2) you want to keep your scientific environment in a virtualenv.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install the latest Mac C and C++ compilers</title>
@@ -299,27 +70,7 @@ See also:
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">First, install Xcode.
-
-```
-# Get the latest version of Xcode from the Mac App Store
-# Here: https://itunes.apple.com/us/app/xcode/id497799835?mt=12
-```
-
-Open Xcode, then open the Preferences.
-
-```
-# Open Xcode, then press `Command + ,` to open preferences
-```
-
-Install Command line tools.
-
-```
-# Click `Downloads` at the top of the window
-# Then click `Install` next to `Command Line Tools`
-```
-
-You should now have the latest compilers.</content>
+    <content type="html">http://killtheyak.com/install-mac-xcode-compilers</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Use virtualenv + virtualenvwrapper with Python</title>
@@ -330,67 +81,7 @@ You should now have the latest compilers.</content>
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">Install the packages.
-
-```bash
-$ pip install virtualenv
-$ pip install virtualenvwrapper
-```
-
-
-Open your shell's profile config (e.g. `.bash_profile`, `.bashrc`, or `.zshrc`). This is usually located in your home directory.
-
-Then add the following:
-
-```bash
-# ~/.bash_profile
-
-# Enable virtualenvwrapper 
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
-```
-
-On Window, you can use the [virtualenvwrapper-powershell][].
-
-```bash
-# Virtualenvwrapper-powershell in Windows
-PS&gt; pip install virtualenvwrapper-powershell
-PS&gt; $env:WORKON_HOME=&quot;~/Envs&quot;
-PS&gt; mkdir $env:WORKON_HOME
-PS&gt; import-module virtualenvwrapper
-```
-
-Create the folder for your virtual environments.
-
-```bash
-# Reload your profile
-$ source ~/.bash_profile
-# Create your env directory
-$ mkdir -p $WORKON_HOME
-```
-
-Now, when you log in to a new shell session, you will be able to use virtualenvwrapper.
-
-```bash
-# Create a new environment
-$ mkvirtualenv my-fresh-environment
-# Activate an environment
-$ workon my-fresh-environment
-# List environments
-$ lsvirtualenv
-# Remove an environment
-$ rmvirtualenv my-polluted-environment
-```
-
-See also:
-
-- [Virtual Environments - Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/dev/virtualenvs.html)
-- [Virtualenvwrapper docs](http://virtualenvwrapper.readthedocs.org/en/latest/) 
-- [Virtualenvwrapper-powershell for Windows users][virtualenvwrapper-powershell]
-
-[virtualenvwrapper-powershell]: https://bitbucket.org/guillermooo/virtualenvwrapper-powershell
-</content>
+    <content type="html">Virtualenv allows you to make isolated working copies of Python so that you can work on a specific project without affecting other projects. Virtualenvwrapper provides commands that make it simple to create and manage your virtual environments.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Use Celery in Django with a Redis backend</title>
@@ -401,103 +92,7 @@ See also:
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">First, install redis:
-
-```bash
-# On MacOSX with homebrew
-$ brew update
-$ brew install redis
-
-# On Linux
-$ wget http://download.redis.io/redis-stable.tar.gz
-$ tar xvzf redis-stable.tar.gz
-$ cd redis-stable
-$ make
-```
-
-Then, add the following to your requirements file:
-
-```bash
-# requirements.txt
-celery-with-redis
-django-celery
-```
-
-Install the new requirements:
-
-```bash
-$ pip install -r requirements.txt
-```
-
-Add the following to setup.py:
-
-```python
-# settings.py
-import djcelery
-djcelery.setup_loader()
-...
-
-# Add djcelery to installed apps
-INSTALLED_APPS = [
-    ...
-    'djcelery',
-    ...
-]
-
-# Celery settings
-BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-```
-
-Create the database datatables:
-
-```bash
-# If you're using South:
-$ python manage.py migrate djcelery
-# otherwise:
-$ python manage.py syncdb
-```
-
-Now to start your redis server and a celery worker.
-
-```bash
-# Start the redis server
-$ redis-server
-# In a new terminal window/tab, start a celery worker
-$ python manage.py celeryd worker -E
-# In ANOTHER terminal window/tab, enable the Django Celery monitor
-# so that you can manage your tasks from your admin page
-$ python manage.py celerycam
-```
-
-You are now ready to run Celery tasks. 
-
-Tasks can be defined like so:
-
-```python
-# tasks.py (in one of your apps)
-from celery import task
-
-@task()
-def add(x, y):
-    return x + y
-```
-
-```python
-# In some other file (such as in views or models)
-from myapp.tasks import add
-
-add.delay(2, 2)  # Asynchronous addition--Huzzah!
-```
-
-See also:
-
-- [Celery home page](http://celeryproject.org/)
-- [First steps with Django - Celery Project](http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html)
-- [Redis home page](http://redis.io/)
-
-
-</content>
+    <content type="html">Celery is a distributed task queue for Python that allows you to run computationally expensive code asynchronously. Here's how to integrate Celery in a Django project, using Redis for the backend service.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Python 2 and/or 3</title>
@@ -508,38 +103,7 @@ See also:
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">```bash
-# On Mac &gt;= 10.5 with homebrew
-$ brew update
-## Install Python 2
-$ brew install python
-## Install Python 3
-$ brew install python3
-## Follow any instructions that appear after each brew install
-```
-
-Make sure to follow the instructions after each install. If you missed them, just run `brew info python` or `brew info python3`.
-
-If it still doesn't work, try to fix *every* issue listed when you run `brew doctor`. 
-
-```bash
-# Is everything working?
-$ brew doctor
-# Listen to the doctor
-```
-
-If everything's working, you can run both Python 2 and Python 3 on the same system.
-
-```bash
-# Run Python 2
-$ python
-# Run Python 3
-$ python3
-# Install a Python 2 package
-$ pip install some-package
-# Install a Python 3 package
-$ pip3 install some-package
-```</content>
+    <content type="html">http://killtheyak.com/install-python</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Homebrew</title>
@@ -550,19 +114,6 @@ $ pip3 install some-package
     <author>
       <name>Anonymous</name>
     </author>
-    <content type="html">Works on all MacOSX &gt;= 10.5.
-
-```bash
-# In your Mac Terminal, run:
-$ ruby -e &quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&quot;
-```
-
-Thats it!
-
-See also:
-
-* [Homebrew][]
-
-[Homebrew]: http://mxcl.github.io/homebrew/</content>
+    <content type="html">Homebrew's tagline is &quot;the missing package manager for OS X&quot;. It is by far the best package manager for Mac available and will save you hours of yak-shaving.</content>
   </entry>
 </feed>

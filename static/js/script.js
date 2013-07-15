@@ -5,7 +5,6 @@
 
   $('a.dep-name').on('click', function(e) {
     e.preventDefault();
-    console.log($(this).siblings('.dep-code-container'));
     return $(this).siblings().siblings('.dep-code-container').fadeToggle();
   });
 

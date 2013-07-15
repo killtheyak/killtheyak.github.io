@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from urlparse import urljoin
+from collections import Counter
 from flask import render_template, request
 from werkzeug.contrib.atom import AtomFeed
 from flask_flatpages import pygments_style_defs
 from app import app, pages
-
-EXCLUDE_PAGES = ['contribute', 'TEMPLATE', 'example-dep', "README"]
 
 
 def sort_by_updated(pages):
@@ -19,11 +18,30 @@ def sort_by_updated(pages):
                                     key=lambda p: p.meta['updated'])
                 if page.path not in EXCLUDE_PAGES]
 
+EXCLUDE_PAGES = ['contribute', 'TEMPLATE', 'example-dep', "README"]
+
+ALL_PAGES = [p for p in pages if p.path not in EXCLUDE_PAGES]
+ALL_SORTED = sort_by_updated(ALL_PAGES)
+tags = []
+for page in ALL_PAGES:
+    tags.extend(page.meta.get('tags', []))
+tag_counter = Counter(tags)  # Dict of tag frequency
+ # List of tags sorted by frequency
+SORTED_TAGS = sorted(tag_counter, reverse=True, key=lambda t: tag_counter[t])
+ALL_OS = ['macosx', 'linux', 'windows']
+
+
 @app.route('/')
 def home():
-    all_pages = (p for p in pages if p.path not in EXCLUDE_PAGES)
-    latest = sort_by_updated(all_pages)
-    return render_template('index.html', pages=latest)
+    latest = ALL_SORTED[:15]
+    return render_template('index.html', pages=latest,
+            all_tags=SORTED_TAGS, all_os=ALL_OS)
+
+
+@app.route('/guides/')
+def guides():
+    return render_template('index.html', pages=ALL_SORTED,
+                            all_tags=SORTED_TAGS, all_os=ALL_OS)
 
 
 @app.route('/<path:path>/')
@@ -50,14 +68,16 @@ def os(os):
     else:
         os = os
     latest = sort_by_updated(filtered)
-    return render_template('index.html', pages=latest, os=os)
+    return render_template('index.html', pages=latest, os=os,
+                                all_tags=SORTED_TAGS, all_os=ALL_OS)
 
 
 @app.route('/tag/<string:tag>/')
 def tag(tag):
     filtered = [p for p in pages if tag in p.meta.get('tags', [])]
     latest = sort_by_updated(filtered)
-    return render_template('index.html', pages=latest, tag=tag)
+    return render_template('index.html', pages=latest, tag=tag,
+                                all_tags=SORTED_TAGS, all_os=ALL_OS)
 
 
 def make_external(url):
@@ -75,7 +95,9 @@ def recent_feed():
         latest = sort_by_updated(all_pages)
 
     for page in latest:
-        feed.add(page.meta['title'], page.body, content_type="html",
+        feed.add(page.meta['title'],
+            page.meta.get('description', make_external(page.path)),
+            content_type="html",
             author=page.meta.get('contributors', ["Anonymous"])[0],
             url=make_external(page.path),
             updated=page.meta['updated'],
