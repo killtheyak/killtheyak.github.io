@@ -95,17 +95,6 @@
     <content type="html">Celery is a distributed task queue for Python that allows you to run computationally expensive code asynchronously. Here's how to integrate Celery in a Django project, using Redis for the backend service.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
-    <title type="text">Create my new page</title>
-    <id>http://killtheyak.com/TEMPLATE_PAGE</id>
-    <updated>2013-07-13T00:00:00Z</updated>
-    <published>2013-07-13T00:00:00Z</published>
-    <link href="http://killtheyak.com/TEMPLATE_PAGE" />
-    <author>
-      <name>http://www.github.com/YOU</name>
-    </author>
-    <content type="html">This is the template page.</content>
-  </entry>
-  <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Python 2 and/or 3</title>
     <id>http://killtheyak.com/install-python</id>
     <updated>2013-07-13T00:00:00Z</updated>

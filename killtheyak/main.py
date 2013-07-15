@@ -8,7 +8,7 @@ This file is also used to run the app:
     python main.py
 """
 import os
-from app import app, pages, environment
+from app import app, pages, environment, freezer
 
 from views import *
 import filters

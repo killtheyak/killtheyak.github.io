@@ -5,7 +5,7 @@ from collections import Counter
 from flask import render_template, request
 from werkzeug.contrib.atom import AtomFeed
 from flask_flatpages import pygments_style_defs
-from app import app, pages
+from app import app, pages, freezer
 
 
 def sort_by_updated(pages):
@@ -18,7 +18,7 @@ def sort_by_updated(pages):
                                     key=lambda p: p.meta['updated'])
                 if page.path not in EXCLUDE_PAGES]
 
-EXCLUDE_PAGES = ['contribute', 'TEMPLATE', 'example-dep', "README"]
+EXCLUDE_PAGES = ['contribute', 'template', 'example-dep', "README"]
 
 ALL_PAGES = [p for p in pages if p.path not in EXCLUDE_PAGES]
 ALL_SORTED = sort_by_updated(ALL_PAGES)
@@ -29,6 +29,12 @@ tag_counter = Counter(tags)  # Dict of tag frequency
  # List of tags sorted by frequency
 SORTED_TAGS = sorted(tag_counter, reverse=True, key=lambda t: tag_counter[t])
 ALL_OS = ['macosx', 'linux', 'windows']
+
+@freezer.register_generator
+def pages_url_generator():
+    pages_no_readme = [p for p in pages if p.path != "README"]
+    for page in pages_no_readme:
+        yield 'page', {'path': page.path}
 
 
 @app.route('/')

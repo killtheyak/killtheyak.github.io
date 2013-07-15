@@ -5,10 +5,9 @@ import os
 from datetime import datetime
 from flask.ext.script import Manager
 from flask_frozen import Freezer
-from killtheyak.main import app
+from killtheyak.main import app, freezer
 
 manager = Manager(app)
-freezer = Freezer(app)
 
 
 @manager.command
