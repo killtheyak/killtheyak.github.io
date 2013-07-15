@@ -15,36 +15,40 @@
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Mac-specific instructions&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Install node&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew update 
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install node
-&lt;/pre&gt;&lt;/div&gt;
+    <content type="html">```bash
+# Mac-specific instructions
+# Install node
+$ brew update 
+$ brew install node
+```
 
+Add the node directory to your `PATH`.
 
-&lt;p&gt;Add the node directory to your &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# In you shell profile (.bash_profile, .zshrc, etc.), add this line&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/share/npm/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+# In you shell profile (.bash_profile, .zshrc, etc.), add this line
+export PATH=/usr/local/share/npm/bin:$PATH
+```
 
-
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Install coffee (notice the dash)&lt;/span&gt;
+```bash
+# Install coffee (notice the dash)
 npm install -g coffee-script
-&lt;/pre&gt;&lt;/div&gt;
+```
 
+You now have Coffeescript installed.
 
-&lt;p&gt;You now have Coffeescript installed.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# To compile a file&lt;/span&gt;
+```bash
+# To compile a file
 coffee -c cupofjoe.coffee
-&lt;span class=&quot;c&quot;&gt;# Watch mode--compile a file whenever it is changed&lt;/span&gt;
+# Watch mode--compile a file whenever it is changed
 coffee -cw cupofjoe.coffee
-&lt;/pre&gt;&lt;/div&gt;
+```
 
+See also:
 
-&lt;p&gt;See also:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://coffeescript.org/&quot;&gt;Coffeescript.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+- [Coffeescript.org][Coffeescript]
+
+[Coffeescript]: http://coffeescript.org/
+</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Add color to my Terminal</title>
@@ -55,37 +59,42 @@ coffee -cw cupofjoe.coffee
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">&lt;h2&gt;Bash&lt;/h2&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# If you&amp;#39;re using the bash shell, add the following to your &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# ~/.bash_profile file.&lt;/span&gt;
+    <content type="html">## Bash 
 
-&lt;span class=&quot;c&quot;&gt;# ~/.bash_profile&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Colorful ls and grep&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CLICOLOR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;--color=auto&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;`brew --prefix grc`/etc/grc.bashrc&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+# If you're using the bash shell, add the following to your 
+# ~/.bash_profile file.
 
+# ~/.bash_profile
+# Colorful ls and grep
+export CLICOLOR=1
+export GREP_OPTIONS='--color=auto'
+source &quot;`brew --prefix grc`/etc/grc.bashrc&quot;
+```
 
-&lt;h2&gt;Zsh&lt;/h2&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Another simple option is to use oh-my-zsh which comes with&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# many different themes out of the box, as well as the added &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# functionality of the zsh shell&lt;/span&gt;
+## Zsh
 
-&lt;span class=&quot;c&quot;&gt;# Check out the project here: https://github.com/robbyrussell/oh-my-zsh&lt;/span&gt;
+```bash
+# Another simple option is to use oh-my-zsh which comes with
+# many different themes out of the box, as well as the added 
+# functionality of the zsh shell
 
-&lt;span class=&quot;c&quot;&gt;# Install zsh like so:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-&lt;/pre&gt;&lt;/div&gt;
+# Check out the project here: https://github.com/robbyrussell/oh-my-zsh
 
+# Install zsh like so:
+$ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
 
-&lt;p&gt;Then change your &lt;code&gt;ZSH_THEME&lt;/code&gt; setting in &lt;code&gt;~/.zshrc&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# ~/.zshrc&lt;/span&gt;
+Then change your `ZSH_THEME` setting in `~/.zshrc`.
 
-&lt;span class=&quot;nv&quot;&gt;ZSH_THEME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;nanotech&amp;quot;&lt;/span&gt;
+```bash
+# ~/.zshrc
 
-&lt;span class=&quot;c&quot;&gt;# Available themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content>
+ZSH_THEME=&quot;nanotech&quot;
+
+# Available themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+```
+</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install and configure Git</title>
@@ -96,29 +105,32 @@ coffee -cw cupofjoe.coffee
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# MacOSX-specific instructions&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew update
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install git
-&lt;/pre&gt;&lt;/div&gt;
+    <content type="html">
+```bash
+# MacOSX-specific instructions
+$ brew update
+$ brew install git
+```
 
+```bash
+# If you get an error:
+# `Warning: /usr/bin occurs before /usr/local/bin`
+# Then add the following to your shell profile (.bash_profile, .zshrc, etc.)
+export PATH=&quot;/usr/local/bin:/usr/local/sbin:~/bin:$PATH&quot;
+```
 
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# If you get an error:&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# `Warning: /usr/bin occurs before /usr/local/bin`&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Then add the following to your shell profile (.bash_profile, .zshrc, etc.)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/local/bin:/usr/local/sbin:~/bin:$PATH&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+# Make sure you are using the right git binary
+$ which git
+# should be &quot;/usr/local/bin/git&quot;
+```
 
-
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Make sure you are using the right git binary&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which git
-&lt;span class=&quot;c&quot;&gt;# should be &amp;quot;/usr/local/bin/git&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Configure git with your name and email&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config --global user.name &lt;span class=&quot;s2&quot;&gt;&amp;quot;Django Reinhardt&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git config --global user.email &lt;span class=&quot;s2&quot;&gt;&amp;quot;man_with_guitar@hotmail.com&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content>
+```bash
+# Configure git with your name and email
+$ git config --global user.name &quot;Django Reinhardt&quot;
+$ git config --global user.email &quot;man_with_guitar@hotmail.com&quot;
+```
+</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install a scientific Python environment (numpy + scipy + matplotlib) on MacOSX without Enthought</title>
@@ -129,92 +141,104 @@ coffee -cw cupofjoe.coffee
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">&lt;h2&gt;Optional (but recommended) first step: Create a new virtual environment&lt;/h2&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# If you&amp;#39;re using virtualenvwrapper&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkvirtualenv science
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;workon science
-&lt;/pre&gt;&lt;/div&gt;
+    <content type="html">## Optional (but recommended) first step: Create a new virtual environment
 
+```bash
+# If you're using virtualenvwrapper
+$ mkvirtualenv science
+$ workon science
+```
 
-&lt;h2&gt;Numpy, Scipy, and Matplotlib&lt;/h2&gt;
-&lt;p&gt;Install a fortran compiler and Freetype.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew update
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install gfortran freetype
-&lt;span class=&quot;c&quot;&gt;# Remember to follow any instructions that show up after each install&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# To display the instructions again, run `brew info gfortran` or `brew info freetype`&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+## Numpy, Scipy, and Matplotlib
 
+Install a fortran compiler and Freetype.
 
-&lt;p&gt;Install the Python packages.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Order matters!&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install numpy
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install scipy
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install matplotlib
-&lt;span class=&quot;c&quot;&gt;# Optional: install ipython&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install ipython
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+$ brew update
+$ brew install gfortran freetype
+# Remember to follow any instructions that show up after each install
+# To display the instructions again, run `brew info gfortran` or `brew info freetype`
+```
 
+Install the Python packages.
 
-&lt;p&gt;If everything works, you should be able to &lt;code&gt;import pylab&lt;/code&gt;, which will bring numpy, scipy, and matplotlib functionality all in one go.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Check that everything works&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python
-&amp;gt;&amp;gt;&amp;gt; import pylab
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+# Order matters!
+$ pip install numpy
+$ pip install scipy
+$ pip install matplotlib
+# Optional: install ipython
+$ pip install ipython
+```
 
+If everything works, you should be able to `import pylab`, which will bring numpy, scipy, and matplotlib functionality all in one go.
 
-&lt;p&gt;If all you need is numpy, scipy, and matplotlib, you're done!&lt;/p&gt;
-&lt;h2&gt;Bonus: Install the rest of the EPD packages&lt;/h2&gt;
-&lt;p&gt;If you want to install more of the libraries included with EPD, you can try making a &lt;code&gt;requirements.txt&lt;/code&gt; file containing the following:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# requirements.txt&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# This includes all the packages bundled with EPD-Free&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Feel free to add/remove any items&lt;/span&gt;
-appinst&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.1.1
-apptools&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.1.0
-casuarius&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.0
-chaco&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.2.0
-cloud&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.4.6
-configobj&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.7.2
-distribute&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;.6.26
-&lt;span class=&quot;nb&quot;&gt;enable&lt;/span&gt;&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.2.0
-enaml&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.2.0
-enstaller&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.5.1
-etsproxy&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.1.1
-freetype&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.4.4
-ipython&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.12.1
-jinja2&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.6
-libjpeg&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;7.0
-libpng&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;7.0
-matplotlib&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.1.0
-nose&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.1.2
-numpy&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.6.1
-PIL&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.1.7
-ply&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3.4
-pyaudio&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.2.4
-pyface&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.2.0
-pyglet&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.1.4
-pygments&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.4
-python_dateutil&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.5
+```bash
+# Check that everything works
+$ python
+&gt;&gt;&gt; import pylab
+```
+
+If all you need is numpy, scipy, and matplotlib, you're done!
+
+## Bonus: Install the rest of the EPD packages
+
+If you want to install more of the libraries included with EPD, you can try making a `requirements.txt` file containing the following:
+
+```bash
+# requirements.txt
+# This includes all the packages bundled with EPD-Free
+# Feel free to add/remove any items
+appinst&gt;=2.1.1
+apptools&gt;=4.1.0
+casuarius&gt;=1.0
+chaco&gt;=4.2.0
+cloud&gt;=2.4.6
+configobj&gt;=4.7.2
+distribute&gt;=.6.26
+enable&gt;=4.2.0
+enaml&gt;=0.2.0
+enstaller&gt;=4.5.1
+etsproxy&gt;=0.1.1
+freetype&gt;=2.4.4
+ipython&gt;=0.12.1
+jinja2&gt;=2.6
+libjpeg&gt;=7.0
+libpng&gt;=7.0
+matplotlib&gt;=1.1.0
+nose&gt;=1.1.2
+numpy&gt;=1.6.1
+PIL&gt;=1.1.7
+ply&gt;=3.4
+pyaudio&gt;=0.2.4
+pyface&gt;=4.2.0
+pyglet&gt;=1.1.4
+pygments&gt;=1.4
+python_dateutil&gt;=1.5
 pytz
-pyzmq&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.1.11
-scipy&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.74
-tornado&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.2
-traits&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.2.0
-traitsui&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4.2.0
-wxPython&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.8.10
-&lt;/pre&gt;&lt;/div&gt;
+pyzmq&gt;=2.1.11
+scipy&gt;=1.74
+tornado&gt;=2.2
+traits&gt;=4.2.0
+traitsui&gt;=4.2.0
+wxPython&gt;=2.8.10
+```
 
+Then run:
 
-&lt;p&gt;Then run:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install -r -U requirements.txt
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+$ pip install -r -U requirements.txt
+```
 
+NOTE: This step has not been verified. It is possible that some of the packages have other non-Python dependencies that need to be installed first.
 
-&lt;p&gt;NOTE: This step has not been verified. It is possible that some of the packages have other non-Python dependencies that need to be installed first.&lt;/p&gt;
-&lt;p&gt;See also:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.enthought.com/products/epd/&quot;&gt;Enthought Python Distribution&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.lowindata.com/2013/installing-scientific-python-on-mac-os-x/&quot;&gt;Installing scientific Python on MacOS X - Lowin Data Company&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+See also:
+
+- [Enthought Python Distribution][EPD]
+- [Installing scientific Python on MacOS X - Lowin Data Company](http://www.lowindata.com/2013/installing-scientific-python-on-mac-os-x/)
+
+[EPD]: https://www.enthought.com/products/epd/
+[virtualenv]: /use-virtualenvwrapper</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install the latest Mac C and C++ compilers</title>
@@ -225,24 +249,27 @@ wxPython&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.8.10
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">&lt;p&gt;First, install Xcode.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Get the latest version of Xcode from the Mac App Store&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Here: https://itunes.apple.com/us/app/xcode/id497799835?mt=12&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    <content type="html">First, install Xcode.
 
+```
+# Get the latest version of Xcode from the Mac App Store
+# Here: https://itunes.apple.com/us/app/xcode/id497799835?mt=12
+```
 
-&lt;p&gt;Open Xcode, then open the Preferences.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Open Xcode, then press `Command + ,` to open preferences&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+Open Xcode, then open the Preferences.
 
+```
+# Open Xcode, then press `Command + ,` to open preferences
+```
 
-&lt;p&gt;Install Command line tools.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Click `Downloads` at the top of the window&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Then click `Install` next to `Command Line Tools`&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+Install Command line tools.
 
+```
+# Click `Downloads` at the top of the window
+# Then click `Install` next to `Command Line Tools`
+```
 
-&lt;p&gt;You should now have the latest compilers.&lt;/p&gt;</content>
+You should now have the latest compilers.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Use virtualenv + virtualenvwrapper with Python</title>
@@ -253,58 +280,67 @@ wxPython&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2.8.10
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">&lt;p&gt;Install the packages.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install virtualenv
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install virtualenvwrapper
-&lt;/pre&gt;&lt;/div&gt;
+    <content type="html">Install the packages.
+
+```bash
+$ pip install virtualenv
+$ pip install virtualenvwrapper
+```
 
 
-&lt;p&gt;Open your shell's profile config (e.g. &lt;code&gt;.bash_profile&lt;/code&gt;, &lt;code&gt;.bashrc&lt;/code&gt;, or &lt;code&gt;.zshrc&lt;/code&gt;). This is usually located in your home directory.&lt;/p&gt;
-&lt;p&gt;Then add the following:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# ~/.bash_profile&lt;/span&gt;
+Open your shell's profile config (e.g. `.bash_profile`, `.bashrc`, or `.zshrc`). This is usually located in your home directory.
 
-&lt;span class=&quot;c&quot;&gt;# Enable virtualenvwrapper &lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;VIRTUALENVWRAPPER_PYTHON&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/bin/python
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;WORKON_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/Envs
-&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
-&lt;/pre&gt;&lt;/div&gt;
+Then add the following:
 
+```bash
+# ~/.bash_profile
 
-&lt;p&gt;On Window, you can use the &lt;a href=&quot;https://bitbucket.org/guillermooo/virtualenvwrapper-powershell&quot;&gt;virtualenvwrapper-powershell&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Virtualenvwrapper-powershell in Windows&lt;/span&gt;
-PS&amp;gt; pip install virtualenvwrapper-powershell
-PS&amp;gt; &lt;span class=&quot;nv&quot;&gt;$env&lt;/span&gt;:WORKON_HOME&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;~/Envs&amp;quot;&lt;/span&gt;
-PS&amp;gt; mkdir &lt;span class=&quot;nv&quot;&gt;$env&lt;/span&gt;:WORKON_HOME
-PS&amp;gt; import-module virtualenvwrapper
-&lt;/pre&gt;&lt;/div&gt;
+# Enable virtualenvwrapper 
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
+```
 
+On Window, you can use the [virtualenvwrapper-powershell][].
 
-&lt;p&gt;Create the folder for your virtual environments.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Reload your profile&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bash_profile
-&lt;span class=&quot;c&quot;&gt;# Create your env directory&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkdir -p &lt;span class=&quot;nv&quot;&gt;$WORKON_HOME&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+# Virtualenvwrapper-powershell in Windows
+PS&gt; pip install virtualenvwrapper-powershell
+PS&gt; $env:WORKON_HOME=&quot;~/Envs&quot;
+PS&gt; mkdir $env:WORKON_HOME
+PS&gt; import-module virtualenvwrapper
+```
 
+Create the folder for your virtual environments.
 
-&lt;p&gt;Now, when you log in to a new shell session, you will be able to use virtualenvwrapper.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Create a new environment&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mkvirtualenv my-fresh-environment
-&lt;span class=&quot;c&quot;&gt;# Activate an environment&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;workon my-fresh-environment
-&lt;span class=&quot;c&quot;&gt;# List environments&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsvirtualenv
-&lt;span class=&quot;c&quot;&gt;# Remove an environment&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rmvirtualenv my-polluted-environment
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+# Reload your profile
+$ source ~/.bash_profile
+# Create your env directory
+$ mkdir -p $WORKON_HOME
+```
 
+Now, when you log in to a new shell session, you will be able to use virtualenvwrapper.
 
-&lt;p&gt;See also:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://docs.python-guide.org/en/latest/dev/virtualenvs.html&quot;&gt;Virtual Environments - Hitchhiker's Guide to Python&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://virtualenvwrapper.readthedocs.org/en/latest/&quot;&gt;Virtualenvwrapper docs&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://bitbucket.org/guillermooo/virtualenvwrapper-powershell&quot;&gt;Virtualenvwrapper-powershell for Windows users&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+```bash
+# Create a new environment
+$ mkvirtualenv my-fresh-environment
+# Activate an environment
+$ workon my-fresh-environment
+# List environments
+$ lsvirtualenv
+# Remove an environment
+$ rmvirtualenv my-polluted-environment
+```
+
+See also:
+
+- [Virtual Environments - Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/dev/virtualenvs.html)
+- [Virtualenvwrapper docs](http://virtualenvwrapper.readthedocs.org/en/latest/) 
+- [Virtualenvwrapper-powershell for Windows users][virtualenvwrapper-powershell]
+
+[virtualenvwrapper-powershell]: https://bitbucket.org/guillermooo/virtualenvwrapper-powershell
+</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Use Celery in Django with a Redis backend</title>
@@ -315,93 +351,103 @@ PS&amp;gt; import-module virtualenvwrapper
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">&lt;p&gt;First, install redis:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# On MacOSX with homebrew&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew update
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install redis
+    <content type="html">First, install redis:
 
-&lt;span class=&quot;c&quot;&gt;# On Linux&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget http://download.redis.io/redis-stable.tar.gz
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tar xvzf redis-stable.tar.gz
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;redis-stable
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make
-&lt;/pre&gt;&lt;/div&gt;
+```bash
+# On MacOSX with homebrew
+$ brew update
+$ brew install redis
 
+# On Linux
+$ wget http://download.redis.io/redis-stable.tar.gz
+$ tar xvzf redis-stable.tar.gz
+$ cd redis-stable
+$ make
+```
 
-&lt;p&gt;Then, add the following to your requirements file:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# requirements.txt&lt;/span&gt;
+Then, add the following to your requirements file:
+
+```bash
+# requirements.txt
 celery-with-redis
 django-celery
-&lt;/pre&gt;&lt;/div&gt;
+```
+
+Install the new requirements:
+
+```bash
+$ pip install -r requirements.txt
+```
+
+Add the following to setup.py:
+
+```python
+# settings.py
+import djcelery
+djcelery.setup_loader()
+...
+
+# Add djcelery to installed apps
+INSTALLED_APPS = [
+    ...
+    'djcelery',
+    ...
+]
+
+# Celery settings
+BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+```
+
+Create the database datatables:
+
+```bash
+# If you're using South:
+$ python manage.py migrate djcelery
+# otherwise:
+$ python manage.py syncdb
+```
+
+Now to start your redis server and a celery worker.
+
+```bash
+# Start the redis server
+$ redis-server
+# In a new terminal window/tab, start a celery worker
+$ python manage.py celeryd worker -E
+# In ANOTHER terminal window/tab, enable the Django Celery monitor
+# so that you can manage your tasks from your admin page
+$ python manage.py celerycam
+```
+
+You are now ready to run Celery tasks. 
+
+Tasks can be defined like so:
+
+```python
+# tasks.py (in one of your apps)
+from celery import task
+
+@task()
+def add(x, y):
+    return x + y
+```
+
+```python
+# In some other file (such as in views or models)
+from myapp.tasks import add
+
+add.delay(2, 2)  # Asynchronous addition--Huzzah!
+```
+
+See also:
+
+- [Celery home page](http://celeryproject.org/)
+- [First steps with Django - Celery Project](http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html)
+- [Redis home page](http://redis.io/)
 
 
-&lt;p&gt;Install the new requirements:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install -r requirements.txt
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Add the following to setup.py:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# settings.py&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;djcelery&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;djcelery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setup_loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Add djcelery to installed apps&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&amp;#39;djcelery&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Celery settings&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;BROKER_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;redis://localhost:6379/0&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;CELERY_RESULT_BACKEND&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;redis://localhost:6379/0&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Create the database datatables:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# If you&amp;#39;re using South:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python manage.py migrate djcelery
-&lt;span class=&quot;c&quot;&gt;# otherwise:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python manage.py syncdb
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Now to start your redis server and a celery worker.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Start the redis server&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;redis-server
-&lt;span class=&quot;c&quot;&gt;# In a new terminal window/tab, start a celery worker&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python manage.py celeryd worker -E
-&lt;span class=&quot;c&quot;&gt;# In ANOTHER terminal window/tab, enable the Django Celery monitor&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# so that you can manage your tasks from your admin page&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python manage.py celerycam
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;You are now ready to run Celery tasks. &lt;/p&gt;
-&lt;p&gt;Tasks can be defined like so:&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# tasks.py (in one of your apps)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;celery&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;
-
-&lt;span class=&quot;nd&quot;&gt;@task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# In some other file (such as in views or models)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;myapp.tasks&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Asynchronous addition--Huzzah!&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;See also:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://celeryproject.org/&quot;&gt;Celery home page&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html&quot;&gt;First steps with Django - Celery Project&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://redis.io/&quot;&gt;Redis home page&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Python 2 and/or 3</title>
@@ -412,34 +458,38 @@ django-celery
     <author>
       <name>http://www.github.com/sloria</name>
     </author>
-    <content type="html">&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# On Mac &amp;gt;= 10.5 with homebrew&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew update
-&lt;span class=&quot;c&quot;&gt;## Install Python 2&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install python
-&lt;span class=&quot;c&quot;&gt;## Install Python 3&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew install python3
-&lt;span class=&quot;c&quot;&gt;## Follow any instructions that appear after each brew install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    <content type="html">```bash
+# On Mac &gt;= 10.5 with homebrew
+$ brew update
+## Install Python 2
+$ brew install python
+## Install Python 3
+$ brew install python3
+## Follow any instructions that appear after each brew install
+```
 
+Make sure to follow the instructions after each install. If you missed them, just run `brew info python` or `brew info python3`.
 
-&lt;p&gt;Make sure to follow the instructions after each install. If you missed them, just run &lt;code&gt;brew info python&lt;/code&gt; or &lt;code&gt;brew info python3&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;If it still doesn't work, try to fix &lt;em&gt;every&lt;/em&gt; issue listed when you run &lt;code&gt;brew doctor&lt;/code&gt;. &lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Is everything working?&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew doctor
-&lt;span class=&quot;c&quot;&gt;# Listen to the doctor&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+If it still doesn't work, try to fix *every* issue listed when you run `brew doctor`. 
 
+```bash
+# Is everything working?
+$ brew doctor
+# Listen to the doctor
+```
 
-&lt;p&gt;If everything's working, you can run both Python 2 and Python 3 on the same system.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Run Python 2&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python
-&lt;span class=&quot;c&quot;&gt;# Run Python 3&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3
-&lt;span class=&quot;c&quot;&gt;# Install a Python 2 package&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install some-package
-&lt;span class=&quot;c&quot;&gt;# Install a Python 3 package&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip3 install some-package
-&lt;/pre&gt;&lt;/div&gt;</content>
+If everything's working, you can run both Python 2 and Python 3 on the same system.
+
+```bash
+# Run Python 2
+$ python
+# Run Python 3
+$ python3
+# Install a Python 2 package
+$ pip install some-package
+# Install a Python 3 package
+$ pip3 install some-package
+```</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Install Homebrew</title>
@@ -450,16 +500,19 @@ django-celery
     <author>
       <name>Anonymous</name>
     </author>
-    <content type="html">&lt;p&gt;Works on all MacOSX &amp;gt;= 10.5.&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# In your Mac Terminal, run:&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ruby -e &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    <content type="html">Works on all MacOSX &gt;= 10.5.
 
+```bash
+# In your Mac Terminal, run:
+$ ruby -e &quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&quot;
+```
 
-&lt;p&gt;Thats it!&lt;/p&gt;
-&lt;p&gt;See also:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://mxcl.github.io/homebrew/&quot;&gt;Homebrew&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
+Thats it!
+
+See also:
+
+* [Homebrew][]
+
+[Homebrew]: http://mxcl.github.io/homebrew/</content>
   </entry>
 </feed>

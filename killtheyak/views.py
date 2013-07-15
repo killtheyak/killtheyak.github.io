@@ -75,7 +75,7 @@ def recent_feed():
         latest = sort_by_updated(all_pages)
 
     for page in latest:
-        feed.add(page.meta['title'], page.html, content_type="html",
+        feed.add(page.meta['title'], page.body, content_type="html",
             author=page.meta.get('contributors', ["Anonymous"])[0],
             url=make_external(page.path),
             updated=page.meta['updated'],
