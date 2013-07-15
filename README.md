@@ -6,9 +6,15 @@
 
 <cite>- Jeremy H. Brown</cite>
 
-[Kill The Yak][KillTheYak] is a website with formulae that will reduce the time you spend yak shaving.
+[Kill The Yak][KillTheYak] is a website with guides that will reduce the time you spend yak shaving.
 
 If you are interesting in contributing content, see the [killtheyak-pages][] repo.
+
+## Hacking
+
+Kill The Yak is a small Flask app that uses Flask-FlatPages and Flask-Frozen to build the static content. The app itself lives in the [killtheyak/ directory](https://github.com/killtheyak/killtheyak.github.com/tree/master/killtheyak). Feel free to use, modify, or just browse around.
+
+## License
 
 Licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.com/blob/master/LICENSE).
 
