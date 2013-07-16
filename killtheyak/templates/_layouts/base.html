@@ -19,17 +19,16 @@
   {% block css %}{% endblock %}
 
 </head>
-<body class="{% block body_class %}box{% endblock %}">
+<body class="{% block body_class %}{% endblock %}">
 {% block body %}
+
+
+<div id="layout" class="{% block content_class %}pure-g-r{% endblock content_class %}">
 
 {% include "_layouts/nav.html" %}
 
-<header>{% block header %}{% endblock %}</header>
-
-<div class="{% block content_class %}pure-g{% endblock content_class %}">
-
-  <div class="content pure-u-1">
-    {% block content %}{% endblock %}
+  <div class="pure-u-1">
+    <div class="content">{% block content %}{% endblock %}</div>
   </div>
 
 {% include "_layouts/footer.html" %}

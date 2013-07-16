@@ -5,10 +5,22 @@
     box-sizing: border-box;
 }
 
-.box {
+/*.box {
     width: 900px;
     margin: 40px auto;
 }
+*/
+
+#layout {
+    padding-left: 20%;
+    position: relative;
+}
+
+.content {
+    margin: 0 0;
+    width: 80%;
+}
+
 
 .hero {
     text-align: center;
