@@ -1,4 +1,9 @@
 {% extends "_layouts/base.html" %}
+{% if page.meta.description %}
+{% block meta_description %}
+    {{ page.meta.description }}
+{% endblock meta_description %}
+{% endif %}
 {% block page_title %}
 | {{ page.title }}
 {% endblock page_title %}
