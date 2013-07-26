@@ -8,7 +8,7 @@
 
 [Kill The Yak][KillTheYak] is a website with guides that will reduce the time you spend yak shaving.
 
-If you are interesting in contributing content, see the [killtheyak-pages][] repo.
+If you are interested in contributing content, see the [killtheyak-pages][] repo.
 
 ## Hacking
 

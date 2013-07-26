@@ -73,6 +73,7 @@ pre  {
 
 pre {
     font-size: 1em;
+    margin: 1em 1.2em;
 }
 
 .muted, i.muted {
@@ -101,6 +102,7 @@ pre {
 }
 
 .suggestions {
+    margin-bottom: 60px;
     font-size: 80%;
     color: #777;
 }
@@ -205,6 +207,7 @@ nav .tagline a:hover {
 
 /* Footer */
 footer {
+    padding: 15px 20px;
     font-size: 70%;
     text-align: right;
     letter-spacing: 0;

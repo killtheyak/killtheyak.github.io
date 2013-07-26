@@ -78,12 +78,12 @@ Contributors:
 {{ page }}
 </article>
 
+<div id="likeBtn"></div>
 
 
 {# View raw #}
 <p>Raw: <a href="{{ page|raw_page_url }}">{{ page.path ~ ".md" }}</a></p>
 
-<!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 <a class="addthis_button_reddit"></a>
 <a class="addthis_button_hackernews"></a>
@@ -92,7 +92,7 @@ Contributors:
 <a class="addthis_button_google_plusone_share"></a>
 </div>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51e268c25bf9bae5"></script>
-<!-- AddThis Button END -->
+
 
 </span>
 {% if page.title|lower != "contribute" %}
