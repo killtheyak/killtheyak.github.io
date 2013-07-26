@@ -16,8 +16,9 @@ Kill The Yak is a small Flask app that uses Flask-FlatPages and Flask-Frozen to 
 
 ## License
 
-Licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.com/blob/master/LICENSE).
+Copyrights to the guides are owned by their original authors and are licensed under the [Creative Commons Attribution-Share-Alike license][CC-SA].  The website is licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.com/blob/master/LICENSE).
 
 [KillTheYak]: http://killtheyak.com
 [killtheyak-pages]: https://github.com/killtheyak/killtheyak-pages
 [MIT License]: https://github.com/killtheyak/killtheyak.github.com/blob/master/LICENSE
+[CC-SA]: https://creativecommons.org/licenses/by-sa/3.0/legalcode
