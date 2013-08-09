@@ -15,7 +15,7 @@
     <author>
       <name>http://www.github.com/gcman105</name>
     </author>
-    <content type="html">If you like to use Vim in the Terminal and within various GUI's (Macosx and Linux), as I do, here is parts of my .vimrc file that help to make this happen.</content>
+    <content type="html">If you like to use Vim in the Terminal and within various GUI's (Macosx and Linux), as I do, here are parts of my .vimrc file that help to make this happen.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">Use PostgreSQL with Flask or Django</title>
