@@ -97,7 +97,7 @@ Contributors:
 
 
 
-<span class='date date-updated'>Updated: 07/13/13</span>
+<span class='date date-updated'>Updated: 09/15/13</span>
 
 
 
@@ -116,6 +116,12 @@ Contributors:
                 <div class="codehilite"><pre><span class="c"># In your Mac Terminal, run:</span>
 <span class="nv">$ </span>ruby -e <span class="s2">"$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"</span>
 </pre></div>
+<div class="codehilite"><pre><span class="c"># In your ~/.bashrc, ~/.bash_profile, or ~/.zshrc (for zsh users)</span>
+<span class="c"># ...</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
+</pre></div>
+<div class="codehilite"><pre><span class="nv">$ </span>brew doctor
+</pre></div>
                 </div>
                 
                     
@@ -128,12 +134,40 @@ Contributors:
             </div>
         </li>
     
+        <li>
+            <div class="dep-container">
+                <a class="dep-name" href="#">
+                    Install the latest Mac C and C++ compilers
+                </a>
+
+                <div class="dep-code-container">
+                <div class="codehilite"><pre><span class="c"># Get the latest version of Xcode from the Mac App Store</span>
+<span class="c"># Here: https://developer.apple.com/xcode/</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Open Xcode, then press `Command + ,` to open preferences</span>
+</pre></div>
+<div class="codehilite"><pre><span class="c"># Click `Downloads` at the top of the window</span>
+<span class="c"># Then click `Install` next to `Command Line Tools`</span>
+</pre></div>
+                </div>
+                
+                    
+    
+        <i class="muted icon-macosx"></i>
+    
+
+                
+                <a href="/install-mac-xcode-compilers/">&nbsp;[full instructions]</a>
+            </div>
+        </li>
+    
     </ul>
 
 
 <hr>
 
 
+<p><em>Updated 2013-09-15</em>: Add Xcode compilers as a dependency.</p>
 <div class="codehilite"><pre><span class="c"># On Mac &gt;= 10.5 with homebrew</span>
 <span class="nv">$ </span>brew update
 <span class="c">## Install Python 2</span>
