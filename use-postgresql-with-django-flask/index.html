@@ -103,13 +103,16 @@ A quick guide to get started using Postgres with a Flask or Django app.
 Contributors:
 
 <a href="http://www.github.com/sloria">sloria</a>
+,&nbsp;
+
+<a href="https://github.com/bgschiller">bgschiller</a>
 
 
 
 
 
 
-<span class='date date-updated'>Updated: 07/26/13</span>
+<span class='date date-updated'>Updated: 03/29/14</span>
 
 
 
@@ -119,6 +122,9 @@ Contributors:
 <hr>
 
 
+<ul>
+<li>Updated 2014-03-29: Fix <code>createuser</code> and <code>createdb</code> commands. Thanks @bgshiller.</li>
+</ul>
 <h2>Install Postgres</h2>
 <p>First, download and install Postgres for your OS <a href="http://www.postgresql.org/download/">here</a>.</p>
 <p>Sidenote for MacOSX users: I have found <a href="http://postgresapp.com/">Postgres.app</a> to be the simplest option<sup id="fnref:brew-warning"><a class="footnote-ref" href="#fn:brew-warning" rel="footnote">1</a></sup>. Just download and run the app.</p>
@@ -130,7 +136,7 @@ Contributors:
 
 <h2>Create a new user and a database</h2>
 <div class="codehilite"><pre><span class="c"># Create a new user</span>
-<span class="nv">$ </span>createuser -U postgres yourusername -P
+<span class="nv">$ </span>sudo -u postgres createuser -s <span class="nv">$USER</span>
 Enter password <span class="k">for </span>new role:
 Enter it again:
 Shall the new role be a superuser? <span class="o">(</span>y/n<span class="o">)</span> n
@@ -138,7 +144,7 @@ Shall the new role be allowed to create databases <span class="o">(</span>y/n<sp
 Shall the new role be allowed to create more new roles? <span class="o">(</span>y/n<span class="o">)</span> n
 
 <span class="c"># Create a new database</span>
-<span class="nv">$ </span>createdb -U yourusername -E utf8 -O yourusername yournewnewdb -T template0
+<span class="nv">$ </span>createdb -U <span class="nv">$USER</span> --locale<span class="o">=</span>en_US.utf8 -E utf8 -O <span class="nv">$USER</span> yournewdb -T template0
 </pre></div>
 
 
