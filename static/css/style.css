@@ -63,7 +63,7 @@ body .content {
 }
 
 
-h1, h2, h3, h4, .hero .brand , .navtop .brand {
+h1, h2, h3, h4, .hero .brand , .navtop .brand , .content .page-title {
     font-family: 'Gloria Hallelujah', cursive, serif;
     font-weight: normal;
 }
