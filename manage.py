@@ -24,17 +24,17 @@ def coffee(watch=False):
     Enters watch mode when you run:
         >> ./manage.py coffee -w
     '''
-    JAVASCRIPT_DIR = app.config['JAVASCRIPT_DIR']
-    COFFEE_DIR = app.config['COFFEE_DIR']
-    base_command = 'coffee -o {} '.format(JAVASCRIPT_DIR)
-    coffee_files = "{}/*.coffee".format(COFFEE_DIR)
+    javascript_dir = app.config['JAVASCRIPT_DIR']
+    coffee_dir = app.config['COFFEE_DIR']
+    base_command = 'coffee -o {} '.format(javascript_dir)
+    coffee_files = "{}/*.coffee".format(coffee_dir)
     if watch:
         print("Watching .coffee files in {} to {}"
-                        .format(COFFEE_DIR, JAVASCRIPT_DIR))
+                        .format(coffee_dir, javascript_dir))
         command = base_command + '-cw ' + coffee_files
     else:
         print("Compiling .coffee files in {} and compiling them to {}"
-                        .format(COFFEE_DIR, JAVASCRIPT_DIR))
+                        .format(coffee_dir, javascript_dir))
         command = base_command + '-c ' + coffee_files
     os.system(command)
 
@@ -51,7 +51,7 @@ def build():
 def deploy():
     '''Deploys the site.'''
     build()
-    os.system('git commit -am "Update pages"')
+    os.system('git commit -am "[deploy] Update pages"')
     print('Pushing to GitHub...')
     os.system('git push origin master')
     print('...done.')
