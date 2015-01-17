@@ -49,9 +49,13 @@ span.date-updated {
     display: inline-block;
 }
 
+li {
+    padding-bottom: 5px;
+}
+
 /* Typography */
 
-body {
+body .content {
     font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
     font-size: 17px;
     font-weight: 300;
@@ -59,7 +63,7 @@ body {
 }
 
 
-h1, h2, h3, h4, .brand {
+h1, h2, h3, h4, .hero .brand {
     font-family: 'Gloria Hallelujah', cursive, serif;
     font-weight: normal;
 }

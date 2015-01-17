@@ -9,8 +9,13 @@
       rel="alternate"
       title="Kill The Yak: Recent Guides"
       type="application/atom+xml">
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
-  {# <link rel="stylesheet" href="{{ url_for('static', filename='css/pure-min.css') }}"> #}
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<!--[if lt IE 9]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+<!--<![endif]-->
   <link rel="stylesheet" href="{{ url_for('pygments_css') }}">
   {# Icons and fonts #}
   <link rel="stylesheet" href="{{ url_for('static', filename='icons/css/killtheyak-icons.css') }}">
@@ -23,7 +28,7 @@
 {% block body %}
 
 
-<div id="layout" class="{% block content_class %}pure-g-r{% endblock content_class %}">
+<div id="layout" class="{% block content_class %}pure-g{% endblock content_class %}">
 
 {% include "_layouts/nav.html" %}
 
