@@ -11,19 +11,26 @@ from werkzeug.contrib.atom import AtomFeed
 from flask_flatpages import pygments_style_defs
 from .app import app, pages, freezer
 
+def _ensure_datetime(val):
+    """Ensure ``val`` is a datetime.datetime object, converting it
+    from a datetime.date if necessary.
+    """
+    ret = None
+    if isinstance(val, dt.date):
+        ret = dt.datetime.combine(val, dt.datetime.min.time())
+    elif isinstance(val, dt.datetime):
+        ret = val
+    else:
+        raise ValueError('Could not convert {} to a datetime.datetime')
+    return ret
 
-def sort_by_updated(pages):
+def _sort_by_updated(pages):
     '''Returns a list of pages sorted by the "updated" field.
 
     Exludes any of the pages in EXCLUDE_PAGES.
     '''
     def sort_key(page):
-        updated_date = page.meta['updated']
-        # convert date -> datetime if necessary
-        if isinstance(updated_date, dt.date):
-            updated_date = dt.datetime.combine(updated_date,
-                                                dt.datetime.min.time())
-        return updated_date
+        return _ensure_datetime(page.meta['updated'])
 
     return [page for page in sorted(pages,
                                     reverse=True,
@@ -33,12 +40,12 @@ def sort_by_updated(pages):
 EXCLUDE_PAGES = ['contribute', 'template', 'example-dep', "README"]
 
 ALL_PAGES = [p for p in pages if p.path not in EXCLUDE_PAGES]
-ALL_SORTED = sort_by_updated(ALL_PAGES)
+ALL_SORTED = _sort_by_updated(ALL_PAGES)
 tags = []
 for page in ALL_PAGES:
     tags.extend(page.meta.get('tags', []))
 tag_counter = Counter(tags)  # Dict of tag frequency
- # List of tags sorted by frequency
+# List of tags sorted by frequency
 SORTED_TAGS = sorted(tag_counter, reverse=True, key=lambda t: tag_counter[t])
 ALL_OS = ['macosx', 'linux', 'windows']
 
@@ -85,7 +92,7 @@ def os(os):
         os = 'MacOSX'
     else:
         os = os
-    latest = sort_by_updated(filtered)
+    latest = _sort_by_updated(filtered)
     return render_template('index.html', pages=latest, os=os,
                                 all_tags=SORTED_TAGS, all_os=ALL_OS)
 
@@ -93,7 +100,7 @@ def os(os):
 @app.route('/tag/<string:tag>/')
 def tag(tag):
     filtered = [p for p in pages if tag in p.meta.get('tags', [])]
-    latest = sort_by_updated(filtered)
+    latest = _sort_by_updated(filtered)
     return render_template('index.html', pages=latest, tag=tag,
                                 all_tags=SORTED_TAGS, all_os=ALL_OS)
 
@@ -108,18 +115,18 @@ def recent_feed():
         url=request.url_root)
     all_pages = [p for p in pages if p.path not in EXCLUDE_PAGES]
     if len(all_pages) >= 15:
-        latest = sort_by_updated(all_pages)[:15]
+        latest = _sort_by_updated(all_pages)[:15]
     else:
-        latest = sort_by_updated(all_pages)
+        latest = _sort_by_updated(all_pages)
 
     for page in latest:
         feed.add(page.meta['title'],
             page.meta.get('description', make_external(page.path)),
             content_type="html",
-            author=page.meta.get('contributors', ["Anonymous"])[0],
+            author=page.meta.get('contributors', ['Anonymous'])[0],
             url=make_external(page.path),
-            updated=page.meta['updated'],
-            published=page.meta['updated'])
+            updated=_ensure_datetime(page.meta['updated']),
+            published=_ensure_datetime(page.meta['updated']))
     return feed.get_response()
 
 
