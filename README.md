@@ -14,6 +14,41 @@ If you are interested in contributing content, see the [killtheyak-pages][] repo
 
 Kill The Yak is a small Flask app that uses Flask-FlatPages and Flask-Frozen to build the static content. The app itself lives in the [killtheyak/ directory](https://github.com/killtheyak/killtheyak.github.com/tree/master/killtheyak). Feel free to use, modify, or just browse around.
 
+### Requirements
+
+- Python 2.7
+- npm
+- coffee-script
+
+To install the necessary Python packages:
+
+```
+# After activating your virtualenv
+$ pip install -r requirements.txt
+```
+
+To install coffee-script with npm:
+
+```
+$ npm install
+```
+
+### Building the site
+
+To run the local development server
+
+```
+$ python manage.py runserver
+```
+
+You can browse to `http://localhost:5000/` to view the site.
+
+To build the static version of the site:
+
+```
+$ python manage.py build
+```
+
 ## License
 
 Copyrights to the guides are owned by their original authors and are licensed under the [Creative Commons Attribution-Share-Alike license][CC-SA].  The website is licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.com/blob/master/LICENSE).
