@@ -8,11 +8,13 @@
 
 [Kill The Yak][KillTheYak] is a website with guides that will reduce the time you spend yak shaving.
 
+## Contribute content
+
 If you are interested in contributing content, see the [killtheyak-pages][] repo.
 
 ## Hacking
 
-Kill The Yak is a small Flask app that uses Flask-FlatPages and Flask-Frozen to build the static content. The app itself lives in the [killtheyak/ directory](https://github.com/killtheyak/killtheyak.github.com/tree/master/killtheyak). Feel free to use, modify, or just browse around.
+Kill The Yak is a small Flask app that uses Flask-FlatPages and Flask-Frozen to build the static content. The app itself lives in the [killtheyak/ directory](https://github.com/killtheyak/killtheyak.github.io/tree/master/killtheyak). Feel free to use, modify, or just browse around.
 
 ### Requirements
 
@@ -51,9 +53,9 @@ $ python manage.py build
 
 ## License
 
-Copyrights to the guides are owned by their original authors and are licensed under the [Creative Commons Attribution-Share-Alike license][CC-SA].  The website is licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.com/blob/master/LICENSE).
+Copyrights to the guides are owned by their original authors and are licensed under the [Creative Commons Attribution-Share-Alike license][CC-SA].  The website is licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.io/blob/master/LICENSE).
 
 [KillTheYak]: http://killtheyak.com
 [killtheyak-pages]: https://github.com/killtheyak/killtheyak-pages
-[MIT License]: https://github.com/killtheyak/killtheyak.github.com/blob/master/LICENSE
+[MIT License]: https://github.com/killtheyak/killtheyak.github.io/blob/master/LICENSE
 [CC-SA]: https://creativecommons.org/licenses/by-sa/3.0/legalcode
