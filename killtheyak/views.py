@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from urlparse import urljoin
+import datetime as dt
+try:  # PY3
+    from urllib.parse import urljoin
+except ImportError:  # PY2
+    from urlparse import urljoin
 from collections import Counter
 from flask import render_template, request
 from werkzeug.contrib.atom import AtomFeed
 from flask_flatpages import pygments_style_defs
-from app import app, pages, freezer
+from .app import app, pages, freezer
 
 
 def sort_by_updated(pages):
@@ -13,9 +17,17 @@ def sort_by_updated(pages):
 
     Exludes any of the pages in EXCLUDE_PAGES.
     '''
+    def sort_key(page):
+        updated_date = page.meta['updated']
+        # convert date -> datetime if necessary
+        if isinstance(updated_date, dt.date):
+            updated_date = dt.datetime.combine(updated_date,
+                                                dt.datetime.min.time())
+        return updated_date
+
     return [page for page in sorted(pages,
                                     reverse=True,
-                                    key=lambda p: p.meta['updated'])
+                                    key=sort_key)
                 if page.path not in EXCLUDE_PAGES]
 
 EXCLUDE_PAGES = ['contribute', 'template', 'example-dep', "README"]

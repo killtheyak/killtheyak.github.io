@@ -1,30 +1,27 @@
 '''Unit testing'''
 
 from unittest import TestCase
-from nose.tools import *
+from nose.tools import *  # noqa
 from datetime import datetime
 
 from flask import Markup
 from flask_flatpages import FlatPages
-from ..main import app, pages
+from ..main import app
 from ..filters import fenced_code, github_urlize, lower_first, datetime_format
 
 
 class TestPages(TestCase):
 
     def setUp(self):
-        app.config['FLATPAGES_ROOT'] = 'test/test_pages'
         self.pages = FlatPages(app)
 
     def test_get_fenced_blocks(self):
-        page = self.pages.get('test-install-python')
+        page = self.pages.get('install-python')
         code = fenced_code(page.html)
         assert_not_in('Verified on MacOSX', code)
         assert_in('brew install python3', code)
 
 class TestFilters(TestCase):
-    def setUp(self):
-        pass
 
     def test_github_urlize(self):
         url1 = 'http://www.github.com/sloria'

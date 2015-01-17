@@ -58,7 +58,7 @@ def deploy():
 def test(unit=True, webtest=True):
     """Runs the tests.
     """
-    command = 'nosetests --verbosity=2'
+    command = 'nosetests killtheyak/test/ --verbosity=2'
     if not unit:
         command += ' --exclude="unit_tests'
     if not webtest:

@@ -8,10 +8,10 @@ This file is also used to run the app:
     python main.py
 """
 import os
-from app import app, pages, freezer
+from .app import app, pages, freezer  # noqa
 
-from views import *
-import filters
+from .views import *  # noqa
+import filters  # noqa
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
