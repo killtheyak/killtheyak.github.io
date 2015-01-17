@@ -75,38 +75,23 @@
 
 
 
+<h2>Adding content</h2>
 <ol>
 <li>Fork the <a href="https://github.com/killtheyak/killtheyak-pages">repo</a>.</li>
 <li>Copy <code>template.md</code> to a new file.</li>
 <li>Write your content. Commit.</li>
 <li>Send a pull request.</li>
 </ol>
-<p>Some things to note:</p>
+<h2>Notes</h2>
 <ul>
 <li>You can write in <a href="http://daringfireball.net/projects/markdown/">Markdown</a>.</li>
 <li>If your "recipe" has any dependencies, include them in <code>deps</code>. You can refer to other pages in the repo by writing their filename (without the extension), e.g. <code>deps: [install-homebrew]</code></li>
 <li>Content enclosed in <code>```</code> is important. When other pages list your page as a <code>dep</code>, the content between the <code>```</code> will be included on their page.</li>
-<li>Don't forget to add yourself as a contributor so you can get credit! You can write your name, or you can write your Github page URL. </li>
+<li>Don't forget to add yourself as a contributor so you can get credit! You can write your name, or you can write your Github page URL.</li>
 <li>You retain copyright to your work. By contributing a guide, you agree to publish under the <a href="license">Creative Commons Attribution-Share-Alike </a> license.</li>
 </ul>
-<p>For an example, here is what the template looks like:</p>
-<div class="codehilite"><pre>
-title: Create my new page
-updated: 2013-07-13
-description: This is the template page.
-os: [macosx, windows, linux]
-tags: []
-deps: [example-dep]
-contributors: ["http://www.github.com/YOU"]
-
-Write your content below.
-
-<pre>```
-# Content goes here!
-```</pre>
-</pre></div>
-
-<p>Click <a href="/template/">here</a> to see how it would get rendered.</p>
+<h2>Example</h2>
+<p>For an example, see <a href="https://raw.githubusercontent.com/killtheyak/killtheyak-pages/master/install-coffeescript.md">install-coffeescript.md</a>. The rendered result is here: <a href="http://killtheyak.com/install-coffeescript/">http://killtheyak.com/install-coffeescript/</a>.</p>
 </article>
 
 <div id="likeBtn"></div>
@@ -137,8 +122,15 @@ Write your content below.
   </div>
 
 
+</div><!-- end pure-g -->
 
-</div><!-- end pure-g-r  -->
+<div id="footer" class="pure-g">
+  <div class="pure-u-1">
+    <div class="footer-content">
+    
+    </div>
+  </div>
+</div>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
