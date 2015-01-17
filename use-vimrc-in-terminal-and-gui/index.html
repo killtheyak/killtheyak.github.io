@@ -119,22 +119,22 @@ home directory, you are able to use <strong>Vim</strong> on multiple computers.<
 <h2>Fonts and colors</h2>
 <p>The first snippet from my .vimrc file, shows howto test for the varoius
 environments.</p>
-<div class="codehilite"><pre><span class="s">&quot;Set the color scheme.</span>
-<span class="n">set</span> <span class="n">background</span><span class="o">=</span><span class="n">dark</span>
-<span class="k">if</span> <span class="n">has</span><span class="p">(</span><span class="s">&quot;gui_running&quot;</span><span class="p">)</span>    
-  <span class="n">let</span> <span class="n">base16colorspace</span><span class="o">=</span><span class="mi">256</span>
-  <span class="n">colorscheme</span> <span class="n">base16</span><span class="o">-</span><span class="n">tomorrow</span>
-  <span class="k">if</span> <span class="n">has</span><span class="p">(</span><span class="s">&quot;gui_macvim&quot;</span><span class="p">)</span>
-    <span class="n">set</span> <span class="n">guifont</span><span class="o">=</span><span class="n">Source</span><span class="err">\</span> <span class="n">Code</span><span class="err">\</span> <span class="n">Pro</span><span class="o">:</span><span class="n">h12</span>
-    <span class="n">set</span> <span class="n">mouse</span><span class="o">=</span><span class="n">a</span>
-  <span class="k">else</span>
-    <span class="n">set</span> <span class="n">guifont</span><span class="o">=</span><span class="n">Source</span><span class="err">\</span> <span class="n">Code</span><span class="err">\</span> <span class="n">Pro</span><span class="err">\</span> <span class="mi">10</span>
-    <span class="n">set</span> <span class="n">mouse</span><span class="o">=</span><span class="n">c</span>
-  <span class="n">end</span>
-<span class="k">else</span>
-  <span class="n">colorscheme</span> <span class="n">solarized</span>
-  <span class="n">set</span> <span class="n">mouse</span><span class="o">=</span><span class="n">c</span>
-<span class="n">end</span>
+<div class="codehilite"><pre>&quot;Set the color scheme.
+set background=dark
+if has(&quot;gui_running&quot;)    
+  let base16colorspace=256
+  colorscheme base16-tomorrow
+  if has(&quot;gui_macvim&quot;)
+    set guifont=Source\ Code\ Pro:h12
+    set mouse=a
+  else
+    set guifont=Source\ Code\ Pro\ 10
+    set mouse=c
+  end
+else
+  colorscheme solarized
+  set mouse=c
+end
 </pre></div>
 
 
@@ -148,15 +148,15 @@ environments.</p>
 </ul>
 <p>Then symlink .vimlocal in your home folder to the appropriate one.</p>
 <p>The snippet below is from the very bottom of my .vimrc file.</p>
-<div class="codehilite"><pre><span class="n">source</span> <span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">vimlocal</span>
+<div class="codehilite"><pre><span class="x">source </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.vimlocal</span>
 </pre></div>
 
 
 <h2>Sample .vimlocal</h2>
 <p><em>I try to keep my .vimlocal file really small.</em></p>
-<div class="codehilite"><pre><span class="s">&quot;Set the initial window size</span>
-<span class="n">set</span> <span class="n">lines</span><span class="o">=</span><span class="mi">43</span>
-<span class="n">set</span> <span class="n">columns</span><span class="o">=</span><span class="mi">189</span>
+<div class="codehilite"><pre>&quot;Set the initial window size
+set lines=43
+set columns=189
 </pre></div>
 
 

@@ -109,13 +109,16 @@ Contributors:
 ,&nbsp;
 
 <a href="https://github.com/tristaneuan">tristaneuan</a>
+,&nbsp;
+
+<a href="https://github.com/TayHobbs">TayHobbs</a>
 
 
 
 
 
 
-<span class='date date-updated'>Updated: 05/18/14</span>
+<span class='date date-updated'>Updated: 01/17/15</span>
 
 
 
@@ -126,6 +129,7 @@ Contributors:
 
 
 <ul>
+<li>Updated 2015-01-17: Update paths to postgres binary in Postgres.app. Thanks @TayHobbs.</li>
 <li>Updated 2014-05-18: Fix <code>createdb</code> listing. Thanks @trastaneuan. Also fixed the footnote re: adding Postres.app's binaries to <code>$PATH</code>.</li>
 <li>Updated 2014-03-29: Fix <code>createuser</code> and <code>createdb</code> commands. Thanks @bgshiller.</li>
 </ul>
@@ -134,14 +138,14 @@ Contributors:
 <p>Sidenote for MacOSX users: I have found <a href="http://postgresapp.com/">Postgres.app</a> to be the simplest option<sup id="fnref:path-warning"><a class="footnote-ref" href="#fn:path-warning" rel="footnote">1</a></sup>. Just download and run the app.</p>
 <div class="codehilite"><pre><span class="c"># check that you successfully installed postgres</span>
 <span class="nv">$ </span>which psql
-/Applications/Postgres.app/Contents/Versions/9.3/bin/psql
+/Applications/Postgres.app/Contents/Versions/9.4/bin/psql
 </pre></div>
 
 
 <h2>Create a new user and a database</h2>
 <div class="codehilite"><pre><span class="c"># Create a new user</span>
 <span class="nv">$ </span>sudo -u postgres createuser -s <span class="nv">$USER</span>
-Enter password <span class="k">for </span>new role:
+Enter password <span class="k">for</span> new role:
 Enter it again:
 Shall the new role be a superuser? <span class="o">(</span>y/n<span class="o">)</span> n
 Shall the new role be allowed to create databases <span class="o">(</span>y/n<span class="o">)</span> y
@@ -205,7 +209,7 @@ Shall the new role be allowed to create more new roles? <span class="o">(</span>
 <hr />
 <ol>
 <li id="fn:path-warning">
-<p><strong>IMPORTANT</strong>: If you use Postgres.app, make sure to add its binaries directory to your path. You can do so by adding <code>export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"</code> to your <code>.bashrc</code> (or <code>.zshrc</code>, <code>.bash_profile</code>, etc.)&#160;<a class="footnote-backref" href="#fnref:path-warning" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><strong>IMPORTANT</strong>: If you use Postgres.app, make sure to add its binaries directory to your path. You can do so by adding <code>export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"</code> to your <code>.bashrc</code> (or <code>.zshrc</code>, <code>.bash_profile</code>, etc.)&#160;<a class="footnote-backref" href="#fnref:path-warning" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

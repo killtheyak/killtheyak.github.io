@@ -40,6 +40,7 @@
 .codehilite .nv { color: #003333 } /* Name.Variable */
 .codehilite .ow { color: #000000; font-weight: bold } /* Operator.Word */
 .codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+.codehilite .mb { color: #FF6600 } /* Literal.Number.Bin */
 .codehilite .mf { color: #FF6600 } /* Literal.Number.Float */
 .codehilite .mh { color: #FF6600 } /* Literal.Number.Hex */
 .codehilite .mi { color: #FF6600 } /* Literal.Number.Integer */
