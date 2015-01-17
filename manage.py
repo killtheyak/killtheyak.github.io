@@ -51,7 +51,10 @@ def build():
 def deploy():
     '''Deploys the site.'''
     build()
+    os.system('git commit -am "Update pages"')
+    print('Pushing to GitHub...')
     os.system('git push origin master')
+    print('...done.')
 
 
 @manager.command

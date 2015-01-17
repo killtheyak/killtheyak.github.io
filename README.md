@@ -61,6 +61,12 @@ $ git commit -am "Update pages"
 $ git push
 ```
 
+Or do it all in one go:
+
+```
+$ python manage.py deploy
+```
+
 ## License
 
 Copyrights to the guides are owned by their original authors and are licensed under the [Creative Commons Attribution-Share-Alike license][CC-SA].  The website is licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.io/blob/master/LICENSE).
