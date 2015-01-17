@@ -14,7 +14,7 @@ If you are interested in contributing content, see the [killtheyak-pages][] repo
 
 ## Hacking
 
-Kill The Yak is a small Flask app that uses Flask-FlatPages and Flask-Frozen to build the static content. The app itself lives in the [killtheyak/ directory](https://github.com/killtheyak/killtheyak.github.io/tree/master/killtheyak). Feel free to use, modify, or just browse around.
+Kill The Yak is a small Flask app that uses [Flask-FlatPages](https://github.com/SimonSapin/Flask-FlatPages) and [Frozen-Flask](https://github.com/SimonSapin/Frozen-Flask) to build the static content. The app itself lives in the [killtheyak/ directory](https://github.com/killtheyak/killtheyak.github.io/tree/master/killtheyak). Feel free to use, modify, or just browse around.
 
 ### Requirements
 
