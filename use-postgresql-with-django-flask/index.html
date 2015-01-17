@@ -13,8 +13,13 @@
       rel="alternate"
       title="Kill The Yak: Recent Guides"
       type="application/atom+xml">
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
-  
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<!--[if lt IE 9]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+<!--<![endif]-->
   <link rel="stylesheet" href="/pygments.css">
   
   <link rel="stylesheet" href="/static/icons/css/killtheyak-icons.css">
@@ -27,7 +32,7 @@
 
 
 
-<div id="layout" class="pure-g-r">
+<div id="layout" class="pure-g">
 
 <div class="pure-u">
 <nav class="pure-menu pure-menu-open pure-menu-horizontal">
@@ -129,8 +134,8 @@ Contributors:
 
 
 <ul>
-<li>Updated 2015-01-17: Update paths to postgres binary in Postgres.app. Thanks @TayHobbs.</li>
-<li>Updated 2014-05-18: Fix <code>createdb</code> listing. Thanks @trastaneuan. Also fixed the footnote re: adding Postres.app's binaries to <code>$PATH</code>.</li>
+<li>Updated 2015-01-17: Update paths to <code>psql</code> binary in Postgres.app. Thanks @TayHobbs.</li>
+<li>Updated 2014-05-18: Fix <code>createdb</code> listing. Thanks @trastaneuan. Also fixed the footnote re: adding Postgres.app's binaries to <code>$PATH</code>.</li>
 <li>Updated 2014-03-29: Fix <code>createuser</code> and <code>createdb</code> commands. Thanks @bgshiller.</li>
 </ul>
 <h2>Install Postgres</h2>
