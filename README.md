@@ -51,6 +51,16 @@ To build the static version of the site:
 $ python manage.py build
 ```
 
+### Deployment
+
+To deploy to GitHub Pages:
+
+```
+$ python manage.py build
+$ git commit -am "Update pages"
+$ git push
+```
+
 ## License
 
 Copyrights to the guides are owned by their original authors and are licensed under the [Creative Commons Attribution-Share-Alike license][CC-SA].  The website is licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.io/blob/master/LICENSE).
