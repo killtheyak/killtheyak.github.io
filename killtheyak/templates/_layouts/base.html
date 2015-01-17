@@ -36,9 +36,16 @@
     <div class="content">{% block content %}{% endblock %}</div>
   </div>
 
-{% block footer %}{% endblock footer %}
 
-</div><!-- end pure-g-r  -->
+</div><!-- end pure-g -->
+
+<div id="footer" class="pure-g">
+  <div class="pure-u-1">
+    <div class="footer-content">
+    {% block footer %}{% endblock footer %}
+    </div>
+  </div>
+</div>
 
 {# Javascript #}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>

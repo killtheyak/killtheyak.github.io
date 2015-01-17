@@ -16,7 +16,7 @@
     position: relative;
 }
 
-.content {
+.content, .footer-content{
     margin: 0 0;
     width: 80%;
 }
