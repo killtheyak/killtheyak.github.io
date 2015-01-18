@@ -14,22 +14,26 @@ If you are interested in contributing content, see the [killtheyak-pages][] repo
 
 ## Hacking
 
-Kill The Yak is a small Flask app that uses [Flask-FlatPages](https://github.com/SimonSapin/Flask-FlatPages) and [Frozen-Flask](https://github.com/SimonSapin/Frozen-Flask) to build the static content. The app itself lives in the [killtheyak/ directory](https://github.com/killtheyak/killtheyak.github.io/tree/master/killtheyak). Feel free to use, modify, or just browse around.
+Kill The Yak is a small Flask app that uses [Flask-FlatPages](https://github.com/SimonSapin/Flask-FlatPages) and [Frozen-Flask](https://github.com/SimonSapin/Frozen-Flask) to build the static content. The app itself lives in the [killtheyak/ directory](https://github.com/killtheyak/killtheyak.github.io/tree/app/killtheyak). Feel free to use, modify, or just browse around.
 
-### Requirements
+### Setting up
 
-- Python 2.7
-- npm
-- coffee-script
+Clone the repo
 
-To install the necessary Python packages:
+```
+$ git clone https://github.com/killtheyak/killtheyak.github.io.git --recursive
+```
+
+The `--recursive` option clones the `killtheyak-pages` submodule.
+
+Install the necessary Python packages (requires Python 2.7 with pip):
 
 ```
 # After activating your virtualenv
 $ pip install -r requirements.txt
 ```
 
-To install coffee-script with npm:
+Install coffee-script with npm:
 
 ```
 $ npm install
@@ -65,9 +69,9 @@ This will build the site, commit to the `master` branch, and push to GitHub.
 
 ## License
 
-Copyrights to the guides are owned by their original authors and are licensed under the [Creative Commons Attribution-Share-Alike license][CC-SA].  The website is licensed under the [MIT License](https://github.com/killtheyak/killtheyak.github.io/blob/master/LICENSE).
+Copyrights to the guides are owned by their original authors and are licensed under the [Creative Commons Attribution-Share-Alike license][CC-SA].  The website is licensed under the [MIT License][].
 
 [KillTheYak]: http://killtheyak.com
 [killtheyak-pages]: https://github.com/killtheyak/killtheyak-pages
-[MIT License]: https://github.com/killtheyak/killtheyak.github.io/blob/master/LICENSE
+[MIT License]: https://github.com/killtheyak/killtheyak.github.io/blob/app/LICENSE
 [CC-SA]: https://creativecommons.org/licenses/by-sa/3.0/legalcode
