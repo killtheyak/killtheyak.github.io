@@ -2,11 +2,15 @@
 '''Management commands.'''
 
 import os
+import shutil
+
 from flask.ext.script import Manager
 from killtheyak.main import app, freezer
 
 manager = Manager(app)
+build_dir = app.config['FREEZER_DESTINATION']
 
+HERE = os.path.dirname(os.path.abspath(__file__))
 
 @manager.command
 def install():
@@ -41,17 +45,20 @@ def coffee(watch=False):
 
 @manager.command
 def build():
-    '''Builds the static files.'''
+    """Builds the static files."""
     coffee()  # Compile coffeescript
     print("Freezing it up! Brr...")
     freezer.freeze()  # Freezes the project to build/
+    print('Copying CNAME...')
+    cname = os.path.join(HERE, 'CNAME')
+    shutil.copyfile(cname, os.path.join(build_dir, 'CNAME'))
+    print('...done')
 
 
 @manager.command
 def deploy(push=True):
     '''Deploys the site to GitHub Pages.'''
     build()
-    build_dir = app.config['FREEZER_DESTINATION']
     print('Deploying to GitHub pages...')
     command = 'ghp-import -b master '
     if push:
