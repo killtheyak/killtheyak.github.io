@@ -60,7 +60,7 @@ def deploy(push=True):
     '''Deploys the site to GitHub Pages.'''
     build()
     print('Deploying to GitHub pages...')
-    command = 'ghp-import -b master '
+    command = 'ghp-import -b master -m "[deploy] Build" '
     if push:
         command += '-p '
     command += build_dir
