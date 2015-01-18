@@ -1,9 +1,0 @@
-<div class="pure-menu pure-menu-open pure-menu-horizontal os-menu">
-    <span class="pure-menu-heading">OS: </span>
-    <ul class="os-list">
-        {% for os in oss %}
-        <li><a href="{{ url_for('os', os=os) }}"><i class="icon-{{ os }}"></i>{{ os }}</a></li>
-        {% if not loop.last %}::{% endif %}
-        {% endfor %}
-    </ul>
-</div>
