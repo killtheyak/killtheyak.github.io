@@ -51,21 +51,17 @@ To build the static version of the site:
 $ python manage.py build
 ```
 
+This will build the static site to the `build/` directory.
+
 ### Deployment
 
 To deploy to GitHub Pages:
 
 ```
-$ python manage.py build
-$ git commit -am "Update pages"
-$ git push
-```
-
-Or do it all in one go:
-
-```
 $ python manage.py deploy
 ```
+
+This will build the site, commit to the `master` branch, and push to GitHub.
 
 ## License
 
