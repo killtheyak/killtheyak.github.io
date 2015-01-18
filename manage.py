@@ -48,14 +48,17 @@ def build():
 
 
 @manager.command
-def deploy():
-    '''Deploys the site.'''
+def deploy(push=True):
+    '''Deploys the site to GitHub Pages.'''
     build()
-    os.system('git commit -am "[deploy] Update pages"')
-    print('Pushing to GitHub...')
-    os.system('git push origin master')
-    print('...done.')
-
+    build_dir = app.config['FREEZER_DESTINATION']
+    print('Deploying to GitHub pages...')
+    command = 'ghp-import -b master '
+    if push:
+        command += '-p '
+    command += build_dir
+    os.system(command)
+    print('...done')
 
 @manager.command
 def test(unit=True, webtest=True):

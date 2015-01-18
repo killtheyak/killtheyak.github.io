@@ -13,8 +13,8 @@ def parent_dir(path):
     return os.path.abspath(os.path.join(path, os.pardir))
 
 PROJECT_ROOT = parent_dir(PACKAGE_DIR)
-# Necessary for Github pages
-FREEZER_DESTINATION = PROJECT_ROOT
+# Where to build static files to
+FREEZER_DESTINATION = os.path.join(PROJECT_ROOT, 'build')
 FREEZER_REMOVE_EXTRA_FILES = False  # IMPORTANT: If this is True, all app files
                                     # will be deleted
 FREEZER_DESTINATION_IGNORE = ['*.coffee']
@@ -25,7 +25,7 @@ FLATPAGES_ROOT = os.path.join(PROJECT_ROOT, 'killtheyak-pages')
 FLATPAGES_EXTENSION = '.md'
 
 BASE_URL = "http://killtheyak.com"
-GITHUB_REPO = "http://www.github.com/killtheyak/killtheyak.github.io"
+GITHUB_REPO = "http://www.github.com/killtheyak/killtheyak.github.com"
 PAGES_REPO = "http://www.github.com/killtheyak/killtheyak-pages"
 RAW_PAGES_PREFIX = "https://raw.github.com/killtheyak/killtheyak-pages/master/"
 

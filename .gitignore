@@ -10,3 +10,5 @@ _mailinglist
 .tox
 
 node_modules
+
+build/
