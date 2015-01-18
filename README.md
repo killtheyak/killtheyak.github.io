@@ -33,12 +33,6 @@ Install the necessary Python packages (requires Python 2.7 with pip):
 $ pip install -r requirements.txt
 ```
 
-Install coffee-script with npm:
-
-```
-$ npm install
-```
-
 ### Building the site
 
 To run the local development server

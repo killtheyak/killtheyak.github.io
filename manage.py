@@ -17,36 +17,9 @@ def install():
     '''Installs all required packages.'''
     os.system('pip install -U -r requirements.txt')
 
-
-@manager.command
-def coffee(watch=False):
-    '''Compiles Coffeescript files.
-
-    To do a one-time compile, run:
-        >> ./manage.py coffee
-
-    Enters watch mode when you run:
-        >> ./manage.py coffee -w
-    '''
-    javascript_dir = app.config['JAVASCRIPT_DIR']
-    coffee_dir = app.config['COFFEE_DIR']
-    base_command = 'coffee -o {} '.format(javascript_dir)
-    coffee_files = "{}/*.coffee".format(coffee_dir)
-    if watch:
-        print("Watching .coffee files in {} to {}"
-                        .format(coffee_dir, javascript_dir))
-        command = base_command + '-cw ' + coffee_files
-    else:
-        print("Compiling .coffee files in {} and compiling them to {}"
-                        .format(coffee_dir, javascript_dir))
-        command = base_command + '-c ' + coffee_files
-    os.system(command)
-
-
 @manager.command
 def build():
     """Builds the static files."""
-    coffee()  # Compile coffeescript
     print("Freezing it up! Brr...")
     freezer.freeze()  # Freezes the project to build/
     print('Copying CNAME...')

@@ -26,8 +26,3 @@ BASE_URL = 'http://killtheyak.com'
 GITHUB_REPO = 'http://www.github.com/killtheyak/killtheyak.github.io'
 PAGES_REPO = 'http://www.github.com/killtheyak/killtheyak-pages'
 RAW_PAGES_PREFIX = "https://raw.github.com/killtheyak/killtheyak-pages/master/"
-
-# Javascript directory
-JAVASCRIPT_DIR = os.path.join(PACKAGE_DIR, 'static', 'js')
-# Coffeescript directory
-COFFEE_DIR = os.path.join(PACKAGE_DIR, 'static', 'coffee')
