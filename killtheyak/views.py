@@ -58,8 +58,7 @@ def pages_url_generator():
 
 @app.route('/')
 def home():
-    latest = ALL_SORTED[:15]
-    return render_template('index.html', pages=latest,
+    return render_template('index.html', pages=ALL_SORTED,
             all_tags=SORTED_TAGS, all_os=ALL_OS)
 
 
