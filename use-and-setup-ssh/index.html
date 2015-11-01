@@ -1,0 +1,231 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kill The Yak
+| setup and use SSH
+</title>
+  <meta name="description" content="
+    This is the template page.
+">
+  <link type="text/plain" rel="author" href="/static/humans.txt" />
+  <link href="/feed/recent.atom"
+      rel="alternate"
+      title="Kill The Yak: Recent Guides"
+      type="application/atom+xml">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<!--[if lt IE 9]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+<!--<![endif]-->
+  <link rel="stylesheet" href="/pygments.css">
+  
+  <link rel="stylesheet" href="/static/icons/css/killtheyak-icons.css">
+  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/static/css/style.css">
+  
+
+</head>
+<body class="">
+
+
+
+<div id="layout" class="pure-g">
+
+<div class="pure-u">
+<nav class="pure-menu pure-menu-open pure-menu-horizontal navtop">
+    <a href="/" class="pure-menu-heading brand">Kill The Yak</a>
+    <ul>
+        <li><a href="/guides/">guides</a></li>
+        <li><a class='contribute' href="/contribute/">contribute</a></li>
+        <li><a href="http://www.github.com/killtheyak/">source</a></li>
+        <li><a href="/feed/recent.atom"><i class="icon-rss"></i></a></li>
+    </ul>
+        <span class='tagline'><a href="http://projects.csail.mit.edu/gsb/old-archive/gsb-archive/gsb2000-02-11.html">Yak shaving</a> sucks. So let's kill the yak.</span>
+
+</nav>
+</div>
+
+  <div class="pure-u-1">
+    <div class="content">
+<article>
+<h1 class='muted'>All I want to do is. . .</h1>
+<h1 class='page-title'>. . .setup and use SSH.</h1>
+
+
+    
+        <div class="pure-menu pure-menu-open pure-menu-horizontal os-menu">
+    <span class="pure-menu-heading">OS: </span>
+    <ul class="os-list">
+        
+        <li><a href="/os/macosx/"><i class="icon-macosx"></i>macosx</a></li>
+        ::
+        
+        <li><a href="/os/linux/"><i class="icon-linux"></i>linux</a></li>
+        
+        
+    </ul>
+</div>
+    
+
+
+
+
+    
+        <div class="pure-menu pure-menu-open pure-menu-horizontal tag-menu">
+    <span class="pure-menu-heading">Tags: </span>
+    <ul class="tag-list">
+        
+            <li><a href="/tag/ssh/">ssh</a></li>
+            
+        
+    </ul>
+</div>
+    
+
+<br>
+
+This is the template page.
+
+
+<hr>
+
+
+
+
+<span class="contributors-list">
+Contributors:
+
+<a href="http://www.github.com/daschwa">daschwa</a>
+
+
+
+
+
+
+<span class='date date-updated'>Updated: 10/10/15</span>
+
+
+
+
+
+
+<hr>
+
+
+<h1>Genarating and sharing public key</h1>
+<p>How to create a new public key for ssh and add it to the remote machine.</p>
+<p>generate key:</p>
+<div class="codehilite"><pre>ssh-keygen -t rsa
+</pre></div>
+
+
+<p>Append it to the server: </p>
+<div class="codehilite"><pre>cat ~/.ssh/id_rsa.pub | ssh user@server &quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;
+</pre></div>
+
+
+<p>Copy a file to the remote machine:</p>
+<div class="codehilite"><pre>scp ~/path/to/file user@server:/path/on/server
+</pre></div>
+
+
+<p>Copy a file from the remote machine:</p>
+<div class="codehilite"><pre>scp user@server:/path/to/file ~/path/on/local
+</pre></div>
+
+
+<h1>SSH Config</h1>
+<p>Creating a <code>~/.ssh/config</code> file. Having aliases for SSH is a dream.</p>
+<div class="codehilite"><pre>    Host somealias
+        HostName example.com
+        Port 2222
+        User someuser
+        IdentityFile  ~/.ssh/id_example
+        IdentitiesOnly yes
+
+    Host anotheralias
+        HostName 192.168.33.10
+        User anotheruser
+        PubkeyAuthentication no
+
+    How aws
+        HostName some.address.ec2.aws.com
+        User awsuser
+        IdentityFile  ~/.ssh/aws_identity.pem
+        IdentitiesOnly yes
+</pre></div>
+
+
+<p>Usage: <code>ssh somealias</code></p>
+<ul>
+<li>HostName - The server host (domain or ipaddress)</li>
+<li>Port - The port to use when connecting</li>
+<li>User - The username to log in with</li>
+<li>IdentityFile - The SSH key identity to use to log in with, if using SSH key access</li>
+<li>IdentitiesOnly - "Yes" to specify only attempting to log in via SSH key</li>
+<li>PubkeyAuthentication - "No" to specify you wish to bypass attempting SSH key authentication</li>
+</ul>
+</article>
+
+<div id="likeBtn"></div>
+
+
+
+<p>Raw: <a href="https://raw.github.com/killtheyak/killtheyak-pages/master/use-and-setup-ssh.md">use-and-setup-ssh.md</a></p>
+
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_reddit"></a>
+<a class="addthis_button_hackernews"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51e268c25bf9bae5"></script>
+
+
+</span>
+
+<hr>
+<div class="suggestions">
+<p class="">If you have suggestions, corrections, or content to contribute, fork us at our <a href="http://www.github.com/killtheyak/killtheyak.github.io">Github repo</a> or <a href="http://www.github.com/killtheyak/killtheyak.github.io/issues/new">open an issue</a>.</p>
+<p>Licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">CC-SA</a>.</p>
+</div>
+
+</div>
+  </div>
+
+
+</div><!-- end pure-g -->
+
+<div id="footer" class="pure-g">
+  <div class="pure-u-1">
+    <div class="footer-content">
+    
+    </div>
+  </div>
+</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/static/js/script.js"></script>
+<!-- end scripts -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39544608-3', 'killtheyak.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

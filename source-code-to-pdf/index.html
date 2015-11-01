@@ -2,8 +2,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kill The Yak | No-BS guides to get your project rolling</title>
-  <meta name="description" content="No-BS guides to get your project going">
+  <title>Kill The Yak
+| turn source code into a PDF
+</title>
+  <meta name="description" content="
+    For those times when you need to print your code.
+">
   <link type="text/plain" rel="author" href="/static/humans.txt" />
   <link href="/feed/recent.atom"
       rel="alternate"
@@ -46,16 +50,13 @@
 
   <div class="pure-u-1">
     <div class="content">
+<article>
+<h1 class='muted'>All I want to do is. . .</h1>
+<h1 class='page-title'>. . .turn source code into a PDF.</h1>
 
-<div class="hero">
 
-<h1 class="pure-u-1 l-centered page-title">
     
-    Guides  tagged "ops" 
-</div><!-- end hero-->
-
-
-    <div class="pure-menu pure-menu-open pure-menu-horizontal os-menu">
+        <div class="pure-menu pure-menu-open pure-menu-horizontal os-menu">
     <span class="pure-menu-heading">OS: </span>
     <ul class="os-list">
         
@@ -63,149 +64,122 @@
         ::
         
         <li><a href="/os/linux/"><i class="icon-linux"></i>linux</a></li>
-        ::
-        
-        <li><a href="/os/windows/"><i class="icon-windows"></i>windows</a></li>
         
         
     </ul>
 </div>
+    
 
 
 
-    <div class="pure-menu pure-menu-open pure-menu-horizontal tag-menu">
+
+    
+        <div class="pure-menu pure-menu-open pure-menu-horizontal tag-menu">
     <span class="pure-menu-heading">Tags: </span>
     <ul class="tag-list">
         
-            <li><a href="/tag/python/">python</a></li>
-            ::
-        
-            <li><a href="/tag/django/">django</a></li>
-            ::
-        
-            <li><a href="/tag/scientific/">scientific</a></li>
-            ::
-        
-            <li><a href="/tag/git/">git</a></li>
+            <li><a href="/tag/pdf/">pdf</a></li>
             ::
         
             <li><a href="/tag/pandoc/">pandoc</a></li>
             ::
         
-            <li><a href="/tag/flask/">flask</a></li>
-            ::
-        
-            <li><a href="/tag/coffeescript/">coffeescript</a></li>
-            ::
-        
-            <li><a href="/tag/ncmpcpp/">ncmpcpp</a></li>
-            ::
-        
-            <li><a href="/tag/mpd/">mpd</a></li>
-            ::
-        
-            <li><a href="/tag/mpc/">mpc</a></li>
-            ::
-        
             <li><a href="/tag/a2ps/">a2ps</a></li>
             ::
         
-            <li><a href="/tag/ed/">ed</a></li>
-            ::
-        
-            <li><a href="/tag/vim/">vim</a></li>
-            ::
-        
             <li><a href="/tag/pdftk/">pdftk</a></li>
-            ::
-        
-            <li><a href="/tag/compilers/">compilers</a></li>
-            ::
-        
-            <li><a href="/tag/imagemagick/">imagemagick</a></li>
-            ::
-        
-            <li><a href="/tag/ops/">ops</a></li>
-            ::
-        
-            <li><a href="/tag/ssh/">ssh</a></li>
-            ::
-        
-            <li><a href="/tag/wget/">wget</a></li>
-            ::
-        
-            <li><a href="/tag/ifconfig/">ifconfig</a></li>
-            ::
-        
-            <li><a href="/tag/bash/">bash</a></li>
-            ::
-        
-            <li><a href="/tag/ffmpeg/">ffmpeg</a></li>
-            ::
-        
-            <li><a href="/tag/pdf/">pdf</a></li>
             
         
     </ul>
 </div>
-
-
-
-
-
-
-<h2>All I want to do is. . .</h2>
-
-
-    <ul class="pages-list">
-
-    <li>
-        . . .<a href="/schedule-jobs-launchd/">schedule jobs in MacOSX (a guide to launchd)</a>.
-        
-            
-    
-        <i class="muted icon-macosx"></i>
     
 
-        
-        
-            <span class='tags muted'>
-            <small>
-            :: tags:
-            
-                <a class='tag' href="/tag/ops/">ops</a>
-                
-            
-            </small>
-            </span>
-        
-        
-            <span class="date muted">
-               :: <small>Updated 07/17/13</small>
-            </span>
+<br>
 
-        
-    </li>
+For those times when you need to print your code.
 
-</ul>
+
+<hr>
+
+
+
+
+<span class="contributors-list">
+Contributors:
+
+<a href="http://www.github.com/daschwa">daschwa</a>
 
 
 
 
 
 
-<h2>
-    
-        tagged <a href="/tag/ops/">ops</a>
-    .
-<span class='clear-filter muted'>
-    <a class='clear-filter' href="/guides/">
-    <small>[clear filters]</small>
-</a></span>
-
-</h2>
+<span class='date date-updated'>Updated: 10/10/15</span>
 
 
+
+
+
+
+<hr>
+
+
+<p>Turn source code into a PDF.</p>
+<ol>
+<li>Use <code>Org-Mode</code></li>
+<li>Use <code>Pandoc</code></li>
+<li>Use <code>a2ps</code> and <code>ps2pdf</code></li>
+</ol>
+<h1>Org-Mode</h1>
+<div class="codehilite"><pre>C-x C-e l p
+</pre></div>
+
+
+<h1>Pandoc</h1>
+<div class="codehilite"><pre>pandoc -s example.py -o example.pdf
+</pre></div>
+
+
+<h1>as2ps</h1>
+<h2>Convert all .cpp files in a directory</h2>
+<div class="codehilite"><pre><span class="x">for i in ls *.cpp; do a2ps -o </span><span class="p">$</span><span class="nv">i</span><span class="p">.</span><span class="nv">ps</span><span class="x"> </span><span class="p">$</span><span class="nv">i</span><span class="x">; done;</span>
+</pre></div>
+
+
+<h2>Convert all .ps files to pdf</h2>
+<div class="codehilite"><pre><span class="x">for i in ls *.ps; do ps2pdf </span><span class="p">$</span><span class="nv">i</span><span class="x">; done;</span>
+</pre></div>
+
+
+<p>(May need to remove empty side-effect <code>ls.pdf</code> file).</p>
+<h2>Concatenate all output pdf files</h2>
+<div class="codehilite"><pre>pdftk *.pdf cat output merged.pdf
+</pre></div>
+</article>
+
+<div id="likeBtn"></div>
+
+
+
+<p>Raw: <a href="https://raw.github.com/killtheyak/killtheyak-pages/master/source-code-to-pdf.md">source-code-to-pdf.md</a></p>
+
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_reddit"></a>
+<a class="addthis_button_hackernews"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google_plusone_share"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-51e268c25bf9bae5"></script>
+
+
+</span>
+
+<hr>
+<div class="suggestions">
+<p class="">If you have suggestions, corrections, or content to contribute, fork us at our <a href="http://www.github.com/killtheyak/killtheyak.github.io">Github repo</a> or <a href="http://www.github.com/killtheyak/killtheyak.github.io/issues/new">open an issue</a>.</p>
+<p>Licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode">CC-SA</a>.</p>
+</div>
 
 </div>
   </div>
@@ -217,10 +191,6 @@
   <div class="pure-u-1">
     <div class="footer-content">
     
-<footer>
-    Website by <a href="http://www.stevenloria.com">Steven Loria</a>
-</footer>
-
     </div>
   </div>
 </div>
