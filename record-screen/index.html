@@ -3,10 +3,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kill The Yak
-| use submodules in git
+| record your screen on OS X
 </title>
   <meta name="description" content="
-    Helpful commands for working with git submodules.
+    How to record your Mac&#39;s desktop with minimal additional software
 ">
   <link type="text/plain" rel="author" href="/static/humans.txt" />
   <link href="/feed/recent.atom"
@@ -52,7 +52,7 @@
     <div class="content">
 <article>
 <h1 class='muted'>All I want to do is. . .</h1>
-<h1 class='page-title'>. . .use submodules in git.</h1>
+<h1 class='page-title'>. . .record your screen on OS X.</h1>
 
 
     
@@ -61,12 +61,6 @@
     <ul class="os-list">
         
         <li><a href="/os/macosx/"><i class="icon-macosx"></i>macosx</a></li>
-        ::
-        
-        <li><a href="/os/linux/"><i class="icon-linux"></i>linux</a></li>
-        ::
-        
-        <li><a href="/os/windows/"><i class="icon-windows"></i>windows</a></li>
         
         
     </ul>
@@ -75,22 +69,10 @@
 
 
 
-
-    
-        <div class="pure-menu pure-menu-open pure-menu-horizontal tag-menu">
-    <span class="pure-menu-heading">Tags: </span>
-    <ul class="tag-list">
-        
-            <li><a href="/tag/git/">git</a></li>
-            
-        
-    </ul>
-</div>
-    
 
 <br>
 
-Helpful commands for working with git submodules.
+How to record your Mac&#39;s desktop with minimal additional software
 
 
 <hr>
@@ -108,7 +90,7 @@ Contributors:
 
 
 
-<span class='date date-updated'>Updated: 10/10/15</span>
+<span class='date date-updated'>Updated: 12/10/15</span>
 
 
 
@@ -118,83 +100,44 @@ Contributors:
 <hr>
 
 
-<p>How to use submodules in <code>git</code>.</p>
-<h1>Cloning Repository with Submodules</h1>
-<p>There are two ways to do this:</p>
-<p>First, clone the repository without fetching the submodule's files: </p>
-<div class="codehilite"><pre>git clone &lt;repository&gt;
-</pre></div>
-
-
-<p>Then, fetch all the submodule data:</p>
-<div class="codehilite"><pre>git submodule init
-git submodule update
-</pre></div>
-
-
-<p>Or, you can simply do this all at once with:</p>
-<div class="codehilite"><pre>git clone --recursive &lt;repository&gt;
-</pre></div>
-
-
-<h1>Removing Submodule</h1>
-<p>Taken from: <a href="http://davidwalsh.name/git-remove-submodule">David Walsh's Remove a Submodule within git </a></p>
-<ol>
-<li>Delete the relevant section from the <code>.gitmodules</code> file.  The section would look similar to:</li>
-</ol>
-<div class="codehilite"><pre><span class="k">[submodule &quot;vendor&quot;]</span>
-    <span class="na">path</span> <span class="o">=</span> <span class="s">vendor</span>
-<span class="s">    url = git://github.com/some-user/some-repo.git</span>
-</pre></div>
-
-
-<ol>
-<li>Stage the <code>.gitmodules</code> changes via command line using:</li>
-</ol>
-<div class="codehilite"><pre>git add .gitmodules
-</pre></div>
-
-
-<ol>
-<li>Delete the relevant section from <code>.git/config</code>, which will look like:</li>
-</ol>
-<div class="codehilite"><pre><span class="k">[submodule &quot;vendor&quot;]</span>
-    <span class="na">url</span> <span class="o">=</span> <span class="s">git://github.com/some-user/some-repo.git</span>
-</pre></div>
-
-
-<ol>
-<li>Run:</li>
-</ol>
-<div class="codehilite"><pre>git rm --cached path/to/submodule
-</pre></div>
-
-
-<p>Don't include a trailing slash, that will lead to an error.</p>
-<ol>
-<li>Run:</li>
-</ol>
-<div class="codehilite"><pre>rm -rf .git/modules/submodule_name
-</pre></div>
-
-
+<p>How to record your screen on OS X using QuickTime Player</p>
 <ol>
 <li>
-<p>Commit the change:</p>
+<p>Install <a href="https://code.google.com/p/soundflower/downloads/list">Soundflower</a> to enable system audio recording. Without <code>Soundflower</code>, you will only be able to record audio from your microphone.</p>
 </li>
 <li>
-<p>Delete the now untracked submodule files</p>
+<p>Open <code>Audio Midi Setup</code> and create a new multi-output device.
+Select Built-in Output, Built-in Line Output, and Soundflower (2ch)</p>
+</li>
+<li>
+<p>Then rename the device.</p>
 </li>
 </ol>
-<div class="codehilite"><pre>rm -rf path/to/submodule
-</pre></div>
+<p>To record system audio, open System Preferences Sound then under Outputs, choose your multi-output device (adjust your sound before hand)</p>
+<ol>
+<li>
+<p>Open QuickTime Player and start a new screencapture. Choose the audio to go through Soundflower (2ch)</p>
+</li>
+<li>
+<p>Click on a screen to record there.</p>
+</li>
+</ol>
+<h2>Tips</h2>
+<ol>
+<li>
+<p>If you want to record on multiple monitors, then you have to duplicate QuickTime player in your Applications folder and start a new screencapture.</p>
+</li>
+<li>
+<p>To remove the darkened screen affect, Hide QuickTime Player.</p>
+</li>
+</ol>
 </article>
 
 <div id="likeBtn"></div>
 
 
 
-<p>Raw: <a href="https://raw.github.com/killtheyak/killtheyak-pages/master/use-git-submodule.md">use-git-submodule.md</a></p>
+<p>Raw: <a href="https://raw.github.com/killtheyak/killtheyak-pages/master/record-screen.md">record-screen.md</a></p>
 
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 <a class="addthis_button_reddit"></a>

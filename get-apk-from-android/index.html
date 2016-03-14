@@ -3,10 +3,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kill The Yak
-| use submodules in git
+| Get an app apk from and android device
 </title>
   <meta name="description" content="
-    Helpful commands for working with git submodules.
+    None
 ">
   <link type="text/plain" rel="author" href="/static/humans.txt" />
   <link href="/feed/recent.atom"
@@ -52,7 +52,7 @@
     <div class="content">
 <article>
 <h1 class='muted'>All I want to do is. . .</h1>
-<h1 class='page-title'>. . .use submodules in git.</h1>
+<h1 class='page-title'>. . .get an app apk from and android device.</h1>
 
 
     
@@ -63,10 +63,10 @@
         <li><a href="/os/macosx/"><i class="icon-macosx"></i>macosx</a></li>
         ::
         
-        <li><a href="/os/linux/"><i class="icon-linux"></i>linux</a></li>
+        <li><a href="/os/windows/"><i class="icon-windows"></i>windows</a></li>
         ::
         
-        <li><a href="/os/windows/"><i class="icon-windows"></i>windows</a></li>
+        <li><a href="/os/linux/"><i class="icon-linux"></i>linux</a></li>
         
         
     </ul>
@@ -75,22 +75,10 @@
 
 
 
-
-    
-        <div class="pure-menu pure-menu-open pure-menu-horizontal tag-menu">
-    <span class="pure-menu-heading">Tags: </span>
-    <ul class="tag-list">
-        
-            <li><a href="/tag/git/">git</a></li>
-            
-        
-    </ul>
-</div>
-    
 
 <br>
 
-Helpful commands for working with git submodules.
+None
 
 
 <hr>
@@ -108,7 +96,7 @@ Contributors:
 
 
 
-<span class='date date-updated'>Updated: 10/10/15</span>
+<span class='date date-updated'>Updated: 07/15/13</span>
 
 
 
@@ -118,75 +106,13 @@ Contributors:
 <hr>
 
 
-<p>How to use submodules in <code>git</code>.</p>
-<h1>Cloning Repository with Submodules</h1>
-<p>There are two ways to do this:</p>
-<p>First, clone the repository without fetching the submodule's files: </p>
-<div class="codehilite"><pre>git clone &lt;repository&gt;
+<p>List 3rd party packages on your device.</p>
+<div class="codehilite"><pre>adb shell pm list packages -f -3
 </pre></div>
 
 
-<p>Then, fetch all the submodule data:</p>
-<div class="codehilite"><pre>git submodule init
-git submodule update
-</pre></div>
-
-
-<p>Or, you can simply do this all at once with:</p>
-<div class="codehilite"><pre>git clone --recursive &lt;repository&gt;
-</pre></div>
-
-
-<h1>Removing Submodule</h1>
-<p>Taken from: <a href="http://davidwalsh.name/git-remove-submodule">David Walsh's Remove a Submodule within git </a></p>
-<ol>
-<li>Delete the relevant section from the <code>.gitmodules</code> file.  The section would look similar to:</li>
-</ol>
-<div class="codehilite"><pre><span class="k">[submodule &quot;vendor&quot;]</span>
-    <span class="na">path</span> <span class="o">=</span> <span class="s">vendor</span>
-<span class="s">    url = git://github.com/some-user/some-repo.git</span>
-</pre></div>
-
-
-<ol>
-<li>Stage the <code>.gitmodules</code> changes via command line using:</li>
-</ol>
-<div class="codehilite"><pre>git add .gitmodules
-</pre></div>
-
-
-<ol>
-<li>Delete the relevant section from <code>.git/config</code>, which will look like:</li>
-</ol>
-<div class="codehilite"><pre><span class="k">[submodule &quot;vendor&quot;]</span>
-    <span class="na">url</span> <span class="o">=</span> <span class="s">git://github.com/some-user/some-repo.git</span>
-</pre></div>
-
-
-<ol>
-<li>Run:</li>
-</ol>
-<div class="codehilite"><pre>git rm --cached path/to/submodule
-</pre></div>
-
-
-<p>Don't include a trailing slash, that will lead to an error.</p>
-<ol>
-<li>Run:</li>
-</ol>
-<div class="codehilite"><pre>rm -rf .git/modules/submodule_name
-</pre></div>
-
-
-<ol>
-<li>
-<p>Commit the change:</p>
-</li>
-<li>
-<p>Delete the now untracked submodule files</p>
-</li>
-</ol>
-<div class="codehilite"><pre>rm -rf path/to/submodule
+<p>Now pull the package to your computer.</p>
+<div class="codehilite"><pre>adb pull /data/app/XX.XX.XX.apk
 </pre></div>
 </article>
 
@@ -194,7 +120,7 @@ git submodule update
 
 
 
-<p>Raw: <a href="https://raw.github.com/killtheyak/killtheyak-pages/master/use-git-submodule.md">use-git-submodule.md</a></p>
+<p>Raw: <a href="https://raw.github.com/killtheyak/killtheyak-pages/master/get-apk-from-android.md">get-apk-from-android.md</a></p>
 
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 <a class="addthis_button_reddit"></a>
