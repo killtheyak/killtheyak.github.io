@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-from urlparse import urlparse
+try:
+    from urllib.parse import urlparse
+except ImportError:  # py2
+    from urlparse import urlparse
 from flask import Markup
 from bs4 import BeautifulSoup
 from .main import app

@@ -11,7 +11,7 @@ import os
 from .app import app, pages, freezer  # noqa
 
 from .views import *  # noqa
-import filters  # noqa
+from . import filters  # noqa
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
