@@ -98,20 +98,20 @@ Homebrew&#39;s tagline is &#34;the missing package manager for OS X&#34;. It is 
 <li>Updated 2013-09-15: Add instructions for inserting into <code>PATH</code>.</li>
 <li>Updated 2014-02-09: Update install command.</li>
 </ul>
-<div class="codehilite"><pre><span class="c"># In your Mac Terminal, run:</span>
-<span class="nv">$ </span>ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">&quot;</span>
+<div class="codehilite"><pre><span></span><span class="c1"># In your Mac Terminal, run:</span>
+$ ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 
 
 <p>Then, make sure <code>/usr/local/bin</code> is at the top your <code>PATH</code> environment variable.</p>
-<div class="codehilite"><pre><span class="c"># In your ~/.bashrc, ~/.bash_profile, or ~/.zshrc (for zsh users)</span>
-<span class="c"># ...</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
+<div class="codehilite"><pre><span></span><span class="c1"># In your ~/.bashrc, ~/.bash_profile, or ~/.zshrc (for zsh users)</span>
+<span class="c1"># ...</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
 </pre></div>
 
 
 <p>Run <code>brew doctor</code> and try to fix as many of the listed issues as possible.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>brew doctor
+<div class="codehilite"><pre><span></span>$ brew doctor
 </pre></div>
 
 

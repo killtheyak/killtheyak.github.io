@@ -141,60 +141,60 @@ Contributors:
 <h2>Install Postgres</h2>
 <p>First, download and install Postgres for your OS <a href="http://www.postgresql.org/download/">here</a>.</p>
 <p>Sidenote for MacOSX users: I have found <a href="http://postgresapp.com/">Postgres.app</a> to be the simplest option<sup id="fnref:path-warning"><a class="footnote-ref" href="#fn:path-warning" rel="footnote">1</a></sup>. Just download and run the app.</p>
-<div class="codehilite"><pre><span class="c"># check that you successfully installed postgres</span>
-<span class="nv">$ </span>which psql
+<div class="codehilite"><pre><span></span><span class="c1"># check that you successfully installed postgres</span>
+$ which psql
 /Applications/Postgres.app/Contents/Versions/9.4/bin/psql
 </pre></div>
 
 
 <h2>Create a new user and a database</h2>
-<div class="codehilite"><pre><span class="c"># Create a new user</span>
-<span class="nv">$ </span>sudo -u postgres createuser -s <span class="nv">$USER</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Create a new user</span>
+$ sudo -u postgres createuser -s <span class="nv">$USER</span>
 Enter password <span class="k">for</span> new role:
 Enter it again:
 Shall the new role be a superuser? <span class="o">(</span>y/n<span class="o">)</span> n
 Shall the new role be allowed to create databases <span class="o">(</span>y/n<span class="o">)</span> y
 Shall the new role be allowed to create more new roles? <span class="o">(</span>y/n<span class="o">)</span> n
 
-<span class="c"># Create a new database</span>
-<span class="nv">$ </span>createdb -U <span class="nv">$USER</span> --locale<span class="o">=</span>en_US.utf-8 -E utf-8 -O <span class="nv">$USER</span> yournewdb -T template0
+<span class="c1"># Create a new database</span>
+$ createdb -U <span class="nv">$USER</span> --locale<span class="o">=</span>en_US.utf-8 -E utf-8 -O <span class="nv">$USER</span> yournewdb -T template0
 </pre></div>
 
 
 <h2>Set up Postgres with Flask or Django</h2>
-<div class="codehilite"><pre><span class="c"># install psycopg2</span>
-<span class="nv">$ </span>pip install -U psycopg2
-<span class="c"># If using SQLAlchemy</span>
-<span class="nv">$ </span>pip install Flask-SQLAlchemy
+<div class="codehilite"><pre><span></span><span class="c1"># install psycopg2</span>
+$ pip install -U psycopg2
+<span class="c1"># If using SQLAlchemy</span>
+$ pip install Flask-SQLAlchemy
 </pre></div>
 
 
 <h3>Flask</h3>
-<div class="codehilite"><pre><span class="c"># Flask config.py</span>
-<span class="n">SQLALCHEMY_DATABASE_URI</span> <span class="o">=</span> <span class="s">&quot;postgresql://yourusername:yourpassword@localhost/yournewdb&quot;</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Flask config.py</span>
+<span class="n">SQLALCHEMY_DATABASE_URI</span> <span class="o">=</span> <span class="s2">&quot;postgresql://yourusername:yourpassword@localhost/yournewdb&quot;</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span class="c"># Flask app.py</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Flask app.py</span>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_pyfile</span><span class="p">(</span><span class="s">&#39;config.py&#39;</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_pyfile</span><span class="p">(</span><span class="s1">&#39;config.py&#39;</span><span class="p">)</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </pre></div>
 
 
 <h3>Django</h3>
-<div class="codehilite"><pre><span class="c"># Django settings.py</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Django settings.py</span>
 <span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s">&#39;django.db.backends.postgresql_psycopg2&#39;</span><span class="p">,</span>
-        <span class="s">&#39;NAME&#39;</span><span class="p">:</span> <span class="s">&#39;yournewdb&#39;</span><span class="p">,</span>
-        <span class="s">&#39;USER&#39;</span><span class="p">:</span> <span class="s">&#39;yourusername&#39;</span><span class="p">,</span>
-        <span class="s">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s">&#39;yourpassword&#39;</span><span class="p">,</span>
-        <span class="s">&#39;HOST&#39;</span><span class="p">:</span> <span class="s">&#39;localhost&#39;</span><span class="p">,</span>
-        <span class="s">&#39;PORT&#39;</span><span class="p">:</span> <span class="s">&#39;5432&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.postgresql_psycopg2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;yournewdb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="s1">&#39;yourusername&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;yourpassword&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;5432&#39;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 

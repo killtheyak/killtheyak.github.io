@@ -124,14 +124,14 @@ Contributors:
                 </a>
 
                 <div class="dep-code-container">
-                <div class="codehilite"><pre><span class="c"># In your Mac Terminal, run:</span>
-<span class="nv">$ </span>ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">"</span>
+                <div class="codehilite"><pre><span></span><span class="c1"># In your Mac Terminal, run:</span>
+$ ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">"</span>
 </pre></div>
-<div class="codehilite"><pre><span class="c"># In your ~/.bashrc, ~/.bash_profile, or ~/.zshrc (for zsh users)</span>
-<span class="c"># ...</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
+<div class="codehilite"><pre><span></span><span class="c1"># In your ~/.bashrc, ~/.bash_profile, or ~/.zshrc (for zsh users)</span>
+<span class="c1"># ...</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
 </pre></div>
-<div class="codehilite"><pre><span class="nv">$ </span>brew doctor
+<div class="codehilite"><pre><span></span>$ brew doctor
 </pre></div>
                 </div>
                 
@@ -152,71 +152,71 @@ Contributors:
 
 
 <p>First, install redis:</p>
-<div class="codehilite"><pre><span class="c"># On MacOSX with homebrew</span>
-<span class="nv">$ </span>brew update
-<span class="nv">$ </span>brew install redis
+<div class="codehilite"><pre><span></span><span class="c1"># On MacOSX with homebrew</span>
+$ brew update
+$ brew install redis
 
-<span class="c"># On Linux</span>
-<span class="nv">$ </span>wget http://download.redis.io/redis-stable.tar.gz
-<span class="nv">$ </span>tar xvzf redis-stable.tar.gz
-<span class="nv">$ </span><span class="nb">cd </span>redis-stable
-<span class="nv">$ </span>make
+<span class="c1"># On Linux</span>
+$ wget http://download.redis.io/redis-stable.tar.gz
+$ tar xvzf redis-stable.tar.gz
+$ <span class="nb">cd</span> redis-stable
+$ make
 </pre></div>
 
 
 <p>Then, add the following to your requirements file:</p>
-<div class="codehilite"><pre><span class="c"># requirements.txt</span>
+<div class="codehilite"><pre><span></span><span class="c1"># requirements.txt</span>
 celery-with-redis
 django-celery
 </pre></div>
 
 
 <p>Install the new requirements:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>pip install -r requirements.txt
+<div class="codehilite"><pre><span></span>$ pip install -r requirements.txt
 </pre></div>
 
 
 <p>Add the following to setup.py:</p>
-<div class="codehilite"><pre><span class="c"># settings.py</span>
+<div class="codehilite"><pre><span></span><span class="c1"># settings.py</span>
 <span class="kn">import</span> <span class="nn">djcelery</span>
 <span class="n">djcelery</span><span class="o">.</span><span class="n">setup_loader</span><span class="p">()</span>
 <span class="o">...</span>
 
-<span class="c"># Add djcelery to installed apps</span>
+<span class="c1"># Add djcelery to installed apps</span>
 <span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="o">...</span>
-    <span class="s">&#39;djcelery&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;djcelery&#39;</span><span class="p">,</span>
     <span class="o">...</span>
 <span class="p">]</span>
 
-<span class="c"># Celery settings</span>
-<span class="n">BROKER_URL</span> <span class="o">=</span> <span class="s">&#39;redis://localhost:6379/0&#39;</span>
-<span class="n">CELERY_RESULT_BACKEND</span> <span class="o">=</span> <span class="s">&#39;redis://localhost:6379/0&#39;</span>
+<span class="c1"># Celery settings</span>
+<span class="n">BROKER_URL</span> <span class="o">=</span> <span class="s1">&#39;redis://localhost:6379/0&#39;</span>
+<span class="n">CELERY_RESULT_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;redis://localhost:6379/0&#39;</span>
 </pre></div>
 
 
 <p>Create the database datatables:</p>
-<div class="codehilite"><pre><span class="c"># If you&#39;re using South:</span>
-<span class="nv">$ </span>python manage.py migrate djcelery
-<span class="c"># otherwise:</span>
-<span class="nv">$ </span>python manage.py syncdb
+<div class="codehilite"><pre><span></span><span class="c1"># If you&#39;re using South:</span>
+$ python manage.py migrate djcelery
+<span class="c1"># otherwise:</span>
+$ python manage.py syncdb
 </pre></div>
 
 
 <p>Now to start your redis server and a celery worker.</p>
-<div class="codehilite"><pre><span class="c"># Start the redis server</span>
-<span class="nv">$ </span>redis-server
-<span class="c"># In a new terminal window/tab, start a celery worker</span>
-<span class="nv">$ </span>python manage.py celeryd worker -E
-<span class="c"># In ANOTHER terminal window/tab, enable the Django Celery monitor</span>
-<span class="c"># so that you can manage your tasks from your admin page</span>
-<span class="nv">$ </span>python manage.py celerycam
+<div class="codehilite"><pre><span></span><span class="c1"># Start the redis server</span>
+$ redis-server
+<span class="c1"># In a new terminal window/tab, start a celery worker</span>
+$ python manage.py celeryd worker -E
+<span class="c1"># In ANOTHER terminal window/tab, enable the Django Celery monitor</span>
+<span class="c1"># so that you can manage your tasks from your admin page</span>
+$ python manage.py celerycam
 </pre></div>
 
 
 <p>You are now ready to run Celery tasks. </p>
 <p>Tasks can be defined like so:</p>
-<div class="codehilite"><pre><span class="c"># tasks.py (in one of your apps)</span>
+<div class="codehilite"><pre><span></span><span class="c1"># tasks.py (in one of your apps)</span>
 <span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">task</span>
 
 <span class="nd">@task</span><span class="p">()</span>
@@ -225,10 +225,10 @@ django-celery
 </pre></div>
 
 
-<div class="codehilite"><pre><span class="c"># In some other file (such as in views or models)</span>
+<div class="codehilite"><pre><span></span><span class="c1"># In some other file (such as in views or models)</span>
 <span class="kn">from</span> <span class="nn">myapp.tasks</span> <span class="kn">import</span> <span class="n">add</span>
 
-<span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># Asynchronous addition--Huzzah!</span>
+<span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Asynchronous addition--Huzzah!</span>
 </pre></div>
 
 

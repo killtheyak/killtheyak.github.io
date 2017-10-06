@@ -131,29 +131,29 @@ Contributors:
 <li>Use <code>a2ps</code> and <code>ps2pdf</code></li>
 </ol>
 <h1>Org-Mode</h1>
-<div class="codehilite"><pre>C-x C-e l p
+<div class="codehilite"><pre><span></span>C-x C-e l p
 </pre></div>
 
 
 <h1>Pandoc</h1>
-<div class="codehilite"><pre>pandoc -s example.py -o example.pdf
+<div class="codehilite"><pre><span></span>pandoc -s example.py -o example.pdf
 </pre></div>
 
 
 <h1>as2ps</h1>
 <h2>Convert all .cpp files in a directory</h2>
-<div class="codehilite"><pre><span class="x">for i in ls *.cpp; do a2ps -o </span><span class="p">$</span><span class="nv">i</span><span class="p">.</span><span class="nv">ps</span><span class="x"> </span><span class="p">$</span><span class="nv">i</span><span class="x">; done;</span>
+<div class="codehilite"><pre><span></span>for i in ls *.cpp; do a2ps -o $i.ps $i; done;
 </pre></div>
 
 
 <h2>Convert all .ps files to pdf</h2>
-<div class="codehilite"><pre><span class="x">for i in ls *.ps; do ps2pdf </span><span class="p">$</span><span class="nv">i</span><span class="x">; done;</span>
+<div class="codehilite"><pre><span></span>for i in ls *.ps; do ps2pdf $i; done;
 </pre></div>
 
 
 <p>(May need to remove empty side-effect <code>ls.pdf</code> file).</p>
 <h2>Concatenate all output pdf files</h2>
-<div class="codehilite"><pre>pdftk *.pdf cat output merged.pdf
+<div class="codehilite"><pre><span></span>pdftk *.pdf cat output merged.pdf
 </pre></div>
 </article>
 

@@ -118,24 +118,24 @@ Contributors:
 <p>Helpful <a href="https://www.ffmpeg.org/">ffmpeg</a> commands.</p>
 <h1>Speeding Up</h1>
 <p>Speed video up 2x.</p>
-<div class="codehilite"><pre>ffmpeg -i input.mkv -filter:v &quot;setpts=0.5*PTS&quot; output.mkv
+<div class="codehilite"><pre><span></span>ffmpeg -i input.mkv -filter:v &quot;setpts=0.5*PTS&quot; output.mkv
 </pre></div>
 
 
 <h1>Slowing Down</h1>
 <p>Slow video down 2x</p>
-<div class="codehilite"><pre>ffmpeg -i input.mkv -filter:v &quot;setpts=2.0*PTS&quot; output.mkv
+<div class="codehilite"><pre><span></span>ffmpeg -i input.mkv -filter:v &quot;setpts=2.0*PTS&quot; output.mkv
 </pre></div>
 
 
 <h1>Add Audio track to Video</h1>
-<div class="codehilite"><pre>ffmpeg -i input.mkv -i input.mp3 -c copy -shortest -map 0:0 -map 1:0 output.mkv
+<div class="codehilite"><pre><span></span>ffmpeg -i input.mkv -i input.mp3 -c copy -shortest -map 0:0 -map 1:0 output.mkv
 </pre></div>
 
 
 <h1>Boost Audio</h1>
 <p>Boost audio by 150%</p>
-<div class="codehilite"><pre>ffmpeg -g input.mp4 -af &quot;volume=1.5&quot; output.mp4
+<div class="codehilite"><pre><span></span>ffmpeg -g input.mp4 -af &quot;volume=1.5&quot; output.mp4
 </pre></div>
 </article>
 

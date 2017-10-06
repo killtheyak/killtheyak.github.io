@@ -102,7 +102,7 @@ Contributors:
 
 
 
-<span class='date date-updated'>Updated: 07/17/13</span>
+<span class='date date-updated'>Updated: 10/04/17</span>
 
 
 
@@ -114,8 +114,8 @@ Contributors:
 
 <h2>Optional (but recommended): Install Lunchy</h2>
 <p>Lunchy makes it easier to manage your agents. </p>
-<div class="codehilite"><pre><span class="c"># Install lunchy</span>
-<span class="nv">$ </span>gem install lunchy
+<div class="codehilite"><pre><span></span><span class="c1"># Install lunchy</span>
+$ gem install lunchy
 </pre></div>
 
 
@@ -124,14 +124,14 @@ Contributors:
 <p>Your plist files should go in <code>~/Library/LaunchAgents/</code> so that they will be loaded automatically when you log in.</p>
 <p>Let's say we want to run a python script called <code>email.py</code> at a regular interval. The script takes one argument, an email address.</p>
 <p>Make a file using reverse domain syntax, like <code>~/Library/LaunchAgents/org.yourusername.email-mom.plist</code>.</p>
-<div class="codehilite"><pre><span class="c"># Make a plist file</span>
-<span class="nv">$ </span>touch ~/Library/LaunchAgents/org.yourusername.email-mom.plist
-<span class="c"># Open this file in your text editor</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Make a plist file</span>
+$ touch ~/Library/LaunchAgents/org.yourusername.email-mom.plist
+<span class="c1"># Open this file in your text editor</span>
 </pre></div>
 
 
 <p>Your plist might look like this:</p>
-<div class="codehilite"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
 <span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;dict&gt;</span>
@@ -155,7 +155,7 @@ Contributors:
 
 <p>You can use this as a template.</p>
 <p>If you want to schedule the job for calendar intervals (like in cron), you can use <code>StartCalendarInterval</code> instead of <code>StartInterval</code>.</p>
-<div class="codehilite"><pre><span class="c">&lt;!-- StartCalendarInterval examples --&gt;</span>
+<div class="codehilite"><pre><span></span><span class="c">&lt;!-- StartCalendarInterval examples --&gt;</span>
 
     <span class="c">&lt;!-- Run every Sunday (weekday 0) at 15:30/3:30PM --&gt;</span>
     <span class="nt">&lt;key&gt;</span>StartCalendarInterval<span class="nt">&lt;/key&gt;</span>
@@ -185,32 +185,32 @@ Contributors:
 
 
 <p>Now you need to load your agent and start it.</p>
-<div class="codehilite"><pre><span class="c"># Load and start your new agent</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Load and start your new agent</span>
 
-<span class="c">## With the built in `launchctl`</span>
-<span class="nv">$ </span>launchctl load ~/Library/LaunchAgents/org.yourusername.email-mom.plist
-<span class="nv">$ </span>launchctl start org.yourusername.email-mom
+<span class="c1">## With the built in `launchctl`</span>
+$ launchctl load ~/Library/LaunchAgents/org.yourusername.email-mom.plist
+$ launchctl start org.yourusername.email-mom
 
-<span class="c">## Or with Lunchy</span>
-<span class="c">## `restart` will unload your agent (if it&#39;s loaded), load it, then start the job</span>
-<span class="c">## Lunchy sees the argument as a pattern, so you don&#39;t have to specify the entire agent-name</span>
-<span class="nv">$ </span>lunchy restart email-mom
+<span class="c1">## Or with Lunchy</span>
+<span class="c1">## `restart` will unload your agent (if it&#39;s loaded), load it, then start the job</span>
+<span class="c1">## Lunchy sees the argument as a pattern, so you don&#39;t have to specify the entire agent-name</span>
+$ lunchy restart email-mom
 </pre></div>
 
 
 <p>You can also see a list of loaded agents.</p>
-<div class="codehilite"><pre><span class="c"># Show loaded agents</span>
-<span class="nv">$ </span>launchctl list
-<span class="c"># OR</span>
-<span class="nv">$ </span>lunchy list
+<div class="codehilite"><pre><span></span><span class="c1"># Show loaded agents</span>
+$ launchctl list
+<span class="c1"># OR</span>
+$ lunchy list
 </pre></div>
 
 
 <p>To stop an agent:</p>
-<div class="codehilite"><pre><span class="c"># Stop an agent</span>
-<span class="nv">$ </span>launchctl org.yourusername.email-mom
-<span class="c"># OR</span>
-<span class="nv">$ </span>lunchy stop email-mom
+<div class="codehilite"><pre><span></span><span class="c1"># Stop an agent</span>
+$ launchctl stop org.yourusername.email-mom
+<span class="c1"># OR</span>
+$ lunchy stop email-mom
 </pre></div>
 
 

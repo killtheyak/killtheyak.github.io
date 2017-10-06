@@ -124,26 +124,26 @@ Contributors:
                 </a>
 
                 <div class="dep-code-container">
-                <div class="codehilite"><pre><span class="c"># On Mac &gt;= 10.5 with homebrew</span>
-<span class="nv">$ </span>brew update
-<span class="c">## Install Python 2</span>
-<span class="nv">$ </span>brew install python
-<span class="c">## Install Python 3</span>
-<span class="nv">$ </span>brew install python3
-<span class="c">## Follow any instructions that appear after each brew install</span>
+                <div class="codehilite"><pre><span></span><span class="c1"># On Mac &gt;= 10.5 with homebrew</span>
+$ brew update
+<span class="c1">## Install Python 2</span>
+$ brew install python
+<span class="c1">## Install Python 3</span>
+$ brew install python3
+<span class="c1">## Follow any instructions that appear after each brew install</span>
 </pre></div>
-<div class="codehilite"><pre><span class="c"># Is everything working?</span>
-<span class="nv">$ </span>brew doctor
-<span class="c"># Listen to the doctor</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Is everything working?</span>
+$ brew doctor
+<span class="c1"># Listen to the doctor</span>
 </pre></div>
-<div class="codehilite"><pre><span class="c"># Run Python 2</span>
-<span class="nv">$ </span>python
-<span class="c"># Run Python 3</span>
-<span class="nv">$ </span>python3
-<span class="c"># Install a Python 2 package</span>
-<span class="nv">$ </span>pip install some-package
-<span class="c"># Install a Python 3 package</span>
-<span class="nv">$ </span>pip3 install some-package
+<div class="codehilite"><pre><span></span><span class="c1"># Run Python 2</span>
+$ python
+<span class="c1"># Run Python 3</span>
+$ python3
+<span class="c1"># Install a Python 2 package</span>
+$ pip install some-package
+<span class="c1"># Install a Python 3 package</span>
+$ pip3 install some-package
 </pre></div>
                 </div>
                 
@@ -164,24 +164,24 @@ Contributors:
 
 
 <p>Install the packages.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>pip install virtualenv
-<span class="nv">$ </span>pip install virtualenvwrapper
+<div class="codehilite"><pre><span></span>$ pip install virtualenv
+$ pip install virtualenvwrapper
 </pre></div>
 
 
 <p>Open your shell's profile config (e.g. <code>.bash_profile</code>, <code>.bashrc</code>, or <code>.zshrc</code>). This is usually located in your home directory.</p>
 <p>Then add the following:</p>
-<div class="codehilite"><pre><span class="c"># ~/.bash_profile</span>
+<div class="codehilite"><pre><span></span><span class="c1"># ~/.bash_profile</span>
 
-<span class="c"># Enable virtualenvwrapper </span>
+<span class="c1"># Enable virtualenvwrapper </span>
 <span class="nv">VIRTUALENVWRAPPER_PYTHON</span><span class="o">=</span>/usr/local/bin/python
-<span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span>~/Envs
+<span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span>~/Envs
 <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </pre></div>
 
 
 <p>On Window, you can use the <a href="https://bitbucket.org/guillermooo/virtualenvwrapper-powershell">virtualenvwrapper-powershell</a>.</p>
-<div class="codehilite"><pre><span class="c"># Virtualenvwrapper-powershell in Windows</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Virtualenvwrapper-powershell in Windows</span>
 PS&gt; pip install virtualenvwrapper-powershell
 PS&gt; <span class="nv">$env</span>:WORKON_HOME<span class="o">=</span><span class="s2">&quot;~/Envs&quot;</span>
 PS&gt; mkdir <span class="nv">$env</span>:WORKON_HOME
@@ -190,22 +190,22 @@ PS&gt; import-module virtualenvwrapper
 
 
 <p>Create the folder for your virtual environments.</p>
-<div class="codehilite"><pre><span class="c"># Reload your profile</span>
-<span class="nv">$ </span><span class="nb">source</span> ~/.bash_profile
-<span class="c"># Create your env directory</span>
-<span class="nv">$ </span>mkdir -p <span class="nv">$WORKON_HOME</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Reload your profile</span>
+$ <span class="nb">source</span> ~/.bash_profile
+<span class="c1"># Create your env directory</span>
+$ mkdir -p <span class="nv">$WORKON_HOME</span>
 </pre></div>
 
 
 <p>Now, when you log in to a new shell session, you will be able to use virtualenvwrapper.</p>
-<div class="codehilite"><pre><span class="c"># Create a new environment</span>
-<span class="nv">$ </span>mkvirtualenv my-fresh-environment
-<span class="c"># Activate an environment</span>
-<span class="nv">$ </span>workon my-fresh-environment
-<span class="c"># List environments</span>
-<span class="nv">$ </span>lsvirtualenv
-<span class="c"># Remove an environment</span>
-<span class="nv">$ </span>rmvirtualenv my-polluted-environment
+<div class="codehilite"><pre><span></span><span class="c1"># Create a new environment</span>
+$ mkvirtualenv my-fresh-environment
+<span class="c1"># Activate an environment</span>
+$ workon my-fresh-environment
+<span class="c1"># List environments</span>
+$ lsvirtualenv
+<span class="c1"># Remove an environment</span>
+$ rmvirtualenv my-polluted-environment
 </pre></div>
 
 

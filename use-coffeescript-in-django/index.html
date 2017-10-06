@@ -130,20 +130,20 @@ Contributors:
                 </a>
 
                 <div class="dep-code-container">
-                <div class="codehilite"><pre><span class="c"># Mac-specific instructions</span>
-<span class="c"># Install node</span>
-<span class="nv">$ </span>brew update 
-<span class="nv">$ </span>brew install node
+                <div class="codehilite"><pre><span></span><span class="c1"># Mac-specific instructions</span>
+<span class="c1"># Install node</span>
+$ brew update 
+$ brew install node
 </pre></div>
-<div class="codehilite"><pre><span class="c"># In you shell profile (.bash_profile, .zshrc, etc.), add this line</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/share/npm/bin:<span class="nv">$PATH</span>
+<div class="codehilite"><pre><span></span><span class="c1"># In you shell profile (.bash_profile, .zshrc, etc.), add this line</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/share/npm/bin:<span class="nv">$PATH</span>
 </pre></div>
-<div class="codehilite"><pre><span class="c"># Install coffee (notice the dash)</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Install coffee (notice the dash)</span>
 npm install -g coffee-script
 </pre></div>
-<div class="codehilite"><pre><span class="c"># To compile a file</span>
+<div class="codehilite"><pre><span></span><span class="c1"># To compile a file</span>
 coffee -c cupofjoe.coffee
-<span class="c"># Watch mode--compile a file whenever it is changed</span>
+<span class="c1"># Watch mode--compile a file whenever it is changed</span>
 coffee -cw cupofjoe.coffee
 </pre></div>
                 </div>
@@ -165,37 +165,37 @@ coffee -cw cupofjoe.coffee
 
 
 <p>First, set up <a href="http://django_compressor.readthedocs.org/en/master/">django-compressor</a>. </p>
-<div class="codehilite"><pre><span class="c"># Install django-compressor</span>
-<span class="nv">$ </span>pip install django_compressor
+<div class="codehilite"><pre><span></span><span class="c1"># Install django-compressor</span>
+$ pip install django_compressor
 </pre></div>
 
 
 <p>Include the following in your <code>settings.py</code>.</p>
-<div class="codehilite"><pre><span class="c"># settings.py</span>
+<div class="codehilite"><pre><span></span><span class="c1"># settings.py</span>
 
 <span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="c"># Other apps...</span>
-    <span class="s">&#39;compressor&#39;</span><span class="p">,</span>
+    <span class="c1"># Other apps...</span>
+    <span class="s1">&#39;compressor&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="n">STATICFILES_FINDERS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s">&#39;django.contrib.staticfiles.finders.FileSystemFinder&#39;</span><span class="p">,</span>
-    <span class="s">&#39;django.contrib.staticfiles.finders.AppDirectoriesFinder&#39;</span><span class="p">,</span>
-    <span class="c"># other finders..</span>
-    <span class="s">&#39;compressor.finders.CompressorFinder&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles.finders.FileSystemFinder&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles.finders.AppDirectoriesFinder&#39;</span><span class="p">,</span>
+    <span class="c1"># other finders..</span>
+    <span class="s1">&#39;compressor.finders.CompressorFinder&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">COMPRESS_PRECOMPILERS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s">&#39;text/coffeescript&#39;</span><span class="p">,</span> <span class="s">&#39;coffee --compile --stdio&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;text/coffeescript&#39;</span><span class="p">,</span> <span class="s1">&#39;coffee --compile --stdio&#39;</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 
 
 <p>That's it! You can now include <code>.coffee</code> files in your html. Make sure to include them between <code>{% compress js %}</code> tags and set the <code>type</code> attribute for the script tag to <code>text/coffeescript</code>. </p>
-<div class="codehilite"><pre># some_template.html
+<div class="codehilite"><pre><span></span># some_template.html
 
 {% compress js %}
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;{{ STATIC_URL }}coffee/cupofjoe.coffee&quot;</span> <span class="na">type=</span><span class="s">&quot;text/coffeescript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span> 
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ STATIC_URL }}coffee/cupofjoe.coffee&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/coffeescript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span> 
 {% endcompress %}
 </pre></div>
 </article>

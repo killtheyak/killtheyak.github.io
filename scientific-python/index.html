@@ -121,14 +121,14 @@ Contributors:
                 </a>
 
                 <div class="dep-code-container">
-                <div class="codehilite"><pre><span class="c"># In your Mac Terminal, run:</span>
-<span class="nv">$ </span>ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">"</span>
+                <div class="codehilite"><pre><span></span><span class="c1"># In your Mac Terminal, run:</span>
+$ ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">"</span>
 </pre></div>
-<div class="codehilite"><pre><span class="c"># In your ~/.bashrc, ~/.bash_profile, or ~/.zshrc (for zsh users)</span>
-<span class="c"># ...</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
+<div class="codehilite"><pre><span></span><span class="c1"># In your ~/.bashrc, ~/.bash_profile, or ~/.zshrc (for zsh users)</span>
+<span class="c1"># ...</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
 </pre></div>
-<div class="codehilite"><pre><span class="nv">$ </span>brew doctor
+<div class="codehilite"><pre><span></span>$ brew doctor
 </pre></div>
                 </div>
                 
@@ -149,26 +149,26 @@ Contributors:
                 </a>
 
                 <div class="dep-code-container">
-                <div class="codehilite"><pre><span class="c"># On Mac &gt;= 10.5 with homebrew</span>
-<span class="nv">$ </span>brew update
-<span class="c">## Install Python 2</span>
-<span class="nv">$ </span>brew install python
-<span class="c">## Install Python 3</span>
-<span class="nv">$ </span>brew install python3
-<span class="c">## Follow any instructions that appear after each brew install</span>
+                <div class="codehilite"><pre><span></span><span class="c1"># On Mac &gt;= 10.5 with homebrew</span>
+$ brew update
+<span class="c1">## Install Python 2</span>
+$ brew install python
+<span class="c1">## Install Python 3</span>
+$ brew install python3
+<span class="c1">## Follow any instructions that appear after each brew install</span>
 </pre></div>
-<div class="codehilite"><pre><span class="c"># Is everything working?</span>
-<span class="nv">$ </span>brew doctor
-<span class="c"># Listen to the doctor</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Is everything working?</span>
+$ brew doctor
+<span class="c1"># Listen to the doctor</span>
 </pre></div>
-<div class="codehilite"><pre><span class="c"># Run Python 2</span>
-<span class="nv">$ </span>python
-<span class="c"># Run Python 3</span>
-<span class="nv">$ </span>python3
-<span class="c"># Install a Python 2 package</span>
-<span class="nv">$ </span>pip install some-package
-<span class="c"># Install a Python 3 package</span>
-<span class="nv">$ </span>pip3 install some-package
+<div class="codehilite"><pre><span></span><span class="c1"># Run Python 2</span>
+$ python
+<span class="c1"># Run Python 3</span>
+$ python3
+<span class="c1"># Install a Python 2 package</span>
+$ pip install some-package
+<span class="c1"># Install a Python 3 package</span>
+$ pip3 install some-package
 </pre></div>
                 </div>
                 
@@ -189,12 +189,12 @@ Contributors:
                 </a>
 
                 <div class="dep-code-container">
-                <div class="codehilite"><pre># Get the latest version of Xcode from the Mac App Store
+                <div class="codehilite"><pre><span></span># Get the latest version of Xcode from the Mac App Store
 # Here: https://developer.apple.com/xcode/
 </pre></div>
-<div class="codehilite"><pre># Open Xcode, then press `Command + ,` to open preferences
+<div class="codehilite"><pre><span></span># Open Xcode, then press `Command + ,` to open preferences
 </pre></div>
-<div class="codehilite"><pre># Click `Downloads` at the top of the window
+<div class="codehilite"><pre><span></span># Click `Downloads` at the top of the window
 # Then click `Install` next to `Command Line Tools`
 </pre></div>
                 </div>
@@ -216,34 +216,34 @@ Contributors:
 
 
 <h2>Optional (but recommended) first step: Create a new virtual environment</h2>
-<div class="codehilite"><pre><span class="c"># If you&#39;re using virtualenvwrapper</span>
-<span class="nv">$ </span>mkvirtualenv science
-<span class="nv">$ </span>workon science
+<div class="codehilite"><pre><span></span><span class="c1"># If you&#39;re using virtualenvwrapper</span>
+$ mkvirtualenv science
+$ workon science
 </pre></div>
 
 
 <h2>Numpy, Scipy, and Matplotlib</h2>
 <p>Install a fortran compiler and Freetype.</p>
-<div class="codehilite"><pre><span class="nv">$ </span>brew update
-<span class="nv">$ </span>brew install gfortran freetype
-<span class="c"># Remember to follow any instructions that show up after each install</span>
-<span class="c"># To display the instructions again, run `brew info gfortran` or `brew info freetype`</span>
+<div class="codehilite"><pre><span></span>$ brew update
+$ brew install gfortran freetype
+<span class="c1"># Remember to follow any instructions that show up after each install</span>
+<span class="c1"># To display the instructions again, run `brew info gfortran` or `brew info freetype`</span>
 </pre></div>
 
 
 <p>Install the Python packages.</p>
-<div class="codehilite"><pre><span class="c"># Order matters!</span>
-<span class="nv">$ </span>pip install numpy
-<span class="nv">$ </span>pip install scipy
-<span class="nv">$ </span>pip install matplotlib
-<span class="c"># Optional: install ipython</span>
-<span class="nv">$ </span>pip install ipython
+<div class="codehilite"><pre><span></span><span class="c1"># Order matters!</span>
+$ pip install numpy
+$ pip install scipy
+$ pip install matplotlib
+<span class="c1"># Optional: install ipython</span>
+$ pip install ipython
 </pre></div>
 
 
 <p>If everything works, you should be able to <code>import pylab</code>, which will bring numpy, scipy, and matplotlib functionality all in one go.</p>
-<div class="codehilite"><pre><span class="c"># Check that everything works</span>
-<span class="nv">$ </span>python
+<div class="codehilite"><pre><span></span><span class="c1"># Check that everything works</span>
+$ python
 &gt;&gt;&gt; import pylab
 </pre></div>
 
@@ -251,47 +251,47 @@ Contributors:
 <p>If all you need is numpy, scipy, and matplotlib, you're done!</p>
 <h2>Bonus: Install the rest of the EPD packages</h2>
 <p>If you want to install more of the libraries included with EPD, you can try making a <code>requirements.txt</code> file containing the following:</p>
-<div class="codehilite"><pre><span class="c"># requirements.txt</span>
-<span class="c"># This includes all the packages bundled with EPD-Free</span>
-<span class="c"># Feel free to add/remove any items</span>
-appinst&gt;<span class="o">=</span>2.1.1
-apptools&gt;<span class="o">=</span>4.1.0
-casuarius&gt;<span class="o">=</span>1.0
-chaco&gt;<span class="o">=</span>4.2.0
-cloud&gt;<span class="o">=</span>2.4.6
-configobj&gt;<span class="o">=</span>4.7.2
+<div class="codehilite"><pre><span></span><span class="c1"># requirements.txt</span>
+<span class="c1"># This includes all the packages bundled with EPD-Free</span>
+<span class="c1"># Feel free to add/remove any items</span>
+appinst&gt;<span class="o">=</span><span class="m">2</span>.1.1
+apptools&gt;<span class="o">=</span><span class="m">4</span>.1.0
+casuarius&gt;<span class="o">=</span><span class="m">1</span>.0
+chaco&gt;<span class="o">=</span><span class="m">4</span>.2.0
+cloud&gt;<span class="o">=</span><span class="m">2</span>.4.6
+configobj&gt;<span class="o">=</span><span class="m">4</span>.7.2
 distribute&gt;<span class="o">=</span>.6.26
-<span class="nb">enable</span>&gt;<span class="o">=</span>4.2.0
-enaml&gt;<span class="o">=</span>0.2.0
-enstaller&gt;<span class="o">=</span>4.5.1
-etsproxy&gt;<span class="o">=</span>0.1.1
-freetype&gt;<span class="o">=</span>2.4.4
-ipython&gt;<span class="o">=</span>0.12.1
-jinja2&gt;<span class="o">=</span>2.6
-libjpeg&gt;<span class="o">=</span>7.0
-libpng&gt;<span class="o">=</span>7.0
-matplotlib&gt;<span class="o">=</span>1.1.0
-nose&gt;<span class="o">=</span>1.1.2
-numpy&gt;<span class="o">=</span>1.6.1
-PIL&gt;<span class="o">=</span>1.1.7
-ply&gt;<span class="o">=</span>3.4
-pyaudio&gt;<span class="o">=</span>0.2.4
-pyface&gt;<span class="o">=</span>4.2.0
-pyglet&gt;<span class="o">=</span>1.1.4
-pygments&gt;<span class="o">=</span>1.4
-python_dateutil&gt;<span class="o">=</span>1.5
+enable&gt;<span class="o">=</span><span class="m">4</span>.2.0
+enaml&gt;<span class="o">=</span><span class="m">0</span>.2.0
+enstaller&gt;<span class="o">=</span><span class="m">4</span>.5.1
+etsproxy&gt;<span class="o">=</span><span class="m">0</span>.1.1
+freetype&gt;<span class="o">=</span><span class="m">2</span>.4.4
+ipython&gt;<span class="o">=</span><span class="m">0</span>.12.1
+jinja2&gt;<span class="o">=</span><span class="m">2</span>.6
+libjpeg&gt;<span class="o">=</span><span class="m">7</span>.0
+libpng&gt;<span class="o">=</span><span class="m">7</span>.0
+matplotlib&gt;<span class="o">=</span><span class="m">1</span>.1.0
+nose&gt;<span class="o">=</span><span class="m">1</span>.1.2
+numpy&gt;<span class="o">=</span><span class="m">1</span>.6.1
+PIL&gt;<span class="o">=</span><span class="m">1</span>.1.7
+ply&gt;<span class="o">=</span><span class="m">3</span>.4
+pyaudio&gt;<span class="o">=</span><span class="m">0</span>.2.4
+pyface&gt;<span class="o">=</span><span class="m">4</span>.2.0
+pyglet&gt;<span class="o">=</span><span class="m">1</span>.1.4
+pygments&gt;<span class="o">=</span><span class="m">1</span>.4
+python_dateutil&gt;<span class="o">=</span><span class="m">1</span>.5
 pytz
-pyzmq&gt;<span class="o">=</span>2.1.11
-scipy&gt;<span class="o">=</span>1.74
-tornado&gt;<span class="o">=</span>2.2
-traits&gt;<span class="o">=</span>4.2.0
-traitsui&gt;<span class="o">=</span>4.2.0
-wxPython&gt;<span class="o">=</span>2.8.10
+pyzmq&gt;<span class="o">=</span><span class="m">2</span>.1.11
+scipy&gt;<span class="o">=</span><span class="m">1</span>.74
+tornado&gt;<span class="o">=</span><span class="m">2</span>.2
+traits&gt;<span class="o">=</span><span class="m">4</span>.2.0
+traitsui&gt;<span class="o">=</span><span class="m">4</span>.2.0
+wxPython&gt;<span class="o">=</span><span class="m">2</span>.8.10
 </pre></div>
 
 
 <p>Then run:</p>
-<div class="codehilite"><pre><span class="nv">$ </span>pip install -r -U requirements.txt
+<div class="codehilite"><pre><span></span>$ pip install -r -U requirements.txt
 </pre></div>
 
 

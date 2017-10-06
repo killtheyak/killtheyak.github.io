@@ -118,28 +118,28 @@ Contributors:
 <h1>Genarating and sharing public key</h1>
 <p>How to create a new public key for ssh and add it to the remote machine.</p>
 <p>generate key:</p>
-<div class="codehilite"><pre>ssh-keygen -t rsa
+<div class="codehilite"><pre><span></span>ssh-keygen -t rsa
 </pre></div>
 
 
 <p>Append it to the server: </p>
-<div class="codehilite"><pre>cat ~/.ssh/id_rsa.pub | ssh user@server &quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;
+<div class="codehilite"><pre><span></span>cat ~/.ssh/id_rsa.pub | ssh user@server &quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;
 </pre></div>
 
 
 <p>Copy a file to the remote machine:</p>
-<div class="codehilite"><pre>scp ~/path/to/file user@server:/path/on/server
+<div class="codehilite"><pre><span></span>scp ~/path/to/file user@server:/path/on/server
 </pre></div>
 
 
 <p>Copy a file from the remote machine:</p>
-<div class="codehilite"><pre>scp user@server:/path/to/file ~/path/on/local
+<div class="codehilite"><pre><span></span>scp user@server:/path/to/file ~/path/on/local
 </pre></div>
 
 
 <h1>SSH Config</h1>
 <p>Creating a <code>~/.ssh/config</code> file. Having aliases for SSH is a dream.</p>
-<div class="codehilite"><pre>    Host somealias
+<div class="codehilite"><pre><span></span>    Host somealias
         HostName example.com
         Port 2222
         User someuser

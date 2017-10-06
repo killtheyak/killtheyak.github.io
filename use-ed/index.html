@@ -116,13 +116,13 @@ Contributors:
 
 
 <p>How to use <code>ed</code>, a line oriented text editor.</p>
-<div class="codehilite"><pre>ed sample.txt
+<div class="codehilite"><pre><span></span>ed sample.txt
 sample.txt: No such file or directory
 </pre></div>
 
 
 <p>The message above warns that the sample.txt file is newly created.</p>
-<div class="codehilite"><pre>a
+<div class="codehilite"><pre><span></span>a
 the quick brown fox
 jumped over the lazy dog
 .
@@ -131,21 +131,21 @@ jumped over the lazy dog
 
 <p>That was an append command, which added text to the file.<br />
 The dot on a line by itself terminated the append.</p>
-<div class="codehilite"><pre>1s/f[a-z]x/dragon/
+<div class="codehilite"><pre><span></span>1s/f[a-z]x/dragon/
 </pre></div>
 
 
 <p>On line 1, replace the first substring matching an f followed by a
 lowercase alphabetic followed by x with ‘dragon’.  The
 substitute command accepts basic regular expressions.</p>
-<div class="codehilite"><pre><span class="x">1,</span><span class="p">$</span><span class="nv">p</span><span class="x"></span>
+<div class="codehilite"><pre><span></span>1,$p
 </pre></div>
 
 
 <p>the quick brown dragon
 jumped over the lazy dog</p>
 <p>Print all lines from 1 to the last.</p>
-<div class="codehilite"><pre>w
+<div class="codehilite"><pre><span></span>w
 
 51
 </pre></div>
@@ -153,7 +153,7 @@ jumped over the lazy dog</p>
 
 <p>That wrote the file to disk. The ‘q’ command ends the
 editing session.</p>
-<div class="codehilite"><pre>q
+<div class="codehilite"><pre><span></span>q
 </pre></div>
 
 

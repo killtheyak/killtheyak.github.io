@@ -122,18 +122,18 @@ Contributors:
 <h1>Cloning Repository with Submodules</h1>
 <p>There are two ways to do this:</p>
 <p>First, clone the repository without fetching the submodule's files: </p>
-<div class="codehilite"><pre>git clone &lt;repository&gt;
+<div class="codehilite"><pre><span></span>git clone &lt;repository&gt;
 </pre></div>
 
 
 <p>Then, fetch all the submodule data:</p>
-<div class="codehilite"><pre>git submodule init
+<div class="codehilite"><pre><span></span>git submodule init
 git submodule update
 </pre></div>
 
 
 <p>Or, you can simply do this all at once with:</p>
-<div class="codehilite"><pre>git clone --recursive &lt;repository&gt;
+<div class="codehilite"><pre><span></span>git clone --recursive &lt;repository&gt;
 </pre></div>
 
 
@@ -142,7 +142,7 @@ git submodule update
 <ol>
 <li>Delete the relevant section from the <code>.gitmodules</code> file.  The section would look similar to:</li>
 </ol>
-<div class="codehilite"><pre><span class="k">[submodule &quot;vendor&quot;]</span>
+<div class="codehilite"><pre><span></span><span class="k">[submodule &quot;vendor&quot;]</span>
     <span class="na">path</span> <span class="o">=</span> <span class="s">vendor</span>
 <span class="s">    url = git://github.com/some-user/some-repo.git</span>
 </pre></div>
@@ -151,14 +151,14 @@ git submodule update
 <ol>
 <li>Stage the <code>.gitmodules</code> changes via command line using:</li>
 </ol>
-<div class="codehilite"><pre>git add .gitmodules
+<div class="codehilite"><pre><span></span>git add .gitmodules
 </pre></div>
 
 
 <ol>
 <li>Delete the relevant section from <code>.git/config</code>, which will look like:</li>
 </ol>
-<div class="codehilite"><pre><span class="k">[submodule &quot;vendor&quot;]</span>
+<div class="codehilite"><pre><span></span><span class="k">[submodule &quot;vendor&quot;]</span>
     <span class="na">url</span> <span class="o">=</span> <span class="s">git://github.com/some-user/some-repo.git</span>
 </pre></div>
 
@@ -166,7 +166,7 @@ git submodule update
 <ol>
 <li>Run:</li>
 </ol>
-<div class="codehilite"><pre>git rm --cached path/to/submodule
+<div class="codehilite"><pre><span></span>git rm --cached path/to/submodule
 </pre></div>
 
 
@@ -174,7 +174,7 @@ git submodule update
 <ol>
 <li>Run:</li>
 </ol>
-<div class="codehilite"><pre>rm -rf .git/modules/submodule_name
+<div class="codehilite"><pre><span></span>rm -rf .git/modules/submodule_name
 </pre></div>
 
 
@@ -186,7 +186,7 @@ git submodule update
 <p>Delete the now untracked submodule files</p>
 </li>
 </ol>
-<div class="codehilite"><pre>rm -rf path/to/submodule
+<div class="codehilite"><pre><span></span>rm -rf path/to/submodule
 </pre></div>
 </article>
 

@@ -127,7 +127,7 @@ Contributors:
 <li><code>uWSGI</code> talks to <code>nginx</code>.</li>
 <li><code>nginx</code> handles contact with the outside world.</li>
 </ul>
-<div class="codehilite"><pre>[SERVER] Flask &lt;---&gt; uWSGI &lt;---&gt; nginx &lt;---&gt; [YOUR AUDIENCE IRL]
+<div class="codehilite"><pre><span></span>[SERVER] Flask &lt;---&gt; uWSGI &lt;---&gt; nginx &lt;---&gt; [YOUR AUDIENCE IRL]
 </pre></div>
 
 
@@ -144,7 +144,7 @@ Contributors:
 <li>App name (e.g. if your Flask app says this: <code>myapp = Flask(__name__)</code>, your app name is <code>myapp</code>)</li>
 <li>If you have <code>app.run()</code> in your application somewhere, MAKE SURE IT'S INSIDE THE FOLLOWING CHECK:  </li>
 </ol>
-<div class="codehilite"><pre><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 
@@ -162,7 +162,7 @@ You do NOT want this.</p>
 <em> that communiates with a web server via port <code>4242</code>
 </em> for file <code>server.py</code>
 * with app name <code>myapp</code></p>
-<div class="codehilite"><pre>uwsgi --socket 127.0.0.1:4242 --module server --callab myapp
+<div class="codehilite"><pre><span></span>uwsgi --socket 127.0.0.1:4242 --module server --callab myapp
 </pre></div>
 
 
@@ -170,14 +170,14 @@ You do NOT want this.</p>
 <h2>nginx</h2>
 <p>This is easy. Super easy.
 Here's an <code>nginx</code> config that works with <code>uwsgi</code> on port <code>4242</code>:</p>
-<div class="codehilite"><pre><span class="nt">server</span> <span class="p">{</span>
-    <span class="n">listen</span>       <span class="m">80</span><span class="p">;</span>
-    <span class="n">server_name</span>  <span class="cp">[</span><span class="nx">YOUR</span> <span class="nx">SERVER</span> <span class="nx">NAME.com</span><span class="cp">]</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="nt">server</span> <span class="p">{</span>
+    <span class="err">listen</span>       <span class="err">80</span><span class="p">;</span>
+    <span class="err">server_name</span>  <span class="cp">[</span><span class="nx">YOUR</span> <span class="nx">SERVER</span> <span class="nx">NAME.com</span><span class="cp">]</span><span class="p">;</span>
 
-    <span class="n">location</span> <span class="o">/</span> <span class="err">{</span> <span class="n">try_files</span> <span class="err">$</span><span class="n">uri</span> <span class="o">@</span><span class="cp">[</span><span class="nx">YOUR</span> <span class="nx">APP</span> <span class="nx">NAME</span><span class="cp">]</span><span class="p">;</span> <span class="p">}</span>
+    <span class="err">location</span> <span class="err">/</span> <span class="err">{</span> <span class="err">try_files</span> <span class="err">$uri</span> <span class="err">@</span><span class="cp">[</span><span class="nx">YOUR</span> <span class="nx">APP</span> <span class="nx">NAME</span><span class="cp">]</span><span class="p">;</span> <span class="p">}</span>
     <span class="nt">location</span> <span class="o">@</span><span class="cp">[</span><span class="nx">YOUR</span> <span class="nx">APP</span> <span class="nx">NAME</span><span class="cp">]</span> <span class="p">{</span>
-        <span class="n">uwsgi_pass</span> <span class="m">127</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="o">:</span><span class="m">4242</span><span class="p">;</span>
-        <span class="n">include</span> <span class="n">uwsgi_params</span><span class="p">;</span>
+        <span class="err">uwsgi_pass</span> <span class="err">127.0.0.1:4242</span><span class="p">;</span>
+        <span class="err">include</span> <span class="err">uwsgi_params</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="err">}</span>
 </pre></div>
