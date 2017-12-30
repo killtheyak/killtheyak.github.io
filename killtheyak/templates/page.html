@@ -26,12 +26,12 @@
 {% endif %}
 <br>
 
-{{ page.meta.description }}
 
-{% if page.meta.os|length or page.meta.deps|length or page.meta.updated %}
-<hr>
+{% if page.meta.description %}
+<div class="description">
+ Description: {{page.meta.description}}
+</div>
 {% endif %}
-
 {# Contributors #}
 {% if page.meta.contributors|length %}
 <span class="contributors-list">
@@ -44,7 +44,9 @@ Contributors:
 
 {# Updated #}
 {% if page.meta.updated %}
-<span class='date date-updated'>Updated: {{ page.meta.updated|datetime_format }}</span>
+<div>
+    <span>Updated: {{ page.meta.updated|datetime_format }}</span>
+</div>
 {% endif %}
 
 
@@ -58,13 +60,12 @@ Contributors:
                 <a class="dep-name" href="#">
                     {{ dep.title }}
                 </a>
-
-                <div class="dep-code-container">
-                {{ dep.html|fenced_code }}
-                </div>
                 {% with page=dep  %}
                     {% include "os_buttons.html" %}
                 {% endwith %}
+                <div class="dep-code-container">
+                {{ dep.html|fenced_code }}
+                </div>
                 <a href="{{ url_for('page', path=dep.path) }}">&nbsp;[full instructions]</a>
             </div>
         </li>
@@ -73,6 +74,7 @@ Contributors:
 {% endif %}
 {% if page.meta.os|length or page.meta.deps|length %}
 <hr>
+
 {% endif %}
 {# Page Content #}
 {{ page }}
