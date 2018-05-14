@@ -13,13 +13,13 @@ class TestAUser(TestCase):
 
     def test_can_see_homepage(self):
         # Goes to homepage
-        res = self.app.get('')
+        res = self.app.get('/')
         assert_equal(res.status_code, 200)
         assert_in("All I want to do is", res)
 
     def test_can_see_a_page(self):
         # Goes to homepage
-        res = self.app.get('')
+        res = self.app.get('/')
         # Sees titles for a page
         assert_in('install Python', res)
         # Clicks on a title
@@ -35,7 +35,7 @@ class TestAUser(TestCase):
 
     def test_can_see_deps(self):
         # Goes to homepage
-        res = self.app.get('')
+        res = self.app.get('/')
         # Clicks on a page
         res = res.click('install Python 2 and/or 3')
         # The page has dependency

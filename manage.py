@@ -4,7 +4,7 @@
 import os
 import shutil
 
-from flask.ext.script import Manager
+from flask_script import Manager
 from killtheyak.main import app, freezer
 
 manager = Manager(app)
