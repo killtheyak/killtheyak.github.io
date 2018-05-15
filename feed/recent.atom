@@ -62,15 +62,15 @@
     <content type="html">http://killtheyak.com/install-mpd-mpc-ncmpcpp</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
-    <title type="text">print with a2ps</title>
-    <id>http://killtheyak.com/print-with-a2ps</id>
+    <title type="text">convert files with pandoc</title>
+    <id>http://killtheyak.com/use-pandoc</id>
     <updated>2015-10-10T00:00:00Z</updated>
     <published>2015-10-10T00:00:00Z</published>
-    <link href="http://killtheyak.com/print-with-a2ps" />
+    <link href="http://killtheyak.com/use-pandoc" />
     <author>
       <name>http://www.github.com/anschwa</name>
     </author>
-    <content type="html">Printing from the command line.</content>
+    <content type="html">Some sample file conversions you can do with pandoc.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">turn source code into a PDF</title>
@@ -84,6 +84,17 @@
     <content type="html">For those times when you need to print your code.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
+    <title type="text">print with a2ps</title>
+    <id>http://killtheyak.com/print-with-a2ps</id>
+    <updated>2015-10-10T00:00:00Z</updated>
+    <published>2015-10-10T00:00:00Z</published>
+    <link href="http://killtheyak.com/print-with-a2ps" />
+    <author>
+      <name>http://www.github.com/anschwa</name>
+    </author>
+    <content type="html">Printing from the command line.</content>
+  </entry>
+  <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">spoof my MAC address</title>
     <id>http://killtheyak.com/spoof-mac-address</id>
     <updated>2015-10-10T00:00:00Z</updated>
@@ -93,39 +104,6 @@
       <name>http://www.github.com/anschwa</name>
     </author>
     <content type="html">spoof your MAC address and protect your privacy.</content>
-  </entry>
-  <entry xml:base="http://localhost/feed/recent.atom">
-    <title type="text">setup and use SSH</title>
-    <id>http://killtheyak.com/use-and-setup-ssh</id>
-    <updated>2015-10-10T00:00:00Z</updated>
-    <published>2015-10-10T00:00:00Z</published>
-    <link href="http://killtheyak.com/use-and-setup-ssh" />
-    <author>
-      <name>http://www.github.com/anschwa</name>
-    </author>
-    <content type="html">This is the template page.</content>
-  </entry>
-  <entry xml:base="http://localhost/feed/recent.atom">
-    <title type="text">use ed</title>
-    <id>http://killtheyak.com/use-ed</id>
-    <updated>2015-10-10T00:00:00Z</updated>
-    <published>2015-10-10T00:00:00Z</published>
-    <link href="http://killtheyak.com/use-ed" />
-    <author>
-      <name>http://www.github.com/anschwa</name>
-    </author>
-    <content type="html">A short interactive tutorial for ed.</content>
-  </entry>
-  <entry xml:base="http://localhost/feed/recent.atom">
-    <title type="text">use submodules in git</title>
-    <id>http://killtheyak.com/use-git-submodule</id>
-    <updated>2015-10-10T00:00:00Z</updated>
-    <published>2015-10-10T00:00:00Z</published>
-    <link href="http://killtheyak.com/use-git-submodule" />
-    <author>
-      <name>http://www.github.com/anschwa</name>
-    </author>
-    <content type="html">Helpful commands for working with git submodules.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">use ncmpcpp</title>
@@ -139,15 +117,26 @@
     <content type="html">Installing and basic configuration of mpd and ncmpcpp.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
-    <title type="text">convert files with pandoc</title>
-    <id>http://killtheyak.com/use-pandoc</id>
+    <title type="text">use ed</title>
+    <id>http://killtheyak.com/use-ed</id>
     <updated>2015-10-10T00:00:00Z</updated>
     <published>2015-10-10T00:00:00Z</published>
-    <link href="http://killtheyak.com/use-pandoc" />
+    <link href="http://killtheyak.com/use-ed" />
     <author>
       <name>http://www.github.com/anschwa</name>
     </author>
-    <content type="html">Some sample file conversions you can do with pandoc.</content>
+    <content type="html">A short interactive tutorial for ed.</content>
+  </entry>
+  <entry xml:base="http://localhost/feed/recent.atom">
+    <title type="text">setup and use SSH</title>
+    <id>http://killtheyak.com/use-and-setup-ssh</id>
+    <updated>2015-10-10T00:00:00Z</updated>
+    <published>2015-10-10T00:00:00Z</published>
+    <link href="http://killtheyak.com/use-and-setup-ssh" />
+    <author>
+      <name>http://www.github.com/anschwa</name>
+    </author>
+    <content type="html">This is the template page.</content>
   </entry>
   <entry xml:base="http://localhost/feed/recent.atom">
     <title type="text">wget an entire website</title>
@@ -170,5 +159,16 @@
       <name>http://www.github.com/anschwa</name>
     </author>
     <content type="html">Useful ffmpeg commands like speeding up video or boosting audio.</content>
+  </entry>
+  <entry xml:base="http://localhost/feed/recent.atom">
+    <title type="text">use submodules in git</title>
+    <id>http://killtheyak.com/use-git-submodule</id>
+    <updated>2015-10-10T00:00:00Z</updated>
+    <published>2015-10-10T00:00:00Z</published>
+    <link href="http://killtheyak.com/use-git-submodule" />
+    <author>
+      <name>http://www.github.com/anschwa</name>
+    </author>
+    <content type="html">Helpful commands for working with git submodules.</content>
   </entry>
 </feed>
